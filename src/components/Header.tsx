@@ -24,8 +24,12 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
             className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
             onClick={() => onNavigate('home')}
           >
-            <div className="bg-gradient-to-r from-red-600 to-red-800 p-2 rounded-full">
-              <Zap className="h-6 w-6 text-white" />
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-red-600">
+              <img 
+                src="/Diseño sin título.png" 
+                alt="Ink Life Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">

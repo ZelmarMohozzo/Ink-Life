@@ -10,7 +10,7 @@ const ArtistInfo: React.FC = () => {
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/instructor.png"
                 alt="Nico Lemos"
                 className="w-full h-96 lg:h-[500px] object-cover"
               />

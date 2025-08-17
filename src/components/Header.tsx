@@ -25,13 +25,13 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           
           {/* Centered Logo */}
           <div 
-            className="flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity"
+            className="flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity relative z-10"
             onClick={() => onNavigate('home')}
           >
             <img 
               src="/banner_inkedlife.png" 
               alt="Inked Life" 
-              className="h-12 object-contain"
+              className="h-20 object-contain"
             />
           </div>
           

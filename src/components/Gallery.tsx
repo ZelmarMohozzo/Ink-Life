@@ -10,8 +10,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   const [isPaused, setIsPaused] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const [dragOffset, setDragOffset] = useState(0);
+  const [currentOffset, setCurrentOffset] = useState(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const images = [
@@ -86,13 +85,6 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     setIsPaused(true);
     setStartX(e.pageX);
     if (containerRef.current) {
-      const currentTransform = containerRef.current.querySelector('div')?.style.transform || '';
-      const currentX = currentTransform.match(/translateX\((-?\d+(?:\.\d+)?)px\)/) 
-        ? parseFloat(currentTransform.match(/translateX\((-?\d+(?:\.\d+)?)px\)/)![1]) 
-        : dragOffset;
-      setScrollLeft(currentX);
-    }
-    if (containerRef.current) {
       containerRef.current.style.cursor = 'grabbing';
     }
   };
@@ -101,14 +93,14 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX;
-    const walk = (x - startX) * 2; // Multiplicador para sensibilidad
-    setDragOffset(scrollLeft + walk);
+    const walk = (x - startX) * 2;
+    setCurrentOffset(currentOffset + walk);
+    setStartX(x); // Actualizar startX para el próximo movimiento
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    // Pequeño delay antes de reanudar para evitar saltos
-    setTimeout(() => setIsPaused(false), 100);
+    setTimeout(() => setIsPaused(false), 300);
     if (containerRef.current) {
       containerRef.current.style.cursor = 'grab';
     }
@@ -119,26 +111,19 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     setIsDragging(true);
     setIsPaused(true);
     setStartX(e.touches[0].pageX);
-    if (containerRef.current) {
-      const currentTransform = containerRef.current.querySelector('div')?.style.transform || '';
-      const currentX = currentTransform.match(/translateX\((-?\d+(?:\.\d+)?)px\)/) 
-        ? parseFloat(currentTransform.match(/translateX\((-?\d+(?:\.\d+)?)px\)/)![1]) 
-        : dragOffset;
-      setScrollLeft(currentX);
-    }
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isDragging) return;
     const x = e.touches[0].pageX;
     const walk = (x - startX) * 2;
-    setDragOffset(scrollLeft + walk);
+    setCurrentOffset(currentOffset + walk);
+    setStartX(x); // Actualizar startX para el próximo movimiento
   };
 
   const handleTouchEnd = () => {
     setIsDragging(false);
-    // Pequeño delay antes de reanudar para evitar saltos
-    setTimeout(() => setIsPaused(false), 100);
+    setTimeout(() => setIsPaused(false), 300);
   };
 
   // Prevenir el comportamiento por defecto en móviles
@@ -208,7 +193,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
               className={`flex gap-6 ${isPaused || isDragging ? '' : 'animate-scroll'}`}
               style={{
                 width: `${duplicatedImages.length * 320}px`,
-                transform: `translateX(${dragOffset}px)`,
+                transform: `translateX(${currentOffset}px)`,
                 transition: isDragging ? 'none' : 'transform 0.3s ease-out',
               }}
             >

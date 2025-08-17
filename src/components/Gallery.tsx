@@ -51,7 +51,6 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     <section 
       className="py-20 px-4 relative" 
       style={{
-        backgroundColor: '#111827',
         backgroundImage: 'url(/texture-dark.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

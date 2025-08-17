@@ -22,6 +22,12 @@ const Galeria: React.FC<GaleriaProps> = ({ onNavigate }) => {
     { id: 8, url: '/tatuajes/IMG-20250614-WA0027.jpg', category: 'Realismo', title: 'Brújula y Paisaje' },
     { id: 9, url: '/tatuajes/IMG-20250614-WA0028 copy.jpg', category: 'Realismo', title: 'Manga Completa' },
     { id: 10, url: '/tatuajes/IMG-20250614-WA0029.jpg', category: 'Geométrico', title: 'Ozzy Osbourne' }
+  ];
+
+  const filteredImages = selectedCategory === 'Todos' 
+    ? images 
+    : images.filter(image => image.category === selectedCategory);
+
   return (
     <div className="min-h-screen bg-black pt-20">
       <div className="max-w-7xl mx-auto px-4 py-12">

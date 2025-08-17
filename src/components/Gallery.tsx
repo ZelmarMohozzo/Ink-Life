@@ -11,6 +11,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [currentOffset, setCurrentOffset] = useState(0);
+  const [animationOffset, setAnimationOffset] = useState(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const images = [
@@ -100,7 +101,12 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setIsPaused(false);
+    // Sincronizar el offset de animación con la posición actual
+    setAnimationOffset(currentOffset);
+    // Reanudar después de un breve momento
+    setTimeout(() => {
+      setIsPaused(false);
+    }, 100);
     if (containerRef.current) {
       containerRef.current.style.cursor = 'grab';
     }
@@ -123,7 +129,12 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
 
   const handleTouchEnd = () => {
     setIsDragging(false);
-    setIsPaused(false);
+    // Sincronizar el offset de animación con la posición actual
+    setAnimationOffset(currentOffset);
+    // Reanudar después de un breve momento
+    setTimeout(() => {
+      setIsPaused(false);
+    }, 100);
   };
 
   // Prevenir el comportamiento por defecto en móviles
@@ -193,7 +204,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
               className={`flex gap-6 ${isPaused || isDragging ? '' : 'animate-scroll'}`}
               style={{
                 width: `${duplicatedImages.length * 320}px`,
-                transform: `translateX(${currentOffset}px)`,
+                transform: `translateX(${isDragging || isPaused ? currentOffset : animationOffset}px)`,
                 transition: isDragging ? 'none' : 'transform 0.3s ease-out',
               }}
             >
@@ -254,15 +265,16 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
       <style jsx>{`
         @keyframes scroll {
           0% {
-            transform: translateX(0);
+            transform: translateX(var(--start-offset, 0px));
           }
           100% {
-            transform: translateX(-${images.length * 320}px);
+            transform: translateX(calc(var(--start-offset, 0px) - ${images.length * 320}px));
           }
         }
         
         .animate-scroll {
           animation: scroll 60s linear infinite;
+          --start-offset: ${animationOffset}px;
         }
       `}</style>
     </section>

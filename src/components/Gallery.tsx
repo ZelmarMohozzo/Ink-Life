@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { X, Eye, ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
-import { useEffect } from 'react';
+import { X, Eye, Play, Pause } from 'lucide-react';
 
 interface GalleryProps {
   onNavigate: (page: string) => void;
@@ -8,7 +7,6 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
   const images = [
@@ -74,26 +72,12 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     }
   ];
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % Math.ceil(images.length / 3));
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + Math.ceil(images.length / 3)) % Math.ceil(images.length / 3));
-  };
-
-  // Auto-scroll effect
-  useEffect(() => {
-    if (!isPaused) {
-      const timer = setInterval(nextSlide, 4000); // Cambia cada 4 segundos
-      return () => clearInterval(timer);
-    }
-  }, [isPaused]);
-  const visibleImages = images.slice(currentIndex * 3, currentIndex * 3 + 3);
+  // Duplicamos las imágenes para crear el efecto infinito
+  const duplicatedImages = [...images, ...images, ...images];
 
   return (
     <section 
-      className="py-20 px-4 relative" 
+      className="py-20 px-4 relative overflow-hidden" 
       style={{
         backgroundImage: 'url(/texture-dark.png)',
         backgroundSize: 'cover',
@@ -117,7 +101,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
           </button>
         </div>
 
-        {/* Horizontal Carousel */}
+        {/* Continuous Scroll Container */}
         <div className="relative">
           {/* Pause/Play Button */}
           <button
@@ -127,94 +111,49 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
             {isPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
           </button>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
-
-          {/* Carousel Container */}
+          {/* Scrolling Container */}
           <div 
             className="overflow-hidden rounded-2xl"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
             <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              className={`flex gap-6 ${isPaused ? '' : 'animate-scroll'}`}
+              style={{
+                width: `${duplicatedImages.length * 320}px`,
+              }}
             >
-              {Array.from({ length: Math.ceil(images.length / 3) }).map((_, slideIndex) => (
-                <div key={slideIndex} className="w-full flex-shrink-0">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-                    {images.slice(slideIndex * 3, slideIndex * 3 + 3).map((image) => (
-                      <div
-                        key={image.id}
-                        className="group relative overflow-hidden rounded-xl bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]"
-                      >
-                        <img
-                          src={image.url}
-                          alt={image.title}
-                          className="w-full h-64 lg:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="absolute bottom-0 left-0 right-0 p-6">
-                            <div className="flex items-center justify-between mb-2">
-                              <span className="bg-red-600 text-white text-xs px-3 py-1 rounded-full font-medium">
-                                {image.category}
-                              </span>
-                              <button
-                                onClick={() => setSelectedImage(image.url)}
-                                className="bg-white/10 backdrop-blur-sm p-2 rounded-full hover:bg-white/20 transition-colors"
-                              >
-                                <Eye className="h-5 w-5 text-white" />
-                              </button>
-                            </div>
-                            <h3 className="text-white font-semibold text-lg">{image.title}</h3>
-                          </div>
-                        </div>
+              {duplicatedImages.map((image, index) => (
+                <div
+                  key={`${image.id}-${index}`}
+                  className="group relative overflow-hidden rounded-xl bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] flex-shrink-0"
+                  style={{ width: '300px', height: '400px' }}
+                >
+                  <img
+                    src={image.url}
+                    alt={image.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="bg-red-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+                          {image.category}
+                        </span>
+                        <button
+                          onClick={() => setSelectedImage(image.url)}
+                          className="bg-white/10 backdrop-blur-sm p-2 rounded-full hover:bg-white/20 transition-colors"
+                        >
+                          <Eye className="h-5 w-5 text-white" />
+                        </button>
                       </div>
-                    ))}
+                      <h3 className="text-white font-semibold text-lg">{image.title}</h3>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center items-center mt-8 space-x-2">
-            {Array.from({ length: Math.ceil(images.length / 3) }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-red-500 scale-125' 
-                    : 'bg-white/30 hover:bg-white/50'
-                }`}
-              />
-            ))}
-            
-            {/* Pause/Play Button in dots area */}
-            <button
-              onClick={() => setIsPaused(!isPaused)}
-              className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 ml-4"
-            >
-              {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
-            </button>
           </div>
         </div>
       </div>
@@ -237,6 +176,21 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-${images.length * 320}px);
+          }
+        }
+        
+        .animate-scroll {
+          animation: scroll 60s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };

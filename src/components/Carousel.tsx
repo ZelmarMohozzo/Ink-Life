@@ -25,7 +25,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         { text: 'VER CURSOS', action: () => onNavigate('cursos'), style: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' },
         { text: 'GALERÍA →', action: () => onNavigate('galeria'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
       ],
-      image: 'https://images.pexels.com/photos/1300355/pexels-photo-1300355.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         { text: 'VER PRECIOS', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' },
         { text: 'CONSULTAR →', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
       ],
-      image: 'https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
       id: 3,
@@ -59,7 +59,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         { text: 'VER PRECIOS', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' },
         { text: 'GALERÍA →', action: () => onNavigate('galeria'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
       ],
-      image: '/instructor.png'
+      image: 'https://images.pexels.com/photos/1300355/pexels-photo-1300355.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
   ];
 
@@ -84,7 +84,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
-          backgroundImage: 'url(/tattoo-artist-bg.png)'
+          backgroundImage: 'url(https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=1200)'
         }}
       ></div>
       

@@ -139,15 +139,26 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
 
                 {/* Right Image */}
                 <div className="relative">
-                  <div className="relative w-80 h-80 mx-auto overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-500/30 hover:ring-purple-400/50 transition-all duration-500">
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent hover:from-purple-800/40 transition-all duration-500"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
-                  </div>
+                  {slide.id === 1 ? (
+                    <div className="relative w-80 h-80 mx-auto overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-500/30 hover:ring-purple-400/50 transition-all duration-500">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent hover:from-purple-800/40 transition-all duration-500"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+                    </div>
+                  ) : (
+                    <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-96 lg:h-[500px] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent" />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

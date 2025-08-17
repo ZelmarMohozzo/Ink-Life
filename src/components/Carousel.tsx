@@ -11,23 +11,6 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
   const slides = [
     {
       id: 1,
-      badge: 'DALE VIDA A TU PIEL',
-      title: 'HAZTE UN TATTOO',
-      description: 'Especialistas certificados en técnicas avanzadas y diferentes estilos. Aplicación precisa, pigmentos de alta calidad y protocolos de bioseguridad profesional.',
-      specialties: [
-        { name: 'Blackwork', color: 'bg-gray-800 text-white' },
-        { name: 'Realismo', color: 'bg-orange-500 text-white' },
-        { name: 'Neotradicional', color: 'bg-blue-500 text-white' },
-        { name: 'Tribales', color: 'bg-red-600 text-white' }
-      ],
-      buttons: [
-        { text: 'VER PRECIOS', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' },
-        { text: 'GALERÍA →', action: () => onNavigate('galeria'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
-      ],
-      image: '/instructor.png'
-    },
-    {
-      id: 2,
       badge: 'APRENDE EL ARTE',
       title: 'CURSOS DE TATUAJE',
       description: 'Conviértete en un artista profesional con nuestros cursos completos. Desde nivel principiante hasta técnicas avanzadas con instructores certificados.',
@@ -44,7 +27,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       image: 'https://images.pexels.com/photos/1300355/pexels-photo-1300355.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
-      id: 3,
+      id: 2,
       badge: 'TECNOLOGÍA AVANZADA',
       title: 'REMOCIÓN LÁSER',
       description: 'Eliminación segura y efectiva de tatuajes con tecnología láser de última generación. Resultados profesionales con mínimo dolor.',
@@ -59,6 +42,23 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         { text: 'CONSULTAR →', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
       ],
       image: 'https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      id: 3,
+      badge: 'DALE VIDA A TU PIEL',
+      title: 'HAZTE UN TATTOO',
+      description: 'Especialistas certificados en técnicas avanzadas y diferentes estilos. Aplicación precisa, pigmentos de alta calidad y protocolos de bioseguridad profesional.',
+      specialties: [
+        { name: 'Blackwork', color: 'bg-gray-800 text-white' },
+        { name: 'Realismo', color: 'bg-orange-500 text-white' },
+        { name: 'Neotradicional', color: 'bg-blue-500 text-white' },
+        { name: 'Tribales', color: 'bg-red-600 text-white' }
+      ],
+      buttons: [
+        { text: 'VER PRECIOS', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' },
+        { text: 'GALERÍA →', action: () => onNavigate('galeria'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
+      ],
+      image: '/instructor.png'
     }
   ];
 
@@ -139,7 +139,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
 
                 {/* Right Image */}
                 <div className="relative">
-                  {slide.id === 1 ? (
+                  {slide.id === 3 ? (
                     <div className="relative w-96 h-96 mx-auto overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-500/30 hover:ring-purple-400/50 transition-all duration-500">
                       <img
                         src={slide.image}

@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   <button
                     key={item.page}
                     onClick={() => onNavigate(item.page)}
-                    className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-red-400 font-['MBF_Royal'] ${
+                    className={`px-3 py-2 text-lg font-medium transition-all duration-300 hover:text-red-400 font-['MBF_Royal'] ${
                       currentPage === item.page 
                         ? 'text-red-500 border-b-2 border-red-500' 
                         : 'text-gray-300'
@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   <button
                     key={item.page}
                     onClick={() => onNavigate(item.page)}
-                    className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-red-400 font-['MBF_Royal'] ${
+                    className={`px-3 py-2 text-lg font-medium transition-all duration-300 hover:text-red-400 font-['MBF_Royal'] ${
                       currentPage === item.page 
                         ? 'text-red-500 border-b-2 border-red-500' 
                         : 'text-gray-300'
@@ -83,7 +83,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                     onNavigate(item.page);
                     setIsMenuOpen(false);
                   }}
-                  className={`block w-full text-left px-3 py-2 text-sm font-medium transition-colors hover:text-red-400 font-['MBF_Royal'] ${
+                  className={`block w-full text-left px-3 py-2 text-lg font-medium transition-colors hover:text-red-400 font-['MBF_Royal'] ${
                     currentPage === item.page ? 'text-red-500' : 'text-gray-300'
                   }`}
                 >

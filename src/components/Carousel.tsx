@@ -18,7 +18,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       action: () => onNavigate('cursos'),
       icon: <GraduationCap className="h-12 w-12" />,
       bgGradient: 'from-red-900/80 to-gray-900/80',
-      image: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=1200'
+      image: '/public/tattoo-artist-bg.png'
     },
     {
       id: 2,

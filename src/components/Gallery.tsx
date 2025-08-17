@@ -114,8 +114,6 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
           {/* Scrolling Container */}
           <div 
             className="overflow-hidden rounded-2xl"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
           >
             <div 
               className={`flex gap-6 ${isPaused ? '' : 'animate-scroll'}`}

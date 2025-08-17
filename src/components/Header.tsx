@@ -18,22 +18,8 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
   return (
     <>
-      {/* Logo positioned above navbar */}
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-        <div 
-          className="cursor-pointer hover:opacity-80 transition-opacity"
-          onClick={() => onNavigate('home')}
-        >
-          <img 
-            src="/banner_inkedlife.png" 
-            alt="Inked Life" 
-            className="h-24 object-contain"
-          />
-        </div>
-      </div>
-
       {/* Navbar */}
-      <header className="bg-black/95 backdrop-blur-sm fixed w-full top-20 z-40 border-b border-red-900/20">
+      <header className="bg-black/95 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-red-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Desktop Menu */}
@@ -83,6 +69,20 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           )}
         </div>
       </header>
+
+      {/* Logo positioned below navbar */}
+      <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-40">
+        <div 
+          className="cursor-pointer hover:opacity-80 transition-opacity"
+          onClick={() => onNavigate('home')}
+        >
+          <img 
+            src="/banner_inkedlife.png" 
+            alt="Inked Life" 
+            className="h-20 object-contain"
+          />
+        </div>
+      </div>
     </>
   );
 };

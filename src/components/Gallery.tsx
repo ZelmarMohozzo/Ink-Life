@@ -100,7 +100,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setIsPaused(false);
+    setTimeout(() => setIsPaused(false), 20000);
     if (containerRef.current) {
       containerRef.current.style.cursor = 'grab';
     }
@@ -123,7 +123,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
 
   const handleTouchEnd = () => {
     setIsDragging(false);
-    setIsPaused(false);
+    setTimeout(() => setIsPaused(false), 20000);
   };
 
   // Prevenir el comportamiento por defecto en móviles

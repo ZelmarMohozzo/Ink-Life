@@ -80,6 +80,14 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
 
   return (
     <div className="relative h-screen overflow-hidden mt-4 bg-black">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: 'url(/tattoo-artist-bg.png)'
+        }}
+      ></div>
+      
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-radial from-red-900/20 via-transparent to-transparent"></div>

@@ -218,6 +218,11 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
                     src={image.url}
                     alt={image.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImage(image.url);
+                    }}
+                    style={{ cursor: 'pointer' }}
                   />
                   
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -227,7 +232,10 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
                           {image.category}
                         </span>
                         <button
-                          onClick={() => setSelectedImage(image.url)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedImage(image.url);
+                          }}
                           className="bg-white/10 backdrop-blur-sm p-2 rounded-full hover:bg-white/20 transition-colors"
                         >
                           <Eye className="h-5 w-5 text-white" />

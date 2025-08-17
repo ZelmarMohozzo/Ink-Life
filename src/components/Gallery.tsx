@@ -48,12 +48,16 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-900 relative" style={{
-      backgroundImage: 'url(/texture-dark.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}>
+    <section 
+      className="py-20 px-4 relative" 
+      style={{
+        backgroundColor: '#111827',
+        backgroundImage: 'url(/texture-dark.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">

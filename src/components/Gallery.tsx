@@ -55,7 +55,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
       backgroundRepeat: 'no-repeat'
     }}>
       {/* Overlay para mantener legibilidad */}
-      <div className="absolute inset-0 bg-gray-900/80"></div>
+      <div className="absolute inset-0 bg-gray-900/40"></div>
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10">
         <div className="text-center mb-16">

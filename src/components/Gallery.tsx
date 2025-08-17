@@ -8,6 +8,11 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const images = [
     {
@@ -75,6 +80,67 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   // Duplicamos las imágenes para crear el efecto infinito
   const duplicatedImages = [...images, ...images, ...images];
 
+  // Funciones para el arrastre con mouse
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setIsPaused(true);
+    setStartX(e.pageX);
+    setScrollLeft(dragOffset);
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grabbing';
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = (x - startX) * 2; // Multiplicador para sensibilidad
+    setDragOffset(scrollLeft + walk);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    setIsPaused(false);
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grab';
+    }
+  };
+
+  // Funciones para el arrastre con touch (móvil)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setIsPaused(true);
+    setStartX(e.touches[0].pageX);
+    setScrollLeft(dragOffset);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 2;
+    setDragOffset(scrollLeft + walk);
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    setIsPaused(false);
+  };
+
+  // Prevenir el comportamiento por defecto en móviles
+  React.useEffect(() => {
+    const preventDefault = (e: Event) => {
+      if (isDragging) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('touchmove', preventDefault, { passive: false });
+    return () => {
+      document.removeEventListener('touchmove', preventDefault);
+    };
+  }, [isDragging]);
+
   return (
     <section 
       className="py-20 px-4 relative overflow-hidden" 
@@ -113,12 +179,23 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
 
           {/* Scrolling Container */}
           <div 
-            className="overflow-hidden rounded-2xl"
+            className="overflow-hidden rounded-2xl select-none"
+            ref={containerRef}
+            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <div 
-              className={`flex gap-6 ${isPaused ? '' : 'animate-scroll'}`}
+              className={`flex gap-6 ${isPaused || isDragging ? '' : 'animate-scroll'}`}
               style={{
                 width: `${duplicatedImages.length * 320}px`,
+                transform: `translateX(${dragOffset}px)`,
+                transition: isDragging ? 'none' : 'transform 0.3s ease-out',
               }}
             >
               {duplicatedImages.map((image, index) => (

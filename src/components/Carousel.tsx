@@ -113,7 +113,6 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                     {slide.badge}
                   </div>
                   
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight font-['Oswald']">
                     {slide.title}
                   </h1>

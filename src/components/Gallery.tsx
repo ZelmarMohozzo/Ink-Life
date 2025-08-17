@@ -16,6 +16,24 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
       category: 'Realismo'
     },
     {
+      id: 6,
+      url: '/tatuajes/IMG-20250614-WA0025.jpg',
+      title: 'Águila Detallada',
+      category: 'Realismo'
+    },
+    {
+      id: 7,
+      url: '/tatuajes/IMG-20250614-WA0026.jpg',
+      title: 'Retratos Clásicos',
+      category: 'Realismo'
+    },
+    {
+      id: 8,
+      url: '/tatuajes/IMG-20250614-WA0027.jpg',
+      title: 'Brújula y Paisaje',
+      category: 'Realismo'
+    },
+    {
       id: 2,
       url: '/tatuajes/IMG-20250614-WA0023.jpg',
       title: 'Arte en Negro',

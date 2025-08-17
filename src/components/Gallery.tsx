@@ -218,11 +218,16 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
                     src={image.url}
                     alt={image.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedImage(image.url);
+                    onMouseDown={(e) => {
+                      e.preventDefault();
                     }}
-                    style={{ cursor: 'pointer' }}
+                    onMouseUp={(e) => {
+                      if (!isDragging) {
+                        e.stopPropagation();
+                        setSelectedImage(image.url);
+                      }
+                    }}
+                    style={{ cursor: 'pointer', userSelect: 'none' }}
                   />
                   
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

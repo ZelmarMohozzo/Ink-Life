@@ -140,7 +140,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                 {/* Right Image */}
                 <div className="relative">
                   {slide.id === 1 ? (
-                    <div className="relative w-80 h-80 mx-auto overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-500/30 hover:ring-purple-400/50 transition-all duration-500">
+                    <div className="relative w-96 h-96 mx-auto overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-500/30 hover:ring-purple-400/50 transition-all duration-500">
                       <img
                         src={slide.image}
                         alt={slide.title}

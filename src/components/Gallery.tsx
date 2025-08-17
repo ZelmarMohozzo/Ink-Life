@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Eye, ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import { useEffect } from 'react';
 
 interface GalleryProps {
   onNavigate: (page: string) => void;
@@ -8,6 +9,7 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const images = [
     {
@@ -80,6 +82,13 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     setCurrentIndex((prev) => (prev - 1 + Math.ceil(images.length / 3)) % Math.ceil(images.length / 3));
   };
 
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!isPaused) {
+      const timer = setInterval(nextSlide, 4000); // Cambia cada 4 segundos
+      return () => clearInterval(timer);
+    }
+  }, [isPaused]);
   const visibleImages = images.slice(currentIndex * 3, currentIndex * 3 + 3);
 
   return (
@@ -110,9 +119,19 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
 
         {/* Horizontal Carousel */}
         <div className="relative">
+          {/* Pause/Play Button */}
+          <button
+            onClick={() => setIsPaused(!isPaused)}
+            className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
+          >
+            {isPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
+          </button>
+
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -120,13 +139,19 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
           
           <button
             onClick={nextSlide}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
 
           {/* Carousel Container */}
-          <div className="overflow-hidden rounded-2xl">
+          <div 
+            className="overflow-hidden rounded-2xl"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -170,7 +195,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center items-center mt-8 space-x-2">
             {Array.from({ length: Math.ceil(images.length / 3) }).map((_, index) => (
               <button
                 key={index}
@@ -182,6 +207,14 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
                 }`}
               />
             ))}
+            
+            {/* Pause/Play Button in dots area */}
+            <button
+              onClick={() => setIsPaused(!isPaused)}
+              className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 ml-4"
+            >
+              {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+            </button>
           </div>
         </div>
       </div>

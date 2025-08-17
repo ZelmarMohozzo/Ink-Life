@@ -11,39 +11,33 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   const images = [
     {
       id: 1,
-      url: 'https://images.pexels.com/photos/1300355/pexels-photo-1300355.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Tatuaje Realista',
+      url: '/tatuajes/IMG-20250614-WA0016.jpg',
+      title: 'Tatuaje Realista 1',
       category: 'Realismo'
     },
     {
       id: 2,
-      url: 'https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Arte Geométrico',
-      category: 'Geométrico'
+      url: '/tatuajes/IMG-20250614-WA0023.jpg',
+      title: 'Arte en Negro',
+      category: 'Blackwork'
     },
     {
       id: 3,
-      url: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      url: '/tatuajes/IMG-20250614-WA0028.jpg',
       title: 'Tatuaje Tradicional',
       category: 'Tradicional'
     },
     {
       id: 4,
-      url: 'https://images.pexels.com/photos/2183027/pexels-photo-2183027.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Mandala',
-      category: 'Mandala'
+      url: '/tatuajes/IMG-20250614-WA0030.jpg',
+      title: 'Diseño Geométrico',
+      category: 'Geométrico'
     },
     {
       id: 5,
-      url: 'https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Arte Moderno',
-      category: 'Moderno'
-    },
-    {
-      id: 6,
-      url: 'https://images.pexels.com/photos/1570807/pexels-photo-1570807.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Diseño Floral',
-      category: 'Floral'
+      url: '/tatuajes/IMG-20250614-WA0043.jpg',
+      title: 'Mandala Detallado',
+      category: 'Mandala'
     }
   ];
 

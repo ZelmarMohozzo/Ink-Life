@@ -77,8 +77,18 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center px-4 max-w-4xl">
                 <div className="flex justify-center mb-6">
-                  <div className="bg-white/10 backdrop-blur-sm p-4 rounded-full border border-white/20">
-                    {slide.icon}
+                  <div className="bg-white/10 backdrop-blur-sm p-2 rounded-full border border-white/20">
+                    {slide.id === 1 ? (
+                      <img 
+                        src="/instructor.png" 
+                        alt="Nico Lemos" 
+                        className="w-20 h-20 rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="p-2">
+                        {slide.icon}
+                      </div>
+                    )}
                   </div>
                 </div>
                 

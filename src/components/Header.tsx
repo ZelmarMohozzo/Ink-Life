@@ -20,8 +20,12 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     <header className="bg-black/95 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-red-900/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
+          {/* Left spacer for desktop */}
+          <div className="hidden md:block flex-1"></div>
+          
+          {/* Centered Logo */}
           <div 
-            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+            className="flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity"
             onClick={() => onNavigate('home')}
           >
             <img 
@@ -30,9 +34,12 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               className="h-12 object-contain"
             />
           </div>
+          
+          {/* Right spacer for desktop */}
+          <div className="hidden md:block flex-1"></div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 absolute right-4">
             {menuItems.map((item) => (
               <button
                 key={item.page}

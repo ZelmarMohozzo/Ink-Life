@@ -184,7 +184,6 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         ))}
       </div>
     </div>
-    </div>
   );
 };
 

@@ -11,8 +11,32 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   const images = [
     {
       id: 1,
-      url: '/tatuajes/IMG-20250614-WA0016.jpg',
-      title: 'Tatuaje Realista 1',
+      url: '/tatuajes/IMG-20250614-WA0016.jpg', 
+      title: 'Horus Egipcio',
+      category: 'Realismo'
+    },
+    {
+      id: 2,
+      url: '/tatuajes/IMG-20250614-WA0023.jpg',
+      title: 'Carnero Realista',
+      category: 'Realismo'
+    },
+    {
+      id: 3,
+      url: '/tatuajes/IMG-20250614-WA0028.jpg',
+      title: 'Rosa y Ojo',
+      category: 'Realismo'
+    },
+    {
+      id: 4,
+      url: '/tatuajes/IMG-20250614-WA0030.jpg',
+      title: 'Águila y Tigre',
+      category: 'Realismo'
+    },
+    {
+      id: 5,
+      url: '/tatuajes/IMG-20250614-WA0043.jpg',
+      title: 'Guerrero Nativo',
       category: 'Realismo'
     },
     {
@@ -34,28 +58,16 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
       category: 'Realismo'
     },
     {
-      id: 2,
-      url: '/tatuajes/IMG-20250614-WA0023.jpg',
-      title: 'Arte en Negro',
-      category: 'Blackwork'
+      id: 9,
+      url: '/tatuajes/IMG-20250614-WA0028 copy.jpg',
+      title: 'Manga Completa',
+      category: 'Realismo'
     },
     {
-      id: 3,
-      url: '/tatuajes/IMG-20250614-WA0028.jpg',
-      title: 'Tatuaje Tradicional',
-      category: 'Tradicional'
-    },
-    {
-      id: 4,
-      url: '/tatuajes/IMG-20250614-WA0030.jpg',
-      title: 'Diseño Geométrico',
+      id: 10,
+      url: '/tatuajes/IMG-20250614-WA0029.jpg',
+      title: 'Ozzy Osbourne',
       category: 'Geométrico'
-    },
-    {
-      id: 5,
-      url: '/tatuajes/IMG-20250614-WA0043.jpg',
-      title: 'Mandala Detallado',
-      category: 'Mandala'
     }
   ];
 

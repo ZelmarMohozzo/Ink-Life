@@ -193,7 +193,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
         {slides.map((_, index) => (
           <button
             key={index}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 
 interface CarouselProps {
   onNavigate: (page: string) => void;
@@ -7,6 +7,7 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const slides = [
     {
@@ -71,9 +72,11 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
-    return () => clearInterval(timer);
-  }, []);
+    if (!isPaused) {
+      const timer = setInterval(nextSlide, 6000);
+      return () => clearInterval(timer);
+    }
+  }, [isPaused]);
 
   return (
     <div className="relative h-screen overflow-hidden mt-4 bg-black">
@@ -179,6 +182,14 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
       >
         <ChevronRight className="h-6 w-6" />
+      </button>
+
+      {/* Pause/Play Button */}
+      <button
+        onClick={() => setIsPaused(!isPaused)}
+        className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
+      >
+        {isPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
       </button>
 
       {/* Dots Indicator */}

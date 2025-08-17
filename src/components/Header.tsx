@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       </header>
 
       {/* Logo positioned below navbar */}
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
         <div 
           className="cursor-pointer hover:opacity-80 transition-opacity"
           onClick={() => onNavigate('home')}
@@ -104,7 +104,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           <img 
             src="/banner_inkedlife.png" 
             alt="Inked Life" 
-            className="h-28 object-contain"
+            className="h-32 object-contain"
           />
         </div>
       </div>

@@ -85,7 +85,13 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     setIsDragging(true);
     setIsPaused(true);
     setStartX(e.pageX);
-    setScrollLeft(dragOffset);
+    if (containerRef.current) {
+      const currentTransform = containerRef.current.querySelector('div')?.style.transform || '';
+      const currentX = currentTransform.match(/translateX\((-?\d+(?:\.\d+)?)px\)/) 
+        ? parseFloat(currentTransform.match(/translateX\((-?\d+(?:\.\d+)?)px\)/)![1]) 
+        : dragOffset;
+      setScrollLeft(currentX);
+    }
     if (containerRef.current) {
       containerRef.current.style.cursor = 'grabbing';
     }
@@ -101,7 +107,8 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setIsPaused(false);
+    // Pequeño delay antes de reanudar para evitar saltos
+    setTimeout(() => setIsPaused(false), 100);
     if (containerRef.current) {
       containerRef.current.style.cursor = 'grab';
     }
@@ -112,7 +119,13 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     setIsDragging(true);
     setIsPaused(true);
     setStartX(e.touches[0].pageX);
-    setScrollLeft(dragOffset);
+    if (containerRef.current) {
+      const currentTransform = containerRef.current.querySelector('div')?.style.transform || '';
+      const currentX = currentTransform.match(/translateX\((-?\d+(?:\.\d+)?)px\)/) 
+        ? parseFloat(currentTransform.match(/translateX\((-?\d+(?:\.\d+)?)px\)/)![1]) 
+        : dragOffset;
+      setScrollLeft(currentX);
+    }
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -124,7 +137,8 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
 
   const handleTouchEnd = () => {
     setIsDragging(false);
-    setIsPaused(false);
+    // Pequeño delay antes de reanudar para evitar saltos
+    setTimeout(() => setIsPaused(false), 100);
   };
 
   // Prevenir el comportamiento por defecto en móviles

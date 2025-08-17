@@ -48,8 +48,16 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-900">
+    <section className="py-20 px-4 bg-gray-900 relative" style={{
+      backgroundImage: 'url(/texture-dark.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
+      {/* Overlay para mantener legibilidad */}
+      <div className="absolute inset-0 bg-gray-900/80"></div>
       <div className="max-w-7xl mx-auto">
+        <div className="relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
             Galería de Trabajos
@@ -96,6 +104,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
 

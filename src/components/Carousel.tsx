@@ -174,7 +174,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                       <img
                         src={slide.image}
                         alt={slide.title}
-                          className="w-full h-[280px] md:h-[400px] lg:h-[480px] object-cover transform hover:scale-105 transition-transform duration-700"
+                          className="w-full h-[280px] md:h-[400px] lg:h-[480px] object-contain transform hover:scale-105 transition-transform duration-700"
                       />
                       
                       {/* Image Overlay */}

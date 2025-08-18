@@ -163,16 +163,41 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+          <div className="relative mb-8">
+            <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent font-['Cinzel'] tracking-wide">
             Galería de Trabajos
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            </h2>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+          </div>
+          
+          <div className="max-w-3xl mx-auto mb-10">
+            <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed">
             Cada tatuaje cuenta una historia única. Descubre nuestros trabajos más destacados y la calidad artística que nos caracteriza.
-          </p>
-          <button
+            </p>
+            <p className="text-lg text-gray-400 italic">
+              "El arte permanece, la piel es solo el lienzo"
+            </p>
+          </div>
+          
+          <div className="relative inline-block">
+            <button
             onClick={() => onNavigate('galeria')}
-            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
-          >
+            className="group relative bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:via-red-800 hover:to-red-900 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-red-500/25 border border-red-500/30 hover:border-red-400/50"
+            >
+            <span className="relative z-10 flex items-center space-x-2">
+              <span>Ver Galería Completa</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          </button>
+          
+          {/* Decorative elements */}
+          <div className="absolute -left-4 -top-4 w-8 h-8 border-l-2 border-t-2 border-red-500/30 opacity-60"></div>
+          <div className="absolute -right-4 -bottom-4 w-8 h-8 border-r-2 border-b-2 border-red-500/30 opacity-60"></div>
+          </div>
+        </div>
             Ver Galería Completa
           </button>
         </div>

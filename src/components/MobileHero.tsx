@@ -51,29 +51,6 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
           <p className="text-3xl text-gray-300 font-['Oswald']">
             Tatuajes personalizados
           </p>
-          
-          <div className="flex justify-center space-x-4">
-            <button 
-              onClick={() => onNavigate('precios')}
-              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
-            >
-              Remoción
-            </button>
-            <button 
-              onClick={() => onNavigate('cursos')}
-              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
-            >
-              Cursos
-            </button>
-          </div>
-          <div className="flex justify-center">
-            <button 
-              onClick={() => onNavigate('galeria')}
-              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
-            >
-              Galería
-            </button>
-          </div>
         </div>
 
       </div>

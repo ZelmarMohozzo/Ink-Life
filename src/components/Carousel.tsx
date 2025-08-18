@@ -164,7 +164,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
 
                   {/* Right Image */}
                   <div className="relative">
-                    <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                    <div className="relative overflow-hidden rounded-3xl" style={{ filter: 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))' }}>
                       <img
                         src={slide.image}
                         alt={slide.title}

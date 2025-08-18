@@ -53,13 +53,14 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        {/* Animated scroll arrow */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center animate-bounce">
-            <div className="w-6 h-6 border-r-2 border-b-2 border-white/70 transform rotate-45 mb-2"></div>
-            <div className="w-6 h-6 border-r-2 border-b-2 border-white/50 transform rotate-45 mb-2 animate-pulse"></div>
-            <div className="w-6 h-6 border-r-2 border-b-2 border-white/30 transform rotate-45 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-          </div>
+      </div>
+      
+      {/* Animated scroll arrow - positioned at very bottom */}
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+        <div className="flex flex-col items-center animate-bounce">
+          <div className="w-6 h-6 border-r-2 border-b-2 border-white/70 transform rotate-45 mb-2"></div>
+          <div className="w-6 h-6 border-r-2 border-b-2 border-white/50 transform rotate-45 mb-2 animate-pulse"></div>
+          <div className="w-6 h-6 border-r-2 border-b-2 border-white/30 transform rotate-45 animate-pulse" style={{animationDelay: '0.2s'}}></div>
         </div>
       </div>
     </section>

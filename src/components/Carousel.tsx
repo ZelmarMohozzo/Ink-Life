@@ -167,18 +167,18 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                     <div className="relative max-w-md mx-auto lg:max-w-lg xl:max-w-xl">
                       <div 
                         className="relative rounded-2xl overflow-hidden"
+                        style={{ 
+                          filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3))'
+                        }}
                       >
                       <img
                         src={slide.image}
                         alt={slide.title}
-                          className="w-full h-[280px] md:h-[400px] lg:h-[480px] object-contain transform hover:scale-105 transition-transform duration-700 rounded-2xl"
-                          style={{ 
-                            filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3))'
-                          }}
+                          className="w-full h-[280px] md:h-[400px] lg:h-[480px] object-cover transform hover:scale-105 transition-transform duration-700"
                       />
                       
                       {/* Image Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-2xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                       
                       {/* Floating Elements */}
                       <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-sm rounded-full p-3 border border-white/20">

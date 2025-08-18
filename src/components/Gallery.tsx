@@ -164,10 +164,11 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="relative mb-8">
-            <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent font-['Cinzel'] tracking-wide">
-            Galería de Trabajos
+            <h2 className="text-5xl md:text-7xl font-bold font-['Cinzel'] tracking-wide text-transparent bg-gradient-to-r from-purple-400 via-blue-500 to-purple-600 bg-clip-text relative">
+              <span className="absolute inset-0 text-purple-400 blur-sm opacity-75">Galería de Trabajos</span>
+              <span className="relative z-10">Galería de Trabajos</span>
             </h2>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent shadow-lg shadow-purple-500/50"></div>
           </div>
           
           <div className="max-w-3xl mx-auto mb-10">

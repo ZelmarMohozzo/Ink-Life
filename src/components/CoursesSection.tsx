@@ -60,10 +60,11 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-['Cinzel']">
-            NUESTROS CURSOS
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Cinzel'] mb-6 text-transparent bg-gradient-to-r from-purple-400 via-blue-500 to-purple-600 bg-clip-text relative">
+            <span className="absolute inset-0 text-purple-400 blur-sm opacity-75">NUESTROS CURSOS</span>
+            <span className="relative z-10">NUESTROS CURSOS</span>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mb-8 shadow-lg shadow-purple-500/50"></div>
           
           <div className="max-w-4xl mx-auto space-y-4">
             <p className="text-lg md:text-xl text-gray-300">

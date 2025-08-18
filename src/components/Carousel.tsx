@@ -121,19 +121,6 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                     {slide.description}
                   </p>
 
-                  <div>
-                    <p className="text-white font-semibold mb-4">Nuestros estilos especializados:</p>
-                    <div className="flex flex-wrap gap-3">
-                      {slide.specialties.map((specialty, idx) => (
-                        <span
-                          key={idx}
-                          className={`px-4 py-2 rounded-full text-sm font-medium ${specialty.color}`}
-                        >
-                          {specialty.name}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
                     {slide.buttons.map((button, idx) => (

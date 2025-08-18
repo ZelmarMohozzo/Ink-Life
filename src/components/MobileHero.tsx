@@ -45,12 +45,36 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
 
         {/* Services */}
         <div className="space-y-2 mb-8">
-          <p className="text-lg text-gray-300 font-['Oswald']">
-            Remoción de tatuajes
-          </p>
-          <p className="text-lg text-gray-300 font-['Oswald']">
+          <div className="flex items-center justify-center space-x-4">
+            <p className="text-xl text-gray-300 font-['Oswald']">
+              Remoción de tatuajes
+            </p>
+            <button 
+              onClick={() => onNavigate('precios')}
+              className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-full text-sm font-medium transition-colors"
+            >
+              Remoción
+            </button>
+          </div>
+          <p className="text-xl text-gray-300 font-['Oswald']">
             Tatuajes personalizados
           </p>
+          <div className="flex justify-center space-x-4 mt-4">
+            <button 
+              onClick={() => onNavigate('cursos')}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors"
+            >
+              Cursos
+            </button>
+          </div>
+          <div className="flex justify-center mt-4">
+            <button 
+              onClick={() => onNavigate('galeria')}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors"
+            >
+              Galería
+            </button>
+          </div>
         </div>
 
       </div>

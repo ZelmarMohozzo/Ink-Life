@@ -66,7 +66,7 @@ const ArtistInfo: React.FC = () => {
           <div className="space-y-6">
             {/* Instagram Card */}
             <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50 text-center">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
                   <img 
                     src="/437783604_287457661076839_4543038176797207402_n.jpg" 
@@ -75,8 +75,8 @@ const ArtistInfo: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="text-center justify- text-white font-semibold">Instagram</h4>
-                  <p className="text-center text-gray-400 text-sm">@nicolemos.tattoo</p>
+                  <h4 className="text-white font-semibold">Instagram</h4>
+                  <p className="text-gray-400 text-sm">@nicolemos.tattoo</p>
                 </div>
               </div>
               
@@ -97,7 +97,7 @@ const ArtistInfo: React.FC = () => {
             
             {/* WhatsApp Card */}
             <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50 text-center">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
                   <img 
                     src="/15707820.png" 
@@ -125,7 +125,7 @@ const ArtistInfo: React.FC = () => {
             
             {/* Consultation Card */}
             <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50 text-center">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                   <Calendar className="h-5 w-5 text-white" />
                 </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, ArrowRight, Clock, Users, Award } from 'lucide-react';
 
 interface CarouselProps {
   onNavigate: (page: string) => void;
@@ -12,54 +12,51 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
   const slides = [
     {
       id: 1,
-      badge: 'APRENDE EL ARTE',
-      title: 'CURSOS DE TATUAJE',
-      description: 'Conviértete en un artista profesional con nuestros cursos completos. Desde nivel principiante hasta técnicas avanzadas con instructores certificados.',
-      specialties: [
-        { name: 'Básico', color: 'bg-green-600 text-white' },
-        { name: 'Avanzado', color: 'bg-blue-600 text-white' },
-        { name: 'Realismo', color: 'bg-orange-500 text-white' },
-        { name: 'Blackwork', color: 'bg-gray-800 text-white' }
+      category: 'EDUCACIÓN',
+      title: 'Cursos de Tatuaje Profesional',
+      subtitle: 'Conviértete en un artista certificado',
+      description: 'Aprende las técnicas más avanzadas del tatuaje con instructores certificados. Desde fundamentos básicos hasta especialización en realismo y blackwork.',
+      stats: [
+        { icon: Clock, label: 'Duración', value: '8-12 semanas' },
+        { icon: Users, label: 'Estudiantes', value: '500+ formados' },
+        { icon: Award, label: 'Certificación', value: 'Oficial' }
       ],
-      buttons: [
-        { text: 'VER CURSOS', action: () => onNavigate('cursos'), style: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' },
-        { text: 'GALERÍA →', action: () => onNavigate('galeria'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
-      ],
-      image: 'https://images.pexels.com/photos/1300355/pexels-photo-1300355.jpeg?auto=compress&cs=tinysrgb&w=800'
+      primaryAction: { text: 'Ver Cursos', action: () => onNavigate('cursos') },
+      secondaryAction: { text: 'Más Info', action: () => onNavigate('artista') },
+      image: '/instructor.png',
+      gradient: 'from-purple-600 via-purple-700 to-indigo-800'
     },
     {
       id: 2,
-      badge: 'TECNOLOGÍA AVANZADA',
-      title: 'REMOCIÓN LÁSER',
-      description: 'Eliminación segura y efectiva de tatuajes con tecnología láser de última generación. Resultados profesionales con mínimo dolor.',
-      specialties: [
-        { name: 'Q-Switched', color: 'bg-blue-600 text-white' },
-        { name: 'Sin Dolor', color: 'bg-green-600 text-white' },
-        { name: 'Seguro', color: 'bg-purple-600 text-white' },
-        { name: 'Efectivo', color: 'bg-orange-500 text-white' }
+      category: 'TECNOLOGÍA',
+      title: 'Remoción Láser Avanzada',
+      subtitle: 'Elimina tatuajes de forma segura',
+      description: 'Tecnología láser Q-Switched de última generación para la eliminación efectiva de tatuajes. Proceso seguro, mínimo dolor y resultados garantizados.',
+      stats: [
+        { icon: Clock, label: 'Sesiones', value: '6-12 promedio' },
+        { icon: Users, label: 'Éxito', value: '95% efectividad' },
+        { icon: Award, label: 'Tecnología', value: 'Q-Switched' }
       ],
-      buttons: [
-        { text: 'VER PRECIOS', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' },
-        { text: 'CONSULTAR →', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
-      ],
-      image: 'https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=800'
+      primaryAction: { text: 'Ver Precios', action: () => onNavigate('precios') },
+      secondaryAction: { text: 'Consultar', action: () => onNavigate('precios') },
+      image: 'https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=800',
+      gradient: 'from-blue-600 via-cyan-700 to-teal-800'
     },
     {
       id: 3,
-      badge: 'DALE VIDA A TU PIEL',
-      title: 'HAZTE UN TATTOO',
-      description: 'Especialistas certificados en técnicas avanzadas y diferentes estilos. Aplicación precisa, pigmentos de alta calidad y protocolos de bioseguridad profesional.',
-      specialties: [
-        { name: 'Blackwork', color: 'bg-gray-800 text-white' },
-        { name: 'Realismo', color: 'bg-orange-500 text-white' },
-        { name: 'Neotradicional', color: 'bg-blue-500 text-white' },
-        { name: 'Tribales', color: 'bg-red-600 text-white' }
+      category: 'ARTE',
+      title: 'Tatuajes Personalizados',
+      subtitle: 'Dale vida a tu piel con arte único',
+      description: 'Creamos diseños únicos adaptados a tu personalidad. Especialistas en realismo, blackwork, tradicional y estilos contemporáneos.',
+      stats: [
+        { icon: Clock, label: 'Experiencia', value: '12+ años' },
+        { icon: Users, label: 'Clientes', value: '1000+ satisfechos' },
+        { icon: Award, label: 'Estilos', value: 'Todos los tipos' }
       ],
-      buttons: [
-        { text: 'VER PRECIOS', action: () => onNavigate('precios'), style: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' },
-        { text: 'GALERÍA →', action: () => onNavigate('galeria'), style: 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' }
-      ],
-      image: '/instructor.png'
+      primaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },
+      secondaryAction: { text: 'Contactar', action: () => onNavigate('artista') },
+      image: '/tatuajes/IMG-20250614-WA0043.jpg',
+      gradient: 'from-red-600 via-pink-700 to-rose-800'
     }
   ];
 
@@ -73,135 +70,178 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
 
   useEffect(() => {
     if (!isPaused) {
-      const timer = setInterval(nextSlide, 6000);
+      const timer = setInterval(nextSlide, 7000);
       return () => clearInterval(timer);
     }
   }, [isPaused]);
 
   return (
-    <div className="relative h-screen overflow-hidden bg-black">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: 'url(/tattoo-artist-bg.png)'
-        }}
-      ></div>
-      
+    <section className="relative min-h-screen bg-black overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-radial from-red-900/20 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
         }}></div>
       </div>
 
-      {slides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
-            index === currentSlide ? 'translate-x-0' : 'translate-x-full'
-          } ${index < currentSlide ? '-translate-x-full' : ''}`}
-        >
-          <div className="relative h-full flex items-center">
-            <div className="max-w-7xl mx-auto px-4 w-full">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left Content */}
-                <div className="space-y-8">
-                  <div className="inline-block bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                    {slide.badge}
-                  </div>
+      {/* Slides Container */}
+      <div className="relative h-screen">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+              index === currentSlide 
+                ? 'opacity-100 translate-x-0' 
+                : index < currentSlide 
+                  ? 'opacity-0 -translate-x-full' 
+                  : 'opacity-0 translate-x-full'
+            }`}
+          >
+            {/* Background Gradient */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} opacity-90`}></div>
+            
+            {/* Content Grid */}
+            <div className="relative z-10 h-full flex items-center">
+              <div className="max-w-7xl mx-auto px-6 w-full">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
                   
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight font-['Oswald']">
-                    {slide.title}
-                  </h1>
-                  
-                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-lg">
-                    {slide.description}
-                  </p>
+                  {/* Left Content */}
+                  <div className="space-y-8">
+                    {/* Category Badge */}
+                    <div className="inline-flex items-center">
+                      <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold tracking-wider border border-white/30">
+                        {slide.category}
+                      </span>
+                    </div>
 
+                    {/* Main Title */}
+                    <div className="space-y-4">
+                      <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                        {slide.title}
+                      </h1>
+                      <p className="text-xl lg:text-2xl text-white/90 font-light">
+                        {slide.subtitle}
+                      </p>
+                    </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    {slide.buttons.map((button, idx) => (
+                    {/* Description */}
+                    <p className="text-lg text-white/80 leading-relaxed max-w-xl">
+                      {slide.description}
+                    </p>
+
+                    {/* Stats Grid */}
+                    <div className="grid grid-cols-3 gap-6">
+                      {slide.stats.map((stat, idx) => (
+                        <div key={idx} className="text-center">
+                          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                            <stat.icon className="h-6 w-6 text-white mx-auto mb-2" />
+                            <div className="text-white font-bold text-lg">{stat.value}</div>
+                            <div className="text-white/70 text-sm">{stat.label}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
                       <button
-                        key={idx}
-                        onClick={button.action}
-                        className={`px-8 py-4 rounded-full font-bold text-white transition-all duration-300 transform hover:scale-105 ${button.style}`}
+                        onClick={slide.primaryAction.action}
+                        className="group bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white/90 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                       >
-                        {button.text}
+                        <span>{slide.primaryAction.text}</span>
+                        <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                       </button>
-                    ))}
+                      
+                      <button
+                        onClick={slide.secondaryAction.action}
+                        className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:border-white/50"
+                      >
+                        {slide.secondaryAction.text}
+                      </button>
+                    </div>
                   </div>
-                </div>
 
-                {/* Right Image */}
-                <div className="relative">
-                  {slide.id === 3 ? (
-                    <div className="relative w-96 h-96 mx-auto overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-500/30 hover:ring-purple-400/50 transition-all duration-500">
+                  {/* Right Image */}
+                  <div className="relative">
+                    <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                       <img
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                        className="w-full h-[600px] object-cover transform hover:scale-105 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent hover:from-purple-800/40 transition-all duration-500"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+                      
+                      {/* Image Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                      
+                      {/* Floating Elements */}
+                      <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-sm rounded-full p-3 border border-white/20">
+                        <Award className="h-6 w-6 text-white" />
+                      </div>
                     </div>
-                  ) : (
-                    <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full h-96 lg:h-[500px] object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent" />
-                    </div>
-                  )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
-      >
-        <ChevronLeft className="h-6 w-6" />
-      </button>
-      
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
-      >
-        <ChevronRight className="h-6 w-6" />
-      </button>
-
-      {/* Dots Indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide 
-                ? 'bg-purple-500 scale-125' 
-                : 'bg-white/30 hover:bg-white/50'
-            }`}
-          />
         ))}
-        
-        {/* Pause/Play Button in dots area */}
-        <button
-          onClick={() => setIsPaused(!isPaused)}
-          className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20 ml-2"
-        >
-          {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
-        </button>
       </div>
-    </div>
+
+      {/* Navigation Controls */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex items-center space-x-6 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+          
+          {/* Previous Button */}
+          <button
+            onClick={prevSlide}
+            className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-all duration-300 border border-white/20"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex space-x-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-white scale-125' 
+                    : 'bg-white/40 hover:bg-white/60'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={nextSlide}
+            className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-all duration-300 border border-white/20"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
+          {/* Play/Pause Button */}
+          <div className="w-px h-6 bg-white/20 mx-2"></div>
+          <button
+            onClick={() => setIsPaused(!isPaused)}
+            className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-all duration-300 border border-white/20"
+          >
+            {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Slide Counter */}
+      <div className="absolute top-8 right-8 z-20">
+        <div className="bg-black/30 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+          <span className="text-white font-semibold">
+            {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+          </span>
+        </div>
+      </div>
+    </section>
   );
 };
 

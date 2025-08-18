@@ -123,6 +123,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                     alt="Inked Life Logo" 
                     className="h-32 object-contain opacity-80"
                   />
+                </div>
               </div>
               
               {/* Logo at the bottom - positioned fixed independently */}

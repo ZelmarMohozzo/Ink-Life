@@ -8,6 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isAnimating, setIsAnimating] = React.useState(false);
 
   const menuItems = [
     { name: 'Inicio', page: 'home' },
@@ -17,12 +18,24 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     { name: 'Precios', page: 'precios' },
   ];
 
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsAnimating(false);
+      }, 300);
+    } else {
+      setIsMenuOpen(true);
+    }
+  };
+
   return (
     <>
       {/* Navbar */}
       <header className="bg-black/95 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-red-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-center items-center py-4 md:justify-between">
             {/* Desktop Menu */}
             <div className="hidden md:flex justify-between items-center w-full">
               {/* Left Menu Items */}
@@ -65,36 +78,77 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </nav>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 transition-colors ml-auto"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            {/* Mobile Menu Button - Centered */}
+            <div className="md:hidden">
+              <button
+                className="flex items-center space-x-2 text-white hover:text-red-400 transition-colors font-['Cinzel'] text-lg"
+                onClick={toggleMenu}
+              >
+                <span>MENÚ</span>
+                <div className={`transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : ''}`}>
+                  {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </div>
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu Overlay */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-800">
-              {menuItems.map((item) => (
+            <div 
+              className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 top-0"
+              onClick={toggleMenu}
+            >
+              <div className="flex flex-col items-center justify-center h-full space-y-8">
+                {menuItems.map((item, index) => (
+                  <button
+                    key={item.page}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onNavigate(item.page);
+                      toggleMenu();
+                    }}
+                    className={`text-2xl font-medium transition-all duration-500 transform hover:scale-110 font-['Cinzel'] ${
+                      currentPage === item.page ? 'text-red-500' : 'text-white hover:text-red-400'
+                    } ${isAnimating ? 'animate-pulse' : `animate-fade-in-up`}`}
+                    style={{
+                      animationDelay: `${index * 100}ms`,
+                      animationFillMode: 'both'
+                    }}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+                
+                {/* Close button */}
                 <button
-                  key={item.page}
-                  onClick={() => {
-                    onNavigate(item.page);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`block w-full text-left px-3 py-2 text-lg font-medium transition-colors hover:text-red-400 font-['Cinzel'] ${
-                    currentPage === item.page ? 'text-red-500' : 'text-gray-300'
-                  }`}
+                  onClick={toggleMenu}
+                  className="absolute top-8 right-8 text-white hover:text-red-400 transition-colors"
                 >
-                  {item.name}
+                  <X className="h-8 w-8" />
                 </button>
-              ))}
+              </div>
             </div>
           )}
         </div>
       </header>
+
+      {/* Custom CSS for animations */}
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out;
+        }
+      `}</style>
 
       {/* Logo positioned below navbar - only on desktop */}
       <div className="hidden md:block fixed top-0 left-1/2 transform -translate-x-1/2 z-50">

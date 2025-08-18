@@ -27,8 +27,8 @@ const Footer: React.FC = () => {
                 Ink Life Academia
               </h3>
               <p className="text-gray-200 leading-relaxed max-w-md">
-                Más de 15 años transformando pasiones en arte. Especialistas en tatuajes, 
-                cursos profesionales y remoción láser con la más alta calidad y seguridad.
+                Más de 15 años en arte del tatuaje con experiencia en el exterior. 
+                Cursos profesionales y remoción láser con la más alta calidad y seguridad.
               </p>
             </div>
             

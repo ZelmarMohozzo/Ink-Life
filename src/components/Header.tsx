@@ -131,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                 <img 
                   src="/logo.png" 
                   alt="Inked Life Logo" 
-                  className="h-32 object-contain opacity-80"
+                  className="h-40 object-contain opacity-80"
                 />
               </div>
             </div>

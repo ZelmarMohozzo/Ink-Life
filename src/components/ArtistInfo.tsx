@@ -3,7 +3,15 @@ import { Calendar, Phone } from 'lucide-react';
 
 const ArtistInfo: React.FC = () => {
   return (
-    <section className="py-20 px-4 bg-black relative overflow-hidden">
+    <section 
+      className="py-20 px-4 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/texture-dark.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Left Side - Artist Photo and Info */}

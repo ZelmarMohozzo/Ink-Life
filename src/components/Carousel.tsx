@@ -79,7 +79,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
   }, [isPaused]);
 
   return (
-    <div className="relative h-screen overflow-hidden md:mt-4 bg-black">
+    <div className="relative h-screen overflow-hidden bg-black">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"

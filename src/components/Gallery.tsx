@@ -198,9 +198,6 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
           <div className="absolute -right-4 -bottom-4 w-8 h-8 border-r-2 border-b-2 border-red-500/30 opacity-60"></div>
           </div>
         </div>
-            Ver Galería Completa
-          </button>
-        </div>
 
         {/* Continuous Scroll Container */}
         <div className="relative">

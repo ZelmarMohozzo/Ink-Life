@@ -18,7 +18,7 @@ const ArtistInfo: React.FC = () => {
             </div>
 
             {/* Artist Info Card */}
-            <div className="bg-gray-900 p-6 rounded-lg -mt-2">
+            <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg -mt-2 border border-gray-800/50">
               <h2 className="text-3xl font-bold text-white mb-1">Nico Lemos</h2>
               <p className="text-gray-400 font-medium uppercase tracking-wider text-sm mb-4">
                 TATUADOR PROFESIONAL
@@ -57,7 +57,7 @@ const ArtistInfo: React.FC = () => {
           {/* Right Side - Contact Cards Stack */}
           <div className="space-y-6">
             {/* Instagram Card */}
-            <div className="bg-gray-900 rounded-lg p-6">
+            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">IG</span>
@@ -84,7 +84,7 @@ const ArtistInfo: React.FC = () => {
             </div>
             
             {/* WhatsApp Card */}
-            <div className="bg-gray-900 rounded-lg p-6">
+            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
                   <Phone className="h-5 w-5 text-white" />
@@ -108,7 +108,7 @@ const ArtistInfo: React.FC = () => {
             </div>
             
             {/* Consultation Card */}
-            <div className="bg-gray-900 rounded-lg p-6">
+            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                   <Calendar className="h-5 w-5 text-white" />

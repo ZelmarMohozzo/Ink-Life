@@ -3,11 +3,11 @@ import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Clock, Award } from 
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-black border-t border-red-900/30">
+    <footer className="relative bg-gradient-to-br from-black via-purple-950/20 to-green-950/20 border-t border-purple-500/30">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(147,51,234,0.3) 1px, transparent 1px)`,
           backgroundSize: '30px 30px'
         }}></div>
       </div>
@@ -21,12 +21,12 @@ const Footer: React.FC = () => {
               <img 
                 src="/logo.png" 
                 alt="Inked Life" 
-                className="h-20 object-contain mb-4"
+                className="h-32 object-contain mb-6 hover:scale-105 transition-transform duration-300"
               />
               <h3 className="text-2xl font-bold text-white mb-4 font-['Cinzel']">
                 Inked Life Academia
               </h3>
-              <p className="text-gray-300 leading-relaxed max-w-md">
+              <p className="text-gray-200 leading-relaxed max-w-md">
                 Más de 15 años transformando pasiones en arte. Especialistas en tatuajes, 
                 cursos profesionales y remoción láser con la más alta calidad y seguridad.
               </p>
@@ -34,17 +34,17 @@ const Footer: React.FC = () => {
             
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-900/50 p-4 rounded-lg border border-red-500/20">
+              <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 p-4 rounded-lg border border-purple-400/30 hover:border-purple-300/50 transition-all duration-300">
                 <div className="flex items-center space-x-2 mb-2">
-                  <Award className="h-5 w-5 text-red-500" />
-                  <span className="text-red-400 font-semibold">500+</span>
+                  <Award className="h-5 w-5 text-purple-400" />
+                  <span className="text-purple-300 font-semibold">500+</span>
                 </div>
                 <p className="text-gray-400 text-sm">Estudiantes Formados</p>
               </div>
-              <div className="bg-gray-900/50 p-4 rounded-lg border border-red-500/20">
+              <div className="bg-gradient-to-br from-green-900/40 to-green-800/20 p-4 rounded-lg border border-green-400/30 hover:border-green-300/50 transition-all duration-300">
                 <div className="flex items-center space-x-2 mb-2">
-                  <Clock className="h-5 w-5 text-red-500" />
-                  <span className="text-red-400 font-semibold">15+</span>
+                  <Clock className="h-5 w-5 text-green-400" />
+                  <span className="text-green-300 font-semibold">15+</span>
                 </div>
                 <p className="text-gray-400 text-sm">Años de Experiencia</p>
               </div>
@@ -55,25 +55,25 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold text-white mb-6 font-['Cinzel']">Contacto</h3>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3 text-gray-300 group">
-                <MapPin className="h-5 w-5 text-red-500 mt-1 group-hover:text-red-400 transition-colors" />
+              <div className="flex items-start space-x-3 text-gray-200 group">
+                <MapPin className="h-5 w-5 text-purple-400 mt-1 group-hover:text-purple-300 transition-colors" />
                 <div>
                   <p className="font-medium">Av. Principal 123</p>
                   <p className="text-sm text-gray-400">Ciudad, País</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3 text-gray-300 group hover:text-red-400 transition-colors cursor-pointer">
-                <Phone className="h-5 w-5 text-red-500 group-hover:text-red-400 transition-colors" />
+              <div className="flex items-center space-x-3 text-gray-200 group hover:text-green-300 transition-colors cursor-pointer">
+                <Phone className="h-5 w-5 text-green-400 group-hover:text-green-300 transition-colors" />
                 <span>+1 234 567 8900</span>
               </div>
-              <div className="flex items-center space-x-3 text-gray-300 group hover:text-red-400 transition-colors cursor-pointer">
-                <Mail className="h-5 w-5 text-red-500 group-hover:text-red-400 transition-colors" />
+              <div className="flex items-center space-x-3 text-gray-200 group hover:text-purple-300 transition-colors cursor-pointer">
+                <Mail className="h-5 w-5 text-purple-400 group-hover:text-purple-300 transition-colors" />
                 <span>info@inklifeacademia.com</span>
               </div>
             </div>
             
             {/* Business Hours */}
-            <div className="mt-6 p-4 bg-gray-900/30 rounded-lg border border-red-500/10">
+            <div className="mt-6 p-4 bg-gradient-to-br from-purple-900/20 to-green-900/20 rounded-lg border border-purple-400/20 hover:border-purple-300/30 transition-all duration-300">
               <h4 className="text-white font-semibold mb-2">Horarios</h4>
               <div className="text-sm text-gray-400 space-y-1">
                 <p>Lun - Vie: 10:00 - 20:00</p>
@@ -95,8 +95,8 @@ const Footer: React.FC = () => {
                 'Consultas Personalizadas'
               ].map((service) => (
                 <li key={service} className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                  <span className="text-gray-300 hover:text-red-400 transition-colors cursor-pointer text-sm">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-green-400 rounded-full"></div>
+                  <span className="text-gray-200 hover:text-purple-300 transition-colors cursor-pointer text-sm">
                     {service}
                   </span>
                 </li>
@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
                   key={index}
                   href={social.href}
                   title={social.name}
-                  className="bg-gray-900/50 p-3 rounded-full text-gray-300 hover:text-white hover:bg-red-600 transition-all duration-300 transform hover:scale-110 border border-gray-700 hover:border-red-500"
+                  className="bg-gradient-to-br from-purple-900/40 to-green-900/40 p-3 rounded-full text-gray-300 hover:text-white hover:bg-gradient-to-br hover:from-purple-600 hover:to-green-600 transition-all duration-300 transform hover:scale-110 border border-purple-500/30 hover:border-purple-400/50"
                 >
                   {social.icon}
                 </a>
@@ -124,19 +124,19 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-gradient-to-r from-purple-800/50 via-green-800/50 to-purple-800/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
               © 2025 Inked Life Academia. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-purple-300 transition-colors">
                 Política de Privacidad
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-green-300 transition-colors">
                 Términos de Servicio
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-purple-300 transition-colors">
                 Aviso Legal
               </a>
             </div>

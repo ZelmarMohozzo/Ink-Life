@@ -36,6 +36,9 @@ const ArtistInfo: React.FC = () => {
                 Tatuador profesional con más de <span className="text-white font-semibold">12 años de experiencia</span> en el arte del tatuaje y artista plástico reconocido. Ha trabajado en el exterior perfeccionando sus técnicas y estilos.
               </p>
               
+              {/* Separator */}
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-6"></div>
+              
               {/* Specialties Grid - 2x2 */}
               <div className="grid grid-cols-2 gap-y-3 gap-x-8 mb-6">
                 <div className="flex items-center space-x-2">
@@ -55,6 +58,9 @@ const ArtistInfo: React.FC = () => {
                   <span className="text-gray-300 text-sm">Color</span>
                 </div>
               </div>
+              
+              {/* Separator */}
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-6"></div>
               
               <p className="text-gray-300 leading-relaxed">
                 Vive en <span className="text-white font-medium">Maldonado, Uruguay</span>, donde combina su estudio de tatuajes con una academia donde forma a los próximos tatuadores profesionales.

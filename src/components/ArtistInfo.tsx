@@ -67,8 +67,12 @@ const ArtistInfo: React.FC = () => {
             {/* Instagram Card */}
             <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">IG</span>
+                <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+                  <img 
+                    src="/437783604_287457661076839_4543038176797207402_n.jpg" 
+                    alt="Instagram Profile" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Instagram</h4>

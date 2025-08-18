@@ -163,12 +163,20 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="relative mb-8">
-            <h2 className="text-5xl md:text-7xl font-bold font-['Cinzel'] tracking-wide text-transparent bg-gradient-to-r from-purple-400 via-blue-500 to-purple-600 bg-clip-text relative">
-              <span className="absolute inset-0 text-purple-400 blur-sm opacity-75">Galería de Trabajos</span>
-              <span className="relative z-10">Galería de Trabajos</span>
+          <div className="relative mb-12">
+            <h2 className="text-5xl md:text-7xl font-bold font-['Cinzel'] tracking-wide relative">
+              {/* Glow layers */}
+              <span className="absolute inset-0 text-purple-500 blur-md opacity-60 animate-pulse">Galería de Trabajos</span>
+              <span className="absolute inset-0 text-blue-400 blur-sm opacity-40">Galería de Trabajos</span>
+              {/* Main text */}
+              <span className="relative text-white drop-shadow-[0_0_10px_rgba(147,51,234,0.8)]">
+                Galería de Trabajos
+              </span>
             </h2>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent shadow-lg shadow-purple-500/50"></div>
+            
+            {/* Decorative line with glow */}
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent blur-sm opacity-60"></div>
           </div>
           
           <div className="max-w-3xl mx-auto mb-10">

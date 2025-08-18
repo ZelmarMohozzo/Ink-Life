@@ -117,11 +117,11 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                     {slide.title}
                   </h1>
                   
-                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-lg">
+                  <p className="hidden md:block text-lg md:text-xl text-gray-300 leading-relaxed max-w-lg">
                     {slide.description}
                   </p>
 
-                  <div>
+                  <div className="hidden md:block">
                     <p className="text-white font-semibold mb-4">Nuestros estilos especializados:</p>
                     <div className="flex flex-wrap gap-3">
                       {slide.specialties.map((specialty, idx) => (
@@ -149,7 +149,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Right Image */}
-                <div className="relative">
+                <div className="relative hidden lg:block">
                   {slide.id === 3 ? (
                     <div className="relative w-96 h-96 mx-auto overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-500/30 hover:ring-purple-400/50 transition-all duration-500">
                       <img

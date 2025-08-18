@@ -65,7 +65,7 @@ const ArtistInfo: React.FC = () => {
           {/* Right Side - Contact Cards Stack */}
           <div className="space-y-6">
             {/* Instagram Card */}
-            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50">
+            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50 text-center">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
                   <img 
@@ -96,10 +96,14 @@ const ArtistInfo: React.FC = () => {
             </div>
             
             {/* WhatsApp Card */}
-            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50">
+            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50 text-center">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
-                  <Phone className="h-5 w-5 text-white" />
+                <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+                  <img 
+                    src="/15707820.png" 
+                    alt="WhatsApp" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">WhatsApp</h4>
@@ -120,7 +124,7 @@ const ArtistInfo: React.FC = () => {
             </div>
             
             {/* Consultation Card */}
-            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50">
+            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50 text-center">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                   <Calendar className="h-5 w-5 text-white" />

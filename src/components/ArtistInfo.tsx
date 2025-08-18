@@ -4,14 +4,6 @@ import { Calendar, Phone } from 'lucide-react';
 const ArtistInfo: React.FC = () => {
   return (
     <section className="py-20 px-4 bg-black relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px'
-        }}></div>
-      </div>
-      
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Left Side - Artist Photo and Info */}

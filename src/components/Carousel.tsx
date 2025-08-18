@@ -86,7 +86,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       </div>
 
       {/* Slides Container */}
-      <div className="relative min-h-screen flex items-center">
+      <div className="relative min-h-screen flex items-center pb-20">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -188,7 +188,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex items-center space-x-6 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
           
           {/* Previous Button */}
@@ -234,7 +234,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       </div>
 
       {/* Slide Counter */}
-      <div className="absolute top-4 md:top-8 right-4 md:right-8 z-20">
+      <div className="absolute top-8 md:top-12 right-4 md:right-8 z-20">
         <div className="bg-black/30 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
           <span className="text-white font-semibold">
             {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}

@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               <div className="bg-gradient-to-br from-green-900/40 to-green-800/20 p-4 rounded-lg border border-green-400/30 hover:border-green-300/50 transition-all duration-300">
                 <div className="flex items-center space-x-2 mb-2">
                   <Clock className="h-5 w-5 text-green-400" />
-                  <span className="text-green-300 font-semibold">15+</span>
+                  <span className="text-green-300 font-semibold">12+</span>
                 </div>
                 <p className="text-gray-400 text-sm">Años de Experiencia</p>
               </div>

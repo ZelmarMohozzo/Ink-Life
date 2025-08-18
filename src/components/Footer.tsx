@@ -58,13 +58,13 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3 text-gray-200 group">
                 <MapPin className="h-5 w-5 text-purple-400 mt-1 group-hover:text-purple-300 transition-colors" />
                 <div>
-                  <p className="font-medium">Av. Principal 123</p>
-                  <p className="text-sm text-gray-400">Ciudad, País</p>
+                  <p className="font-medium">Av. Lussich </p>
+                  <p className="text-sm text-gray-400">Maldonado, Uruguay</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3 text-gray-200 group hover:text-green-300 transition-colors cursor-pointer">
                 <Phone className="h-5 w-5 text-green-400 group-hover:text-green-300 transition-colors" />
-                <span>+1 234 567 8900</span>
+                <span>+598 92 153 567</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-200 group hover:text-purple-300 transition-colors cursor-pointer">
                 <Mail className="h-5 w-5 text-purple-400 group-hover:text-purple-300 transition-colors" />

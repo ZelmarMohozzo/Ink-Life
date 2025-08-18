@@ -75,8 +75,8 @@ const ArtistInfo: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Instagram</h4>
-                  <p className="text-gray-400 text-sm">@nicolemos.tattoo</p>
+                  <h4 className="text-center text-white font-semibold">Instagram</h4>
+                  <p className="text-center text-gray-400 text-sm">@nicolemos.tattoo</p>
                 </div>
               </div>
               

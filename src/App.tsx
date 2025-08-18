@@ -3,6 +3,7 @@ import Header from './components/Header';
 import MobileHero from './components/MobileHero';
 import Carousel from './components/Carousel';
 import Gallery from './components/Gallery';
+import CoursesSection from './components/CoursesSection';
 import ArtistInfo from './components/ArtistInfo';
 import Footer from './components/Footer';
 import Cursos from './pages/Cursos';
@@ -29,6 +30,7 @@ function App() {
             <MobileHero onNavigate={setCurrentPage} />
             <Carousel onNavigate={setCurrentPage} />
             <Gallery onNavigate={setCurrentPage} />
+            <CoursesSection onNavigate={setCurrentPage} />
             <ArtistInfo />
           </>
         );

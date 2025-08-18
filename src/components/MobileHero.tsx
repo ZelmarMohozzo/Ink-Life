@@ -43,10 +43,22 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
           ACADEMIA DE TATUAJES
         </h1>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+        {/* Services */}
+        <div className="space-y-2 mb-8">
+          <p className="text-lg text-gray-300 font-light">
+            Remoción de tatuajes
+          </p>
+          <p className="text-lg text-gray-300 font-light">
+            Tatuajes personalizados
+          </p>
+        </div>
+
+        {/* Animated scroll arrow */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="flex flex-col items-center animate-bounce">
+            <div className="w-6 h-6 border-r-2 border-b-2 border-white/70 transform rotate-45 mb-2"></div>
+            <div className="w-6 h-6 border-r-2 border-b-2 border-white/50 transform rotate-45 mb-2 animate-pulse"></div>
+            <div className="w-6 h-6 border-r-2 border-b-2 border-white/30 transform rotate-45 animate-pulse" style={{animationDelay: '0.2s'}}></div>
           </div>
         </div>
       </div>

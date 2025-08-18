@@ -192,14 +192,6 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         <ChevronRight className="h-6 w-6" />
       </button>
 
-      {/* Pause/Play Button */}
-      <button
-        onClick={() => setIsPaused(!isPaused)}
-        className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
-      >
-        {isPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
-      </button>
-
       {/* Dots Indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
         {slides.map((_, index) => (

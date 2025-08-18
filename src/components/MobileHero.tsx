@@ -9,7 +9,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
     <section 
       className="md:hidden relative h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: 'url(/tattoo-artist-bg.png)',
+        backgroundImage: 'url(/fondo_movil.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

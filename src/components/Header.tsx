@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 top-0"
               onClick={toggleMenu}
             >
-              <div className="flex flex-col items-center justify-center h-full space-y-8">
+              <div className="flex flex-col items-center justify-center h-full space-y-8 relative">
                 {menuItems.map((item, index) => (
                   <button
                     key={item.page}
@@ -116,12 +116,12 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   </button>
                 ))}
                 
-                {/* Logo at the bottom */}
-                <div className="mt-8">
+                {/* Logo at the bottom - positioned absolutely */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
                   <img 
                     src="/logo.png" 
                     alt="Inked Life Logo" 
-                    className="h-24 object-contain opacity-80"
+                    className="h-32 object-contain opacity-80"
                   />
                 </div>
                 

@@ -165,7 +165,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                   {/* Right Image */}
                   <div className="relative">
                     <div className="relative" style={{ 
-                      filter: index === 0 ? 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4))' : 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4))'
+                      filter: index === 0 ? 'none' : 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4))'
                     }}>
                       <img
                         src={slide.image}

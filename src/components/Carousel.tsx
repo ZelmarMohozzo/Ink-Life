@@ -173,6 +173,9 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                         className={`w-full h-[300px] md:h-[500px] lg:h-[600px] transform hover:scale-105 transition-transform duration-700 rounded-3xl ${
                           index === 0 ? 'object-contain' : 'object-cover'
                         }`}
+                        style={{
+                          filter: index === 0 ? 'none' : undefined
+                        }}
                       />
                       
                       {/* Image Overlay */}

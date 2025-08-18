@@ -174,7 +174,6 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                       />
                       
                       {/* Image Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-3xl"></div>
                       
                       {/* Floating Elements */}
                       <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-sm rounded-full p-3 border border-white/20">

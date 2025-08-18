@@ -40,7 +40,7 @@ const Galeria: React.FC<GaleriaProps> = ({ onNavigate }) => {
         </button>
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent">
             Galería Completa
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -57,7 +57,7 @@ const Galeria: React.FC<GaleriaProps> = ({ onNavigate }) => {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-red-600 text-white'
+                  ? 'bg-green-600 text-white'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
               }`}
             >
@@ -82,7 +82,7 @@ const Galeria: React.FC<GaleriaProps> = ({ onNavigate }) => {
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <span className="bg-red-600 text-white text-xs px-2 py-1 rounded-full font-medium mb-2 inline-block">
+                  <span className="bg-green-600 text-white text-xs px-2 py-1 rounded-full font-medium mb-2 inline-block">
                     {image.category}
                   </span>
                   <h3 className="text-white font-semibold">{image.title}</h3>

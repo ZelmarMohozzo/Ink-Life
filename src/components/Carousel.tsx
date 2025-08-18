@@ -104,10 +104,10 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
             {/* Content Grid */}
             <div className="relative z-10 w-full py-12 md:py-20">
               <div className="max-w-7xl mx-auto px-4 md:px-6 w-full">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                   
                   {/* Left Content */}
-                  <div className="space-y-6 md:space-y-8">
+                  <div className="space-y-4 md:space-y-6 lg:space-y-8">
                     {/* Category Badge */}
                     <div className="inline-flex items-center">
                       <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold tracking-wider border border-white/30">
@@ -116,7 +116,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                     </div>
 
                     {/* Main Title */}
-                    <div className="space-y-3 md:space-y-4">
+                    <div className="space-y-2 md:space-y-3 lg:space-y-4">
                       <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
                         {slide.title}
                       </h1>
@@ -126,17 +126,17 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
+                    <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed max-w-xl">
                       {slide.description}
                     </p>
 
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-3 gap-3 md:gap-6">
+                    <div className="grid grid-cols-3 gap-2 md:gap-4 lg:gap-6">
                       {slide.stats.map((stat, idx) => (
                         <div key={idx} className="text-center">
-                          <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-3 md:p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                          <div className="bg-white/10 backdrop-blur-sm rounded-lg md:rounded-xl lg:rounded-2xl p-2 md:p-3 lg:p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
                             <stat.icon className="h-4 w-4 md:h-6 md:w-6 text-white mx-auto mb-1 md:mb-2" />
-                            <div className="text-white font-bold text-sm md:text-lg">{stat.value}</div>
+                            <div className="text-white font-bold text-xs md:text-sm lg:text-lg">{stat.value}</div>
                             <div className="text-white/70 text-xs md:text-sm">{stat.label}</div>
                           </div>
                         </div>
@@ -144,10 +144,10 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-1 md:pt-2 lg:pt-4">
                       <button
                         onClick={slide.primaryAction.action}
-                        className="group bg-white text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-white/90 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                        className="group bg-white text-black px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 rounded-full font-bold text-sm md:text-base lg:text-lg hover:bg-white/90 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                       >
                         <span>{slide.primaryAction.text}</span>
                         <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -155,7 +155,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                       
                       <button
                         onClick={slide.secondaryAction.action}
-                        className="bg-white/10 backdrop-blur-sm text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:border-white/50"
+                        className="bg-white/10 backdrop-blur-sm text-white px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 rounded-full font-semibold text-sm md:text-base lg:text-lg hover:bg-white/20 transition-all duration-300 border border-white/30 hover:border-white/50"
                       >
                         {slide.secondaryAction.text}
                       </button>

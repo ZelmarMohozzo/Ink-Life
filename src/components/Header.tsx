@@ -123,15 +123,15 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                     alt="Inked Life Logo" 
                     className="h-32 object-contain opacity-80"
                   />
-                </div>
-                
-                {/* Close button */}
-                <button
-                  onClick={toggleMenu}
-                  className="absolute top-8 right-8 text-white hover:text-red-400 transition-colors"
-                >
-                  <X className="h-8 w-8" />
-                </button>
+              </div>
+              
+              {/* Logo at the bottom - positioned fixed independently */}
+              <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+                <img 
+                  src="/logo.png" 
+                  alt="Inked Life Logo" 
+                  className="h-32 object-contain opacity-80"
+                />
               </div>
             </div>
           )}

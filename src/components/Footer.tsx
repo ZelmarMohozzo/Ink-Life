@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3 text-gray-200 group">
                 <MapPin className="h-5 w-5 text-purple-400 mt-1 group-hover:text-purple-300 transition-colors" />
                 <div>
-                  <p className="font-medium">Av. Lussich </p>
+                  <p className="font-medium">Av. Lussich. Calles Granada y Albatros</p>
                   <p className="text-sm text-gray-400">Maldonado, Uruguay</p>
                 </div>
               </div>

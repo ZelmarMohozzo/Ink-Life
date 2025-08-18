@@ -33,9 +33,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   return (
     <>
       {/* Navbar */}
-      <header className="bg-black/95 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-red-900/20">
+      <header className="bg-transparent fixed w-full top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center py-4 md:justify-between">
+          <div className="flex justify-end items-center py-4 md:justify-between">
             {/* Desktop Menu */}
             <div className="hidden md:flex justify-between items-center w-full">
               {/* Left Menu Items */}
@@ -78,16 +78,13 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </nav>
             </div>
 
-            {/* Mobile Menu Button - Centered */}
+            {/* Mobile Menu Button - Right */}
             <div className="md:hidden">
               <button
                 className="flex items-center space-x-2 text-white hover:text-red-400 transition-colors font-['Cinzel'] text-lg"
                 onClick={toggleMenu}
               >
-                <span>MENÚ</span>
-                <div className={`transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : ''}`}>
-                  {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                </div>
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>

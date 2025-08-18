@@ -116,6 +116,15 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   </button>
                 ))}
                 
+                {/* Logo at the bottom */}
+                <div className="mt-8">
+                  <img 
+                    src="/logo.png" 
+                    alt="Inked Life Logo" 
+                    className="h-16 object-contain opacity-80"
+                  />
+                </div>
+                
                 {/* Close button */}
                 <button
                   onClick={toggleMenu}

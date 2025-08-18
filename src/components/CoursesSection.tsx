@@ -47,7 +47,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
     <section 
       className="py-20 px-4 relative overflow-hidden"
       style={{
-        backgroundImage: 'url(https://images.pexels.com/photos/1300355/pexels-photo-1300355.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+        backgroundImage: 'url(/wallpaperflare.com_wallpaper.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

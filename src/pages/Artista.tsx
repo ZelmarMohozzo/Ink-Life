@@ -1,18 +1,31 @@
 import React from 'react';
-import { Award, Users, Calendar, Star } from 'lucide-react';
+import { ArrowLeft, Calendar, Users, Award, Star, Clock } from 'lucide-react';
 
-const ArtistInfo: React.FC = () => {
+interface ArtistaProps {
+  onNavigate: (page: string) => void;
+}
+
+const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
   return (
-    <section className="py-20 px-4 bg-black relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px'
-        }}></div>
-      </div>
-      
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-black pt-20">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <button
+          onClick={() => onNavigate('home')}
+          className="flex items-center space-x-2 text-red-400 hover:text-red-300 mb-8 transition-colors"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          <span>Volver al inicio</span>
+        </button>
+
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+            Conoce al Artista
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Descubre la historia, experiencia y pasión detrás de cada tatuaje en Inked Life Academia.
+          </p>
+        </div>
+
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Artist Photo */}
           <div className="relative lg:col-span-1">
@@ -20,16 +33,43 @@ const ArtistInfo: React.FC = () => {
               <img
                 src="/instructor.png"
                 alt="Nico Lemos"
-                className="w-full h-96 lg:h-[400px] object-cover"
+                className="w-full h-96 lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               
               {/* Artist Name Overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                <h2 className="text-3xl font-bold text-white mb-2">Nico Lemos</h2>
-                <p className="text-gray-300 font-medium uppercase tracking-wider text-sm">
+                <h2 className="text-4xl font-bold text-white mb-2">Nico Lemos</h2>
+                <p className="text-gray-300 font-medium uppercase tracking-wider">
                   TATUADOR PROFESIONAL
                 </p>
+              </div>
+            </div>
+            
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-4 mt-6">
+              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-red-500/30 transition-colors">
+                <Users className="h-6 w-6 text-red-500 mb-2" />
+                <div className="text-xl font-bold text-white mb-1">500+</div>
+                <div className="text-gray-400 text-xs">Estudiantes Formados</div>
+              </div>
+              
+              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-red-500/30 transition-colors">
+                <Award className="h-6 w-6 text-red-500 mb-2" />
+                <div className="text-xl font-bold text-white mb-1">12+</div>
+                <div className="text-gray-400 text-xs">Años de Experiencia</div>
+              </div>
+              
+              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-red-500/30 transition-colors">
+                <Calendar className="h-6 w-6 text-red-500 mb-2" />
+                <div className="text-xl font-bold text-white mb-1">2013</div>
+                <div className="text-gray-400 text-xs">Inicio en el Arte</div>
+              </div>
+              
+              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-red-500/30 transition-colors">
+                <Star className="h-6 w-6 text-red-500 mb-2" />
+                <div className="text-xl font-bold text-white mb-1">4.9</div>
+                <div className="text-gray-400 text-xs">Rating Promedio</div>
               </div>
             </div>
           </div>
@@ -37,32 +77,40 @@ const ArtistInfo: React.FC = () => {
           {/* Artist Description */}
           <div className="lg:col-span-2 space-y-8">
             <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800">
+              <h3 className="text-2xl font-bold text-white mb-6">Historia y Experiencia</h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
                 Tatuador profesional con más de <span className="text-red-400 font-semibold">12 años de experiencia</span> en el arte del tatuaje y artista plástico reconocido. Ha trabajado tanto en el exterior perfeccionando sus técnicas y estilos.
               </p>
               
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Su pasión por el arte comenzó desde muy joven, y encontró en el tatuaje la forma perfecta de combinar su talento artístico con la conexión humana. Cada pieza que crea no es solo un tatuaje, sino una obra de arte personalizada que cuenta la historia única de cada cliente.
+              </p>
+              
               {/* Specialties */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-gray-300">Blackwork</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-gray-300">Black & Gray</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-gray-300">Realismo</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-gray-300">Color</span>
+              <div className="mb-6">
+                <h4 className="text-xl font-semibold text-white mb-4">Especialidades</h4>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="text-gray-300">Blackwork</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="text-gray-300">Black & Gray</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="text-gray-300">Realismo</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="text-gray-300">Color</span>
+                  </div>
                 </div>
               </div>
               
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Vive en <span className="text-white font-medium">Maldonado, Uruguay</span>, donde combina su estudio de tatuajes con una academia donde forma a los próximos tatuadores profesionales.
+              <p className="text-gray-400 leading-relaxed">
+                Vive en <span className="text-white font-medium">Maldonado, Uruguay</span>, donde combina su estudio de tatuajes con una academia donde forma a los próximos tatuadores profesionales. Su enfoque no solo se centra en la técnica, sino también en la ética profesional y la seguridad en el trabajo.
               </p>
             </div>
 
@@ -137,11 +185,20 @@ const ArtistInfo: React.FC = () => {
                 </button>
               </div>
             </div>
+
+            {/* Philosophy Section */}
+            <div className="bg-gradient-to-r from-red-900/20 to-gray-900/20 p-8 rounded-2xl border border-red-500/20">
+              <h3 className="text-2xl font-bold text-white mb-4">Filosofía del Arte</h3>
+              <blockquote className="text-lg text-gray-300 italic leading-relaxed">
+                "Cada tatuaje es una historia que se graba en la piel, pero que nace en el corazón. Mi trabajo no es solo crear arte, sino ser el puente entre la visión del cliente y la realidad que llevará para siempre."
+              </blockquote>
+              <p className="text-red-400 font-medium mt-4">- Nico Lemos</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default ArtistInfo;
+export default Artista;

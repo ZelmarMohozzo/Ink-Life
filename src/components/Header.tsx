@@ -12,6 +12,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   const menuItems = [
     { name: 'Inicio', page: 'home' },
     { name: 'Cursos', page: 'cursos' },
+    { name: 'Artista', page: 'artista' },
     { name: 'Galería', page: 'galeria' },
     { name: 'Precios', page: 'precios' },
   ];

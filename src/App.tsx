@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Cursos from './pages/Cursos';
 import Galeria from './pages/Galeria';
 import Precios from './pages/Precios';
+import Artista from './pages/Artista';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -15,6 +16,8 @@ function App() {
     switch (currentPage) {
       case 'cursos':
         return <Cursos onNavigate={setCurrentPage} />;
+      case 'artista':
+        return <Artista onNavigate={setCurrentPage} />;
       case 'galeria':
         return <Galeria onNavigate={setCurrentPage} />;
       case 'precios':

@@ -164,11 +164,15 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
 
                   {/* Right Image */}
                   <div className="relative">
-                    <div className="relative" style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4))' }}>
+                    <div className="relative" style={{ 
+                      filter: index === 0 ? 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4))' : 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4))'
+                    }}>
                       <img
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-contain transform hover:scale-105 transition-transform duration-700 rounded-3xl"
+                        className={`w-full h-[300px] md:h-[500px] lg:h-[600px] transform hover:scale-105 transition-transform duration-700 rounded-3xl ${
+                          index === 0 ? 'object-contain' : 'object-cover'
+                        }`}
                       />
                       
                       {/* Image Overlay */}

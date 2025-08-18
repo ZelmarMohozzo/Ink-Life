@@ -142,7 +142,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
         <div className="text-center mt-16">
           <button
             onClick={() => onNavigate('cursos')}
-            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl"
+            className="bg-black hover:bg-gray-900 text-green-400 hover:text-green-300 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-green-500/25 border border-green-500/50 hover:border-green-400/70"
           >
             Ver Todos los Cursos
           </button>

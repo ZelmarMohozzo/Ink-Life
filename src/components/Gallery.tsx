@@ -182,7 +182,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
           <div className="relative inline-block">
             <button
             onClick={() => onNavigate('galeria')}
-            className="group relative bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:via-red-800 hover:to-red-900 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-red-500/25 border border-red-500/30 hover:border-red-400/50"
+            className="group relative bg-black hover:bg-gray-900 text-green-400 hover:text-green-300 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-green-500/25 border border-green-500/50 hover:border-green-400/70"
             >
             <span className="relative z-10 flex items-center space-x-2">
               <span>Ver Galería Completa</span>
@@ -190,12 +190,12 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
           </button>
           
           {/* Decorative elements */}
-          <div className="absolute -left-4 -top-4 w-8 h-8 border-l-2 border-t-2 border-red-500/30 opacity-60"></div>
-          <div className="absolute -right-4 -bottom-4 w-8 h-8 border-r-2 border-b-2 border-red-500/30 opacity-60"></div>
+          <div className="absolute -left-4 -top-4 w-8 h-8 border-l-2 border-t-2 border-green-500/30 opacity-60"></div>
+          <div className="absolute -right-4 -bottom-4 w-8 h-8 border-r-2 border-b-2 border-green-500/30 opacity-60"></div>
           </div>
         </div>
 

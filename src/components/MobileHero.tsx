@@ -45,23 +45,23 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
 
         {/* Services */}
         <div className="space-y-4 mb-8">
-          <p className="text-xl text-gray-300 font-['Oswald']">
+          <p className="text-3xl text-gray-300 font-['Oswald']">
             Remoción de tatuajes
           </p>
-          <p className="text-xl text-gray-300 font-['Oswald']">
+          <p className="text-3xl text-gray-300 font-['Oswald']">
             Tatuajes personalizados
           </p>
           
           <div className="flex justify-center space-x-4">
             <button 
               onClick={() => onNavigate('precios')}
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
             >
               Remoción
             </button>
             <button 
               onClick={() => onNavigate('cursos')}
-              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
             >
               Cursos
             </button>
@@ -69,7 +69,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
           <div className="flex justify-center">
             <button 
               onClick={() => onNavigate('galeria')}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
             >
               Galería
             </button>

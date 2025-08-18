@@ -45,10 +45,10 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
 
         {/* Services */}
         <div className="space-y-2 mb-8">
-          <p className="text-lg text-gray-300 font-light">
+          <p className="text-lg text-gray-300 font-['Oswald']">
             Remoción de tatuajes
           </p>
-          <p className="text-lg text-gray-300 font-light">
+          <p className="text-lg text-gray-300 font-['Oswald']">
             Tatuajes personalizados
           </p>
         </div>

@@ -96,8 +96,8 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         </div>
       </header>
 
-      {/* Logo positioned below navbar */}
-      <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
+      {/* Logo positioned below navbar - only on desktop */}
+      <div className="hidden md:block fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
         <div 
           className="cursor-pointer hover:opacity-80 transition-opacity"
           onClick={() => onNavigate('home')}

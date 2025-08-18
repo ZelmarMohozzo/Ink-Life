@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
+import MobileHero from './components/MobileHero';
 import Carousel from './components/Carousel';
 import Gallery from './components/Gallery';
 import ArtistInfo from './components/ArtistInfo';
@@ -25,6 +26,7 @@ function App() {
       default:
         return (
           <>
+            <MobileHero onNavigate={setCurrentPage} />
             <Carousel onNavigate={setCurrentPage} />
             <Gallery onNavigate={setCurrentPage} />
             <ArtistInfo />

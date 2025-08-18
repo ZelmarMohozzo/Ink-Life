@@ -43,35 +43,6 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
           ACADEMIA DE TATUAJES
         </h1>
 
-        {/* Specialties */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {['Realismo', 'Blackwork', 'Color', 'Black & Gray'].map((specialty, idx) => (
-            <span
-              key={idx}
-              className="bg-gradient-to-r from-purple-600 to-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-            >
-              {specialty}
-            </span>
-          ))}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="space-y-4">
-          <button
-            onClick={() => onNavigate('cursos')}
-            className="w-full max-w-xs bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-3 px-6 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
-          >
-            VER CURSOS
-          </button>
-          
-          <button
-            onClick={() => onNavigate('galeria')}
-            className="w-full max-w-xs bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-3 px-6 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
-          >
-            GALERÍA
-          </button>
-        </div>
-
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">

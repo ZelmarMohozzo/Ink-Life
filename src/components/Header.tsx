@@ -9,6 +9,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isAnimating, setIsAnimating] = React.useState(false);
+  const [showFloatingLogo, setShowFloatingLogo] = React.useState(false);
 
   const menuItems = [
     { name: 'Inicio', page: 'home' },
@@ -17,6 +18,18 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     { name: 'Galería', page: 'galeria' },
     { name: 'Precios', page: 'precios' },
   ];
+
+  // Detectar scroll para mostrar/ocultar logo flotante
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Mostrar logo cuando se haga scroll hacia abajo (más de 100px)
+      setShowFloatingLogo(scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     if (isMenuOpen) {
@@ -80,6 +93,18 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
             {/* Mobile Menu Button - Right */}
             <div className="md:hidden">
+              {/* Logo flotante en móvil */}
+              <div className={`absolute left-4 top-1/2 transform -translate-y-1/2 transition-all duration-300 ${
+                showFloatingLogo ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+              }`}>
+                <img 
+                  src="/banner_inkedlife.png" 
+                  alt="Inked Life" 
+                  className="h-8 object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => onNavigate('home')}
+                />
+              </div>
+              
               <button
                 className="flex items-center space-x-2 text-white hover:text-red-400 transition-colors font-['Cinzel'] text-lg"
                 onClick={toggleMenu}

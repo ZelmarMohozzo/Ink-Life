@@ -97,9 +97,15 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                   ? 'opacity-0 -translate-x-full' 
                   : 'opacity-0 translate-x-full'
             }`}
+            style={{
+              backgroundImage: 'url(/fondo_inicio.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
           >
             {/* Background Gradient */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} opacity-90`}></div>
+            <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} opacity-70`}></div>
             
             {/* Content Grid */}
             <div className="relative z-10 w-full py-12 md:py-20">

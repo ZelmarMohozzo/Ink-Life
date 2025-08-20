@@ -129,65 +129,16 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
         {/* Courses Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
-            <div
-              key={course.id}
-              className={`group relative bg-gradient-to-br ${course.bgColor} ${course.hoverColor} rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl cursor-pointer border border-white/10 overflow-hidden`}
-            >
-              {/* Default Content */}
-              <div className="group-hover:opacity-0 group-hover:translate-y-4 transition-all duration-500">
-                {/* Level Badge */}
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    {course.title}
-                  </h3>
-                  <span className={`${course.levelColor} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
-                    {course.level}
-                  </span>
-                </div>
-
-                {/* Course Details */}
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center space-x-3 text-white/90">
-                    <Calendar className="h-5 w-5 flex-shrink-0" />
-                    <span className="text-lg">{course.duration}</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 text-white/90">
-                    <Clock className="h-5 w-5 flex-shrink-0" />
-                    <span className="text-lg">{course.hoursPerClass}</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 text-white/90">
-                    <Users className="h-5 w-5 flex-shrink-0" />
-                    <span className="text-lg">{course.frequency}</span>
-                  </div>
-
-                  {course.specialFeature && (
-                    <div className="flex items-center space-x-3 text-yellow-300">
-                      <CheckCircle className="h-5 w-5 flex-shrink-0" />
-                      <span className="text-lg font-semibold">{course.specialFeature}</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Call to Action */}
-                <div className="border-t border-white/20 pt-6">
-                  <p className="text-white/70 text-center mb-4">
-                    Haz hover para más detalles
-                  </p>
-                  
-                  <div className="flex items-center justify-center space-x-2 text-white group-hover:text-yellow-300 transition-colors">
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Hover Content */}
-              <div className="absolute inset-0 p-8 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-black/20 backdrop-blur-sm">
-                <div className="h-full flex flex-col">
-                  {/* Header */}
+            <div className="group perspective-1000 h-96">
+              <div
+                key={course.id}
+                className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 cursor-pointer"
+              >
+                {/* Front Side */}
+                <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${course.bgColor} rounded-2xl p-8 backface-hidden border border-white/10 shadow-xl`}>
+                  {/* Level Badge */}
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-bold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       {course.title}
                     </h3>
                     <span className={`${course.levelColor} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
@@ -195,32 +146,83 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
                     </span>
                   </div>
 
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-white mb-4">{course.content.title}</h4>
-                    <p className="text-white/80 text-sm mb-4">Temas a dar:</p>
-                    
-                    <div className="space-y-2 mb-6">
-                      {course.content.topics.map((topic, index) => (
-                        <div key={index} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
-                          <span className="text-white/90 text-sm">{topic}</span>
-                        </div>
-                      ))}
+                  {/* Course Details */}
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center space-x-3 text-white/90">
+                      <Calendar className="h-5 w-5 flex-shrink-0" />
+                      <span className="text-lg">{course.duration}</span>
                     </div>
+                    
+                    <div className="flex items-center space-x-3 text-white/90">
+                      <Clock className="h-5 w-5 flex-shrink-0" />
+                      <span className="text-lg">{course.hoursPerClass}</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-3 text-white/90">
+                      <Users className="h-5 w-5 flex-shrink-0" />
+                      <span className="text-lg">{course.frequency}</span>
+                    </div>
+
+                    {course.specialFeature && (
+                      <div className="flex items-center space-x-3 text-yellow-300">
+                        <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                        <span className="text-lg font-semibold">{course.specialFeature}</span>
+                      </div>
+                    )}
                   </div>
 
-                  {/* Button */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onNavigate('cursos');
-                    }}
-                    className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white py-3 rounded-full font-semibold transition-all duration-300 border border-white/30 hover:border-white/50 flex items-center justify-center space-x-2"
-                  >
-                    <span>Inscribirse</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
+                  {/* Call to Action */}
+                  <div className="border-t border-white/20 pt-6">
+                    <p className="text-white/70 text-center mb-4">
+                      Haz hover para más detalles
+                    </p>
+                    
+                    <div className="flex items-center justify-center space-x-2 text-white">
+                      <ArrowRight className="h-5 w-5" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Back Side */}
+                <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${course.bgColor} rounded-2xl p-8 backface-hidden rotate-y-180 border border-white/10 shadow-xl`}>
+                  <div className="h-full flex flex-col">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-2xl font-bold text-white">
+                        {course.title}
+                      </h3>
+                      <span className={`${course.levelColor} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
+                        {course.level}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-white mb-4">{course.content.title}</h4>
+                      <p className="text-white/80 text-sm mb-4">Temas a dar:</p>
+                      
+                      <div className="space-y-2 mb-6">
+                        {course.content.topics.map((topic, index) => (
+                          <div key={index} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                            <span className="text-white/90 text-sm">{topic}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onNavigate('cursos');
+                      }}
+                      className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white py-3 rounded-full font-semibold transition-all duration-300 border border-white/30 hover:border-white/50 flex items-center justify-center space-x-2"
+                    >
+                      <span>Inscribirse</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -243,6 +245,25 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
           </button>
         </div>
       </div>
+
+      {/* Custom CSS for 3D flip effect */}
+      <style jsx>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        
+        .transform-style-preserve-3d {
+          transform-style: preserve-3d;
+        }
+        
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+      `}</style>
     </section>
   );
 };

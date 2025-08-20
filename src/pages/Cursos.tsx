@@ -98,10 +98,69 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
                 {/* Card glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
               </div>
-            </div>
-          ))}
-        </div>
         
+        {/* Courses Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {courses.map((course) => (
+            <div key={course.id} className="group relative">
+              {/* Floating decorative elements */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-purple-500/20 rounded-full blur-sm animate-bounce" style={{animationDelay: `${course.id * 0.2}s`}}></div>
+              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-green-500/20 rounded-full blur-sm animate-bounce" style={{animationDelay: `${course.id * 0.3}s`}}></div>
+              
+              <div className="bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-purple-500/25 hover:shadow-2xl relative group">
+                {/* Course Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={course.image} 
+                    alt={course.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full font-bold text-sm">
+                    {course.price}
+                  </div>
+                </div>
+                
+                {/* Course Content */}
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                    {course.title}
+                  </h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    {course.description}
+                  </p>
+                  
+                  {/* Course Info */}
+                  <div className="flex items-center justify-between mb-4 text-sm text-gray-400">
+                    <div className="flex items-center space-x-1">
+                      <Clock className="h-4 w-4 text-purple-400" />
+                      <span>{course.duration}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Users className="h-4 w-4 text-green-400" />
+                      <span>{course.students}</span>
+                    </div>
+                  </div>
+                  
+                  {/* Features List */}
+                  <div className="space-y-2 mb-6">
+                    {course.features.map((feature, index) => (
+                      <div key={index} className="flex items-center space-x-2 text-sm text-gray-300">
+                        <Award className="h-4 w-4 text-green-400 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Add to Cart Button */}
+                  <button
+                    onClick={() => addToCart(course)}
+                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 px-6 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center space-x-2"
+                  >
+                    <span>Agregar al Carrito</span>
+                  </button>
+                </div>
+                
         {/* WhatsApp Contact Section */}
         <div className="mt-16 text-center">
           <div className="max-w-2xl mx-auto bg-gradient-to-br from-purple-900/40 to-green-900/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 shadow-2xl">

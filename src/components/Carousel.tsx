@@ -105,7 +105,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
             }}
           >
             {/* Background Gradient */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} opacity-70`}></div>
+            <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} opacity-40`}></div>
             
             {/* Content Grid */}
             <div className="relative z-10 w-full py-12 md:py-20">

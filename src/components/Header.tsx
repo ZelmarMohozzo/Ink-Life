@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, X, Zap } from 'lucide-react';
+import CartIcon from './CartIcon';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
@@ -74,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
 
               {/* Right Menu Items */}
-              <nav className="flex space-x-8">
+              <nav className="flex items-center space-x-8">
                 {menuItems.slice(2).map((item) => (
                   <button
                     key={item.page}
@@ -88,11 +89,12 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                     {item.name}
                   </button>
                 ))}
+                <CartIcon />
               </nav>
             </div>
 
             {/* Mobile Menu Button - Right */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center space-x-4">
               {/* Logo flotante en móvil */}
               <div className={`absolute left-4 top-1/2 transform -translate-y-1/2 transition-all duration-300 ${
                 showFloatingLogo ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
@@ -104,6 +106,8 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   onClick={() => onNavigate('home')}
                 />
               </div>
+              
+              <CartIcon />
               
               <button
                 className="flex items-center space-x-2 text-white hover:text-red-400 transition-colors font-['Cinzel'] text-lg"

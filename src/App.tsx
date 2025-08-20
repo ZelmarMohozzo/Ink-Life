@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { CartProvider } from './components/CartContext';
+import Cart from './components/Cart';
 import Header from './components/Header';
 import MobileHero from './components/MobileHero';
 import Carousel from './components/Carousel';
@@ -38,13 +40,16 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header onNavigate={setCurrentPage} currentPage={currentPage} />
-      <main>
-        {renderPage()}
-      </main>
-      <Footer />
-    </div>
+    <CartProvider>
+      <div className="min-h-screen bg-black text-white">
+        <Header onNavigate={setCurrentPage} currentPage={currentPage} />
+        <main>
+          {renderPage()}
+        </main>
+        <Footer />
+        <Cart />
+      </div>
+    </CartProvider>
   );
 }
 

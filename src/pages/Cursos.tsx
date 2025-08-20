@@ -1,11 +1,14 @@
 import React from 'react';
 import { ArrowLeft, Clock, Users, Award } from 'lucide-react';
+import { useCart } from '../components/CartContext';
 
 interface CursosProps {
   onNavigate: (page: string) => void;
 }
 
 const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
+  const { addToCart } = useCart();
+
   const courses = [
     {
       id: 1,
@@ -151,7 +154,18 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
                 </div>
 
                 <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 border border-purple-500/30 hover:border-purple-400/50 mb-3">
-                  Inscribirse Ahora
+                  <button
+                    onClick={() => addToCart({
+                      id: course.id,
+                      title: course.title,
+                      price: course.price,
+                      duration: course.duration,
+                      image: course.image
+                    })}
+                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 border border-purple-500/30 hover:border-purple-400/50 mb-3"
+                  >
+                    Agregar al Carrito
+                  </button>
                 </button>
                 
                 {/* WhatsApp Contact Button */}

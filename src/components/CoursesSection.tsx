@@ -132,7 +132,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
         {/* Courses Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
-            <div key={course.id} className="flip-card h-96">
+            <div key={course.id} className="flip-card h-[450px]">
               <div className="flip-card-inner">
                 {/* Front Side */}
                 <div className={`flip-card-front bg-gradient-to-br ${course.bgColor} rounded-2xl p-8 border border-white/10 shadow-xl`}>

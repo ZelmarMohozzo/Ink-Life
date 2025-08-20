@@ -19,6 +19,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
       hoverColor: 'hover:from-green-700 hover:to-green-900',
       content: {
         title: 'Contenido del Curso',
+        subtitle: 'Temas a dar:',
         topics: [
           'Bioseguridad',
           'Estilos de tatuajes',
@@ -41,6 +42,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
       hoverColor: 'hover:from-blue-700 hover:to-blue-900',
       content: {
         title: 'Contenido del Curso',
+        subtitle: 'Temas a dar:',
         topics: [
           'Bioseguridad',
           'Estilos de tatuajes',
@@ -66,6 +68,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
       hoverColor: 'hover:from-purple-700 hover:to-purple-900',
       content: {
         title: 'Contenido del Curso',
+        subtitle: 'Temas a dar:',
         topics: [
           'Bioseguridad',
           'Estilos de tatuajes',
@@ -129,10 +132,10 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
         {/* Courses Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
-            <div key={course.id} className="group perspective-1000 h-96">
-              <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 cursor-pointer">
+            <div key={course.id} className="flip-card h-96">
+              <div className="flip-card-inner">
                 {/* Front Side */}
-                <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${course.bgColor} rounded-2xl p-8 backface-hidden border border-white/10 shadow-xl`}>
+                <div className={`flip-card-front bg-gradient-to-br ${course.bgColor} rounded-2xl p-8 border border-white/10 shadow-xl`}>
                   {/* Level Badge */}
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-2xl md:text-3xl font-bold text-white">
@@ -181,7 +184,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Back Side */}
-                <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${course.bgColor} rounded-2xl p-8 backface-hidden rotate-y-180 border border-white/10 shadow-xl`}>
+                <div className={`flip-card-back bg-gradient-to-br ${course.bgColor} rounded-2xl p-8 border border-white/10 shadow-xl`}>
                   <div className="h-full flex flex-col">
                     {/* Header */}
                     <div className="flex items-center justify-between mb-6">
@@ -196,7 +199,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
                     {/* Content */}
                     <div className="flex-1">
                       <h4 className="text-lg font-semibold text-white mb-4">{course.content.title}</h4>
-                      <p className="text-white/80 text-sm mb-4">Temas a dar:</p>
+                      <p className="text-white/80 text-sm mb-4">{course.content.subtitle}</p>
                       
                       <div className="space-y-2 mb-6">
                         {course.content.topics.map((topic, index) => (
@@ -245,19 +248,34 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
 
       {/* Custom CSS for 3D flip effect */}
       <style jsx>{`
-        .perspective-1000 {
+        .flip-card {
+          background-color: transparent;
           perspective: 1000px;
         }
         
-        .transform-style-preserve-3d {
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.7s;
           transform-style: preserve-3d;
+          cursor: pointer;
         }
         
-        .backface-hidden {
+        .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
         }
         
-        .rotate-y-180 {
+        .flip-card-back {
           transform: rotateY(180deg);
         }
       `}</style>

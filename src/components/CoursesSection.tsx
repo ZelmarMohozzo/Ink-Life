@@ -161,7 +161,6 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
                     <Users className="h-5 w-5 flex-shrink-0" />
                     <span className="text-lg">{course.frequency}</span>
                   </div>
-                </div>
 
                   {course.specialFeature && (
                     <div className="flex items-center space-x-3 text-yellow-300">
@@ -170,9 +169,6 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
                     </div>
                   )}
                 </div>
-                  </div>
-                )}
-              </div>
 
                 {/* Call to Action */}
                 <div className="border-t border-white/20 pt-6">

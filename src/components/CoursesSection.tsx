@@ -129,11 +129,8 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
         {/* Courses Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
-            <div className="group perspective-1000 h-96">
-              <div
-                key={course.id}
-                className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 cursor-pointer"
-              >
+            <div key={course.id} className="group perspective-1000 h-96">
+              <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 cursor-pointer">
                 {/* Front Side */}
                 <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${course.bgColor} rounded-2xl p-8 backface-hidden border border-white/10 shadow-xl`}>
                   {/* Level Badge */}

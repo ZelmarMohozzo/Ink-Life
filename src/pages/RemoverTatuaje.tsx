@@ -125,41 +125,76 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="min-h-screen bg-black pt-20">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+    <div 
+      className="min-h-screen pt-20 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/fondo_inicio.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Dark overlay with gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-purple-900/40 to-black/90"></div>
+      
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(147,51,234,0.3) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px',
+          animation: 'float 20s ease-in-out infinite'
+        }}></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
         <button
           onClick={() => onNavigate('home')}
-          className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 mb-8 transition-colors"
+          className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 mb-8 transition-all duration-300 hover:scale-105 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full border border-purple-500/30"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Volver al inicio</span>
         </button>
 
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="bg-gradient-to-r from-purple-600 to-purple-800 p-4 rounded-full">
-              <Zap className="h-12 w-12 text-white" />
-            </div>
+        <div className="text-center mb-16 relative">
+          <div className="relative mb-12">
+            <h1 className="text-5xl md:text-7xl font-bold font-['Cinzel'] tracking-wide relative">
+              {/* Glow layers */}
+              <span className="absolute inset-0 text-purple-500 blur-lg opacity-60 animate-pulse">Remoción Láser</span>
+              <span className="absolute inset-0 text-purple-400 blur-md opacity-40">Remoción Láser</span>
+              <span className="absolute inset-0 text-green-400 blur-sm opacity-30">Remoción Láser</span>
+              {/* Main text */}
+              <span className="relative text-white drop-shadow-[0_0_20px_rgba(147,51,234,0.8)]">
+                Remoción Láser
+              </span>
+            </h1>
+            
+            {/* Decorative lines with glow */}
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-60 h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-60 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent blur-sm opacity-60"></div>
           </div>
           
           {/* Hero Image */}
-          <div className="mb-8">
+          <div className="mb-8 relative">
             <img
               src="https://inkster.es/cdn/shop/articles/Blog_Banner_Inkster_-_1200x1800_1_800x.jpg"
               alt="Remoción Láser de Tatuajes"
-              className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl object-cover h-64"
+              className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl object-cover h-64 border border-purple-500/30"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl max-w-2xl mx-auto"></div>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent">
-            Remoción Láser de Tatuajes
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Tecnología de última generación para la eliminación segura y efectiva de tatuajes. 
-            Resultados profesionales con el mínimo dolor y tiempo de recuperación.
-          </p>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/20 shadow-2xl">
+            <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed">
+              Tecnología de última generación para la eliminación segura y efectiva de tatuajes. 
+              Resultados profesionales con el mínimo dolor y tiempo de recuperación.
+            </p>
+            <p className="text-lg text-gray-400 italic">
+              "Borramos el pasado, creamos el futuro"
+            </p>
+          </div>
           
-          <div className="bg-gray-900 rounded-xl p-6 max-w-2xl mx-auto border border-purple-500/20">
+          <div className="bg-black/60 backdrop-blur-md rounded-xl p-6 max-w-2xl mx-auto border border-purple-500/20 mt-8 shadow-xl">
             <h3 className="text-xl font-semibold text-white mb-4">¿Cómo funciona?</h3>
             <p className="text-gray-300 text-left leading-relaxed">
               Utilizamos tecnología láser Q-Switched que rompe las partículas de tinta en fragmentos microscópicos. 
@@ -174,7 +209,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
           {laserPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className={`relative bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] ${
+              className={`relative bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform hover:scale-[1.05] hover:-translate-y-2 border border-purple-500/20 hover:border-purple-400/40 ${
                 pkg.popular ? 'ring-2 ring-purple-500' : ''
               }`}
             >
@@ -185,7 +220,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
               )}
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{pkg.name}</h3>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">{pkg.name}</h3>
                 <p className="text-gray-400 mb-4">{pkg.description}</p>
                 
                 <div className="mb-6">
@@ -196,7 +231,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                 <ul className="space-y-2 mb-6">
                   {pkg.features.map((feature, index) => (
                     <li key={index} className="flex items-center space-x-2 text-gray-300">
-                      <CheckCircle className="h-4 w-4 text-purple-500 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
@@ -205,7 +240,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                 <button 
                   onClick={() => setSelectedPackage(pkg)}
                   className={`w-full py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
-                    pkg.popular 
+                    pkg.popular
                       ? 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white'
                       : 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700'
                   }`}
@@ -213,6 +248,9 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                   Reservar Consulta
                 </button>
               </div>
+              
+              {/* Card glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-green-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
             </div>
           ))}
         </div>
@@ -220,7 +258,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
         {/* Booking Form Modal */}
         {selectedPackage && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-black/90 backdrop-blur-md rounded-2xl p-8 max-w-2xl w-full border border-purple-500/30 max-h-[90vh] overflow-y-auto">
+            <div className="bg-black/90 backdrop-blur-md rounded-2xl p-8 max-w-2xl w-full border border-purple-500/30 max-h-[90vh] overflow-y-auto shadow-2xl">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">Reservar: {selectedPackage.name}</h2>
                 <button
@@ -236,9 +274,9 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                   <img
                     src={selectedPackage.image}
                     alt={selectedPackage.name}
-                    className="w-full h-48 object-cover rounded-lg mb-4"
+                    className="w-full h-48 object-cover rounded-lg mb-4 border border-purple-500/30"
                   />
-                  <div className="bg-purple-900/20 p-4 rounded-lg">
+                  <div className="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
                     <h3 className="text-white font-semibold mb-2">Detalles del Paquete</h3>
                     <p className="text-gray-300 text-sm mb-2">{selectedPackage.description}</p>
                     <div className="flex justify-between text-sm">
@@ -393,7 +431,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
         )}
 
         {/* Contact Section */}
-        <div className="bg-gradient-to-r from-purple-900/20 to-gray-900/20 rounded-2xl p-8 text-center border border-purple-500/20">
+        <div className="bg-gradient-to-br from-purple-900/40 to-green-900/40 backdrop-blur-md rounded-2xl p-8 text-center border border-purple-500/30 shadow-2xl">
           <Zap className="h-12 w-12 text-purple-500 mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-white mb-4">Consulta Personalizada Gratuita</h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
@@ -448,7 +486,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                 a: 'Proporcionamos un plan detallado de cuidados que incluye cremas especiales y recomendaciones para una recuperación óptima.'
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-gray-900 p-6 rounded-xl">
+              <div key={index} className="bg-black/60 backdrop-blur-md p-6 rounded-xl border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
                 <h4 className="font-semibold text-white mb-3">{faq.q}</h4>
                 <p className="text-gray-300 text-sm">{faq.a}</p>
               </div>
@@ -456,6 +494,15 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
           </div>
         </div>
       </div>
+      
+      {/* Custom CSS for animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-10px) rotate(1deg); }
+          66% { transform: translateY(5px) rotate(-1deg); }
+        }
+      `}</style>
     </div>
   );
 };

@@ -132,7 +132,7 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
                   <p className="text-gray-400">Artista</p>
                   <p className="text-gray-400">INK LIFE TATTOO</p>
                   <p className="text-gray-400">Estudio de tattoo y piercing</p>
-                  <p className="text-gray-400">✏️ 12 Años de Experiencia</p>
+                  <p className="text-gray-400">✏️ Desde 2013</p>
                   <p className="text-gray-400">📍 Punta del Este, Uruguay</p>
                   <p className="text-gray-400">Agenda por mp, wpp ⬇️</p>
                 </div>

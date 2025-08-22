@@ -24,7 +24,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       primaryAction: { text: 'Ver Cursos', action: () => onNavigate('cursos') },
       secondaryAction: { text: 'Más Info', action: () => onNavigate('artista') },
       image: '/instructor.png',
-      gradient: 'from-purple-900 via-purple-900 to-indigo-900'
+      gradient: 'from-purple-900 via-purple-1000 to-indigo-900'
     },
     {
       id: 2,

@@ -36,7 +36,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       duration: '4 meses',
       students: '2 maximo por clase',
       price: '$12.000',
-      image: '/home/project/public/fondo_inicio.png',
+      image: '/public/fondo_inicio.png',
       description: 'Especialización en tatuajes en negro, patrones y diseños geométricos.',
       features: ['Patrones complejos', 'Diseño geométrico', 'Técnicas de relleno', 'Estilo personal']
     }

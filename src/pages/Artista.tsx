@@ -19,7 +19,7 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
 
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent">
-            Conoce al Artista
+            Nico Lemos
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Descubre la historia, experiencia y pasión detrás de cada tatuaje en Inked Life Academia.

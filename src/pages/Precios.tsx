@@ -69,7 +69,7 @@ const Precios: React.FC<PreciosProps> = ({ onNavigate }) => {
           {/* Hero Image */}
           <div className="mb-8">
             <img
-              src="/remocion_laser.webp"
+              src="https://inkster.es/cdn/shop/articles/Blog_Banner_Inkster_-_1200x1800_1_800x.jpg"
               alt="Remoción Láser de Tatuajes"
               className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl object-cover h-64"
             />
@@ -102,7 +102,11 @@ const Precios: React.FC<PreciosProps> = ({ onNavigate }) => {
                 pkg.popular ? 'ring-2 ring-blue-500' : ''
               }`}
             >
-             
+              {pkg.popular && (
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  Más Popular
+                </div>
+              )}
               
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>

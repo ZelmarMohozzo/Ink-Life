@@ -44,9 +44,9 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
           <div className="relative lg:col-span-1">
             <div className="relative overflow-hidden shadow-2xl bg-gray-900 border border-gray-800">
               <img
-                src="/instructor.png"
+                src="/instructor_full.png"
                 alt="Nico Lemos"
-                className="w-full h-96 lg:h-[500px] object-contain"
+                className="w-full h-96 lg:h-[500px] object-contain rounded-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               

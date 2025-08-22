@@ -19,9 +19,9 @@ const ArtistInfo: React.FC = () => {
             {/* Artist Photo */}
             <div className="relative">
               <img
-                src="/instructor_rectangular.png"
+                src="/instructor_full.png"
                 alt="Nico Lemos"
-                className="w-full h-auto object-contain rounded-lg"
+                className="w-full h-auto object-contain rounded-2xl"
               />
             </div>
 

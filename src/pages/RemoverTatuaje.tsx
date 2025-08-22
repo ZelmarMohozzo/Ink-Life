@@ -26,7 +26,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
       sessions: '3-5 sesiones',
       price: '$299',
       description: 'Para tatuajes pequeños y simples',
-      url: 'https://inkster.es/cdn/shop/articles/Blog_Banner_Inkster_-_1200x1800_1_800x.jpg',
+      image: 'https://inkster.es/cdn/shop/articles/Blog_Banner_Inkster_-_1200x1800_1_800x.jpg',
       features: [
         'Evaluación inicial gratuita',
         'Tratamiento con láser Q-Switched',
@@ -41,7 +41,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
       sessions: '6-10 sesiones',
       price: '$599',
       description: 'Para tatuajes medianos con colores',
-      image: '/remocion_laser.webp',
+      image: 'https://inkster.es/cdn/shop/articles/Blog_Banner_Inkster_-_1200x1800_1_800x.jpg',
       features: [
         'Evaluación inicial gratuita',
         'Tecnología láser avanzada',

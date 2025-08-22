@@ -11,14 +11,14 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <button
           onClick={() => onNavigate('home')}
-          className="flex items-center space-x-2 text-red-400 hover:text-red-300 mb-8 transition-colors"
+          className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 mb-8 transition-colors"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Volver al inicio</span>
         </button>
 
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent">
             Conoce al Artista
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -48,26 +48,26 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
             
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 mt-6">
-              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-red-500/30 transition-colors">
-                <Users className="h-6 w-6 text-red-500 mb-2" />
+              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-colors">
+                <Users className="h-6 w-6 text-purple-500 mb-2" />
                 <div className="text-xl font-bold text-white mb-1">500+</div>
                 <div className="text-gray-400 text-xs">Estudiantes Formados</div>
               </div>
               
-              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-red-500/30 transition-colors">
-                <Award className="h-6 w-6 text-red-500 mb-2" />
+              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-colors">
+                <Award className="h-6 w-6 text-purple-500 mb-2" />
                 <div className="text-xl font-bold text-white mb-1">12+</div>
                 <div className="text-gray-400 text-xs">Años de Experiencia</div>
               </div>
               
-              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-red-500/30 transition-colors">
-                <Calendar className="h-6 w-6 text-red-500 mb-2" />
+              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-colors">
+                <Calendar className="h-6 w-6 text-purple-500 mb-2" />
                 <div className="text-xl font-bold text-white mb-1">2013</div>
                 <div className="text-gray-400 text-xs">Inicio en el Arte</div>
               </div>
               
-              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-red-500/30 transition-colors">
-                <Star className="h-6 w-6 text-red-500 mb-2" />
+              <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-colors">
+                <Star className="h-6 w-6 text-purple-500 mb-2" />
                 <div className="text-xl font-bold text-white mb-1">4.9</div>
                 <div className="text-gray-400 text-xs">Rating Promedio</div>
               </div>
@@ -79,7 +79,7 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
             <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800">
               <h3 className="text-2xl font-bold text-white mb-6">Historia y Experiencia</h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Tatuador profesional con más de <span className="text-red-400 font-semibold">12 años de experiencia</span> en el arte del tatuaje y artista plástico reconocido. Ha trabajado tanto en el exterior perfeccionando sus técnicas y estilos.
+                Tatuador profesional con más de <span className="text-purple-400 font-semibold">12 años de experiencia</span> en el arte del tatuaje y artista plástico reconocido. Ha trabajado tanto en el exterior perfeccionando sus técnicas y estilos.
               </p>
               
               <p className="text-gray-300 leading-relaxed mb-6">
@@ -91,19 +91,19 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
                 <h4 className="text-xl font-semibold text-white mb-4">Especialidades</h4>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
                     <span className="text-gray-300">Blackwork</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
                     <span className="text-gray-300">Black & Gray</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
                     <span className="text-gray-300">Realismo</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
                     <span className="text-gray-300">Color</span>
                   </div>
                 </div>
@@ -194,12 +194,12 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
             </div>
 
             {/* Philosophy Section */}
-            <div className="bg-gradient-to-r from-red-900/20 to-gray-900/20 p-8 rounded-2xl border border-red-500/20">
+            <div className="bg-gradient-to-r from-purple-900/20 to-gray-900/20 p-8 rounded-2xl border border-purple-500/20">
               <h3 className="text-2xl font-bold text-white mb-4">Filosofía del Arte</h3>
               <blockquote className="text-lg text-gray-300 italic leading-relaxed">
                 "Cada tatuaje es una historia que se graba en la piel, pero que nace en el corazón. Mi trabajo no es solo crear arte, sino ser el puente entre la visión del cliente y la realidad que llevará para siempre."
               </blockquote>
-              <p className="text-red-400 font-medium mt-4">- Nico Lemos</p>
+              <p className="text-purple-400 font-medium mt-4">- Nico Lemos</p>
             </div>
           </div>
         </div>

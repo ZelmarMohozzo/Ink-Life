@@ -28,7 +28,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
     },
     {
       id: 2,
-      category: 'TECNOLOGÍA',
+      category: 'TECNOLOGÍA LASER',
       title: 'Remoción Láser Avanzada',
       subtitle: 'Elimina tatuajes de forma segura',
       description: 'Tecnología láser Q-Switched de última generación para la eliminación efectiva de tatuajes. Proceso seguro, mínimo dolor y resultados garantizados.',
@@ -40,7 +40,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       primaryAction: { text: 'Ver Precios', action: () => onNavigate('precios') },
       secondaryAction: { text: 'Consultar', action: () => onNavigate('precios') },
       image: '/public/remocion_laser.webp',
-      gradient: 'from-blue-900 via-cyan-900 to-teal-900'
+      gradient: 'from-blue-900 via-purple-900 to-teal-900'
     },
     {
       id: 3,

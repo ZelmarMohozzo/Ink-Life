@@ -19,7 +19,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       stats: [
         { icon: Clock, label: 'Duración', value: '8-12 semanas' },
         { icon: Users, label: 'Estudiantes', value: '10+ formados' },
-        { icon: Award, label: 'Certificación', value: 'Oficial' }
+        { icon: Award, label: 'Oficial', value: 'Certificación' }
       ],
       primaryAction: { text: 'Ver Cursos', action: () => onNavigate('cursos') },
       secondaryAction: { text: 'Más Info', action: () => onNavigate('artista') },

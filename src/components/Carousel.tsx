@@ -39,7 +39,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       ],
       primaryAction: { text: 'Ver Precios', action: () => onNavigate('precios') },
       secondaryAction: { text: 'Consultar', action: () => onNavigate('precios') },
-      image: '/public/remocion_laser.png',
+      image: 'https://inkster.es/cdn/shop/articles/Blog_Banner_Inkster_-_1200x1800_1_800x.jpg',
       gradient: 'from-emerald-950 via-esmerald-900 to-cyan-900'
     },
     {

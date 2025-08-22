@@ -56,7 +56,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       primaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },
       secondaryAction: { text: 'Contactar', action: () => onNavigate('artista') },
       image: '/tatuajes/IMG-20250614-WA0043.jpg',
-      gradient: 'from-red-600 via-pink-700 to-rose-800'
+      gradient: 'from-red-900 via-pink-900 to-rose-900'
     }
   ];
 

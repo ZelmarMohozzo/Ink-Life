@@ -18,7 +18,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       description: 'Aprende las técnicas más avanzadas del tatuaje con un instructor profesional con años en el sector. Desde fundamentos básicos hasta especialización en realismo y blackwork.',
       stats: [
         { icon: Clock, label: 'Duración', value: '8-12 semanas' },
-        { icon: Users, label: 'Estudiantes', value: '500+ formados' },
+        { icon: Users, label: 'Estudiantes', value: '10+ formados' },
         { icon: Award, label: 'Certificación', value: 'Oficial' }
       ],
       primaryAction: { text: 'Ver Cursos', action: () => onNavigate('cursos') },

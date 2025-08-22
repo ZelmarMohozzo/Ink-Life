@@ -140,7 +140,6 @@ const Precios: React.FC<PreciosProps> = ({ onNavigate }) => {
 
         {/* Contact Section */}
         <div className="bg-gradient-to-r from-blue-900/20 to-gray-900/20 rounded-2xl p-8 text-center border border-blue-500/20">
-          <Phone className="h-12 w-12 text-blue-500 mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-white mb-4">Consulta Personalizada Gratuita</h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Cada tatuaje es único y requiere un plan personalizado. Agenda tu consulta gratuita 

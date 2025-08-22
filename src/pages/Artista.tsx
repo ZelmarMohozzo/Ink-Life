@@ -181,7 +181,14 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
                   <p className="text-blue-400 font-medium">📅 Consultas gratuitas disponibles</p>
                 </div>
                 <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium transition-all duration-300 text-sm">
-                  AGENDAR CONSULTA
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=59892153567&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center"
+                  >
+                    AGENDAR CONSULTA
+                  </a>
                 </button>
               </div>
             </div>

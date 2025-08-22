@@ -16,7 +16,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       duration: '8 semanas',
       students: '2 maximo por clase',
       price: '$6.500',
-      image: '/cursos/27f3c176-8d12-408c-94d4-1441bc3dbc0f.png',
+      image: '/public/fondo_inicio.png',
       description: 'Fundamentos del tatuaje, técnicas básicas, higiene y seguridad.',
       features: ['Teoria del color', 'Técnicas de línea', 'Sombreado básico', 'Certificado oficial']
     },

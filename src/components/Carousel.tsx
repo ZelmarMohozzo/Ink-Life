@@ -15,11 +15,11 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       category: 'ACADEMIA DE TATTOO',
       title: 'Cursos de Tatuaje Profesional',
       subtitle: 'Conviértete en un artista certificado',
-      description: 'Aprende las técnicas más avanzadas del tatuaje con un instructor certificado. Desde fundamentos básicos hasta especialización en realismo y blackwork.',
+      description: 'Aprende las técnicas más avanzadas del tatuaje con un instructor profesional. Desde fundamentos básicos hasta especialización en realismo y blackwork.',
       stats: [
         { icon: Clock, label: 'Duración', value: '8-12 semanas' },
-        { icon: Users, label: 'Estudiantes', value: '500+ formados' },
-        { icon: Award, label: 'Certificación', value: 'Oficial' }
+        { icon: Users, label: 'Estudiantes', value: '10+ formados' },
+        { icon: Award, label: 'Con Certificación', value: 'Profesional' }
       ],
       primaryAction: { text: 'Ver Cursos', action: () => onNavigate('cursos') },
       secondaryAction: { text: 'Más Info', action: () => onNavigate('artista') },
@@ -28,7 +28,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
     },
     {
       id: 2,
-      category: 'TECNOLOGÍA',
+      category: 'TECNOLOGIA LASER',
       title: 'Remoción Láser Avanzada',
       subtitle: 'Elimina tatuajes de forma segura',
       description: 'Tecnología láser Q-Switched de última generación para la eliminación efectiva de tatuajes. Proceso seguro, mínimo dolor y resultados garantizados.',
@@ -44,14 +44,14 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
     },
     {
       id: 3,
-      category: 'ARTE',
-      title: 'Tatuajes Personalizados',
+      category: 'TATUAJES',
+      title: 'Quieres hacerte un tatuaje?',
       subtitle: 'Dale vida a tu piel con arte único',
-      description: 'Creamos diseños únicos adaptados a tu personalidad. Especialistas en realismo, blackwork, tradicional y estilos contemporáneos.',
+      description: 'Creo diseños únicos adaptados a ti. Especialista en realismo, blackwork, tradicional y estilos contemporáneos.',
       stats: [
         { icon: Clock, label: 'Experiencia', value: '12+ años' },
-        { icon: Users, label: 'Clientes', value: '1000+ satisfechos' },
-        { icon: Award, label: 'Estilos', value: 'Todos los tipos' }
+        { icon: Users, label: 'Clientes', value: 'Confinaza de un profesionl' },
+        { icon: Award, label: 'El estilo que tu elijas', value: 'Todos los estilos' }
       ],
       primaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },
       secondaryAction: { text: 'Contactar', action: () => onNavigate('artista') },

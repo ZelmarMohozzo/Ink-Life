@@ -81,9 +81,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   <button
                     key={item.page}
                     onClick={() => onNavigate(item.page)}
-                    className={`px-3 py-2 text-lg font-medium transition-all duration-300 hover:text-red-400 font-['Cinzel'] ${
+                    className={`px-3 py-2 text-lg font-medium transition-all duration-300 hover:text-purple-400 font-['Cinzel'] ${
                       currentPage === item.page 
-                        ? 'text-red-500 border-b-2 border-red-500' 
+                        ? 'text-purple-500 border-b-2 border-purple-500' 
                         : 'text-gray-300'
                     }`}
                   >

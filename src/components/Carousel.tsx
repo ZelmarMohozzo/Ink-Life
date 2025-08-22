@@ -15,7 +15,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       category: 'APRENDE A TATUAR',
       title: 'Cursos de Tatuaje Profesional',
       subtitle: 'Conviértete en un artista certificado',
-      description: 'Aprende las técnicas más avanzadas del tatuaje con instructores certificados. Desde fundamentos básicos hasta especialización en realismo y blackwork.',
+      description: 'Aprende las técnicas más avanzadas del tatuaje con un instructor profesional con años en el sector. Desde fundamentos básicos hasta especialización en realismo y blackwork.',
       stats: [
         { icon: Clock, label: 'Duración', value: '8-12 semanas' },
         { icon: Users, label: 'Estudiantes', value: '500+ formados' },

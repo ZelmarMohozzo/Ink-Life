@@ -145,7 +145,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
           {/* Hero Image */}
           <div className="mb-8">
             <img
-              src="/remocion_laser.webp"
+              src="https://inkster.es/cdn/shop/articles/Blog_Banner_Inkster_-_1200x1800_1_800x.jpg"
               alt="Remoción Láser de Tatuajes"
               className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl object-cover h-64"
             />

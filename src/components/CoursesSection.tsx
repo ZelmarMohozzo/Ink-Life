@@ -103,8 +103,8 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
           <div className="relative mb-12">
             <h2 className="text-5xl md:text-7xl font-bold font-['Cinzel'] tracking-wide relative">
               {/* Glow layers */}
-              <span className="absolute inset-0 text-red-500 blur-md opacity-60 animate-pulse">NUESTROS CURSOS</span>
-              <span className="absolute inset-0 text-red-400 blur-sm opacity-40">NUESTROS CURSOS</span>
+              <span className="absolute inset-0 text-purple-500 blur-md opacity-60 animate-pulse">NUESTROS CURSOS</span>
+              <span className="absolute inset-0 text-purple-400 blur-sm opacity-40">NUESTROS CURSOS</span>
               {/* Main text */}
               <span className="relative text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]">
                 NUESTROS CURSOS
@@ -112,8 +112,8 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
             </h2>
             
             {/* Decorative line with glow */}
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-0.5 bg-gradient-to-r from-transparent via-red-400 to-transparent"></div>
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-0.5 bg-gradient-to-r from-transparent via-red-400 to-transparent blur-sm opacity-60"></div>
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent blur-sm opacity-60"></div>
           </div>
           
           <div className="max-w-4xl mx-auto space-y-4">
@@ -233,7 +233,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
         <div className="text-center mt-16">
           <button
             onClick={() => onNavigate('cursos')}
-            className="group relative bg-black hover:bg-gray-900 text-red-400 hover:text-red-300 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-red-500/25 border border-red-500/50 hover:border-red-400/70"
+            className="group relative bg-black hover:bg-gray-900 text-purple-400 hover:text-purple-300 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-purple-500/25 border border-purple-500/50 hover:border-purple-400/70"
           >
             <span className="relative z-10 flex items-center space-x-2">
               <span>Ver Todos los Cursos</span>
@@ -241,7 +241,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
           </button>
         </div>
       </div>

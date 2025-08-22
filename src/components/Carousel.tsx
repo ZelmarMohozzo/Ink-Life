@@ -50,7 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       description: 'Creo diseños únicos en base a tus personalidad. Especialista en realismo, blackwork, tradicional y estilos contemporáneos.',
       stats: [
         { icon: Clock, label: 'Experiencia', value: '12+ años' },
-        { icon: Users, label: 'Clientes', value: 'Numerosos trabajos realizados' },
+        { icon: Users, label: 'Clientes', value: 'Confianza y profesionalismo' },
         { icon: Award, label: 'Estilos', value: 'Todos los tipos' }
       ],
       primaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },

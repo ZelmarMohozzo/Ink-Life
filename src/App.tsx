@@ -12,6 +12,8 @@ import Cursos from './pages/Cursos';
 import Galeria from './pages/Galeria';
 import Precios from './pages/Precios';
 import Artista from './pages/Artista';
+import Tatuate from './pages/Tatuate';
+import RemoverTatuaje from './pages/RemoverTatuaje';
 import CheckoutForm from './pages/CheckoutForm';
 
 function AppContent() {
@@ -22,12 +24,16 @@ function AppContent() {
     switch (currentPage) {
       case 'cursos':
         return <Cursos onNavigate={setCurrentPage} />;
+      case 'tatuate':
+        return <Tatuate onNavigate={setCurrentPage} />;
       case 'artista':
         return <Artista onNavigate={setCurrentPage} />;
       case 'galeria':
         return <Galeria onNavigate={setCurrentPage} />;
       case 'precios':
         return <Precios onNavigate={setCurrentPage} />;
+      case 'remover-tatuaje':
+        return <RemoverTatuaje onNavigate={setCurrentPage} />;
       case 'checkout':
         return <CheckoutForm onNavigate={setCurrentPage} cartItems={cartItems} totalPrice={getTotalPrice()} />;
       default:

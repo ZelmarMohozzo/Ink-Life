@@ -68,7 +68,7 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
               
               <div className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-colors">
                 <Star className="h-6 w-6 text-purple-500 mb-2" />
-                <div className="text-xl font-bold text-white mb-1">5</div>
+                <div className="text-xl font-bold text-white mb-1">Tatuador Calificado</div>
                 <div className="text-gray-400 text-xs">Rating Promedio</div>
               </div>
             </div>

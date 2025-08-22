@@ -40,7 +40,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       primaryAction: { text: 'Ver Precios', action: () => onNavigate('precios') },
       secondaryAction: { text: 'Consultar', action: () => onNavigate('precios') },
       image: '/public/remocion_laser.webp',
-      gradient: 'from-emerald-500 via-lime-900 to-lime-900'
+      gradient: 'from-emerald-900 via-lime-900 to-lime-900'
     },
     {
       id: 3,

@@ -29,11 +29,11 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Artist Photo */}
           <div className="relative lg:col-span-1">
-            <div className="relative overflow-hidden shadow-2xl bg-gray-900 border border-gray-800">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-900 border border-gray-800">
               <img
                 src="/instructor.png"
                 alt="Nico Lemos"
-                className="w-full h-96 lg:h-[500px] object-cover"
+                className="w-full h-96 lg:h-[500px] objaect-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               

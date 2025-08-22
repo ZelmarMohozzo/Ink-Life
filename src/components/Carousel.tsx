@@ -35,7 +35,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       stats: [
         { icon: Clock, label: 'Sesiones', value: '6-12 promedio' },
         { icon: Users, label: 'Éxito', value: '95% efectividad' },
-        { icon: Award, label: 'Tecnología', value: 'Q-Switched' }
+        { icon: Award, label: 'Tecnología Láser', value: 'Q-Switched' }
       ],
       primaryAction: { text: 'Ver Precios', action: () => onNavigate('precios') },
       secondaryAction: { text: 'Consultar', action: () => onNavigate('precios') },

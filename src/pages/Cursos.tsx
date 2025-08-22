@@ -14,28 +14,28 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       id: 1,
       title: 'Curso Básico de Tatuaje',
       duration: '8 semanas',
-      students: '20 max',
-      price: '$899',
+      students: '2 maximo por clase',
+      price: '$6.500',
       image: 'https://images.pexels.com/photos/1300355/pexels-photo-1300355.jpeg?auto=compress&cs=tinysrgb&w=600',
       description: 'Fundamentos del tatuaje, técnicas básicas, higiene y seguridad.',
       features: ['Teoria del color', 'Técnicas de línea', 'Sombreado básico', 'Certificado oficial']
     },
     {
       id: 2,
-      title: 'Curso Avanzado - Realismo',
+      title: 'Curso Completo',
       duration: '12 semanas',
-      students: '10 max',
-      price: '$1,299',
+      students: '2 maximo por clase',
+      price: '$10.000',
       image: 'https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=600',
       description: 'Técnicas avanzadas para crear tatuajes realistas fotográficos.',
       features: ['Realismo en piel', 'Retratos', 'Texturas avanzadas', 'Portfolio profesional']
     },
     {
       id: 3,
-      title: 'Workshop Blackwork',
-      duration: '4 semanas',
-      students: '15 max',
-      price: '$599',
+      title: 'Curso Full',
+      duration: '4 meses',
+      students: '2 maximo por clase',
+      price: '$12.000',
       image: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=600',
       description: 'Especialización en tatuajes en negro, patrones y diseños geométricos.',
       features: ['Patrones complejos', 'Diseño geométrico', 'Técnicas de relleno', 'Estilo personal']
@@ -111,7 +111,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
-            <div key={course.id} className="group bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl hover:shadow-red-500/25 transition-all duration-500 transform hover:scale-[1.05] hover:-translate-y-2 border border-red-500/20 hover:border-red-400/40">
+            <div key={course.id} className="group bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform hover:scale-[1.05] hover:-translate-y-2 border border-purple-500/20 hover:border-green-400/40">
               <div className="relative">
                 <img
                   src={course.image}
@@ -121,7 +121,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                 
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm border border-red-400/30">
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm border border-purple-400/30">
                   {course.price}
                 </div>
                 

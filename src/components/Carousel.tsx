@@ -51,7 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       stats: [
         { icon: Clock, label: 'Experiencia', value: '12+ años' },
         { icon: Users, label: 'Clientes', value: 'Confianza y profesionalismo' },
-        { icon: Award, label: 'Estilos', value: 'Todos los tipos' }
+        { icon: Award, label: 'Realismo, Blackwork, etc', value: 'Todos los estilos' }
       ],
       primaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },
       secondaryAction: { text: 'Contactar', action: () => onNavigate('artista') },

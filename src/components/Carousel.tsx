@@ -28,8 +28,8 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
     },
     {
       id: 2,
-      category: 'TECNOLOGÍA LASER',
-      title: 'Remoción Láser Avanzada',
+      category: 'REMOCIÓN LÁSER',
+      title: 'Te arrepientes de ese tatuaje?',
       subtitle: 'Elimina tatuajes de forma segura',
       description: 'Tecnología láser Q-Switched de última generación para la eliminación efectiva de tatuajes. Proceso seguro, mínimo dolor y resultados garantizados.',
       stats: [

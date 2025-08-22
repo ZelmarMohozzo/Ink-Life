@@ -67,11 +67,11 @@ const Precios: React.FC<PreciosProps> = ({ onNavigate }) => {
 
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="p-4">
+            <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
               <img 
                 src="/logo.png" 
                 alt="Ink Life Logo" 
-                className="h-16 w-16 object-contain"
+                className="h-20 w-20 object-contain"
               />
             </div>
           </div>

@@ -47,10 +47,10 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       category: 'EL ARTE CON UN PROFESIONAL',
       title: 'Quieres tatuarte?',
       subtitle: 'Dale vida a tu piel con arte único',
-      description: 'Creamos diseños únicos adaptados a tu personalidad. Especialistas en realismo, blackwork, tradicional y estilos contemporáneos.',
+      description: 'Creo diseños únicos en base a tus personalidad. Especialista en realismo, blackwork, tradicional y estilos contemporáneos.',
       stats: [
         { icon: Clock, label: 'Experiencia', value: '12+ años' },
-        { icon: Users, label: 'Clientes', value: '1000+ satisfechos' },
+        { icon: Users, label: 'Clientes', value: 'Numerosos trabajos realizados' },
         { icon: Award, label: 'Estilos', value: 'Todos los tipos' }
       ],
       primaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },

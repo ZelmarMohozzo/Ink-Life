@@ -34,8 +34,8 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       description: 'Tecnología láser Q-Switched de última generación para la eliminación efectiva de tatuajes. Proceso seguro, mínimo dolor y resultados garantizados.',
       stats: [
         { icon: Clock, label: 'Sesiones', value: '6-12 promedio' },
-        { icon: Users, label: 'Éxito', value: '95% efectividad' },
-        { icon: Award, label: 'Tecnología', value: 'Q-Switched' }
+        { icon: Users, label: 'Éxito', value: '99% efectividad' },
+        { icon: Award, label: 'Tecnología Laser', value: 'Q-Switched' }
       ],
       primaryAction: { text: 'Ver Precios', action: () => onNavigate('precios') },
       secondaryAction: { text: 'Consultar', action: () => onNavigate('precios') },

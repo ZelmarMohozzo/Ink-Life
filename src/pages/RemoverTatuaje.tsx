@@ -57,7 +57,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
       sessions: '10-15 sesiones',
       price: '$999',
       description: 'Para tatuajes grandes y complejos',
-      image: '/remocion_laser.webp',
+      image: 'https://inkster.es/cdn/shop/articles/Blog_Banner_Inkster_-_1200x1800_1_800x.jpg',
       features: [
         'Evaluación inicial gratuita',
         'Láser de última generación',

@@ -7,7 +7,20 @@ interface ArtistaProps {
 
 const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
   return (
-    <div className="min-h-screen bg-black pt-20">
+    <div 
+      className="min-h-screen pt-20 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/fondo_inicio.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70"></div>
+      
+      <div className="relative z-10">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <button
           onClick={() => onNavigate('home')}
@@ -29,11 +42,11 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Artist Photo */}
           <div className="relative lg:col-span-1">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-900 border border-gray-800">
+            <div className="relative overflow-hidden shadow-2xl bg-gray-900 border border-gray-800">
               <img
                 src="/instructor.png"
                 alt="Nico Lemos"
-                className="w-full h-96 lg:h-[500px] objaect-cover"
+                className="w-full h-96 lg:h-[500px] object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               
@@ -119,8 +132,12 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
               {/* Instagram Card */}
               <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 p-6 rounded-xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">IG</span>
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+                    <img 
+                      src="/437783604_287457661076839_4543038176797207402_n.jpg" 
+                      alt="Instagram Profile" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Instagram</h4>
@@ -144,8 +161,12 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
               {/* WhatsApp Card */}
               <div className="bg-gradient-to-br from-green-600/20 to-green-700/20 p-6 rounded-xl border border-green-500/30 hover:border-green-400/50 transition-all duration-300">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">WA</span>
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+                    <img 
+                      src="/15707820.png" 
+                      alt="WhatsApp" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">WhatsApp</h4>
@@ -203,6 +224,7 @@ const Artista: React.FC<ArtistaProps> = ({ onNavigate }) => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

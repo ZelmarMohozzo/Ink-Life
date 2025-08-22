@@ -44,8 +44,8 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
     },
     {
       id: 3,
-      category: 'ARTE',
-      title: 'Tatuajes Personalizados',
+      category: 'EL ARTE CON UN PROFESIONAL',
+      title: 'Quieres tatuarte?',
       subtitle: 'Dale vida a tu piel con arte único',
       description: 'Creamos diseños únicos adaptados a tu personalidad. Especialistas en realismo, blackwork, tradicional y estilos contemporáneos.',
       stats: [

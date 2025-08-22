@@ -72,6 +72,15 @@ const Precios: React.FC<PreciosProps> = ({ onNavigate }) => {
             </div>
           </div>
           
+          {/* Hero Image */}
+          <div className="mb-8">
+            <img
+              src="/remocion_laser.webp"
+              alt="Remoción Láser de Tatuajes"
+              className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl object-cover h-64"
+            />
+          </div>
+          
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
             Remoción Láser de Tatuajes
           </h1>
@@ -125,7 +134,7 @@ const Precios: React.FC<PreciosProps> = ({ onNavigate }) => {
 
                 <button className={`w-full py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
                   pkg.popular 
-                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white'
+                    ? 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white'
                     : 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700'
                 }`}>
                   Consultar Disponibilidad

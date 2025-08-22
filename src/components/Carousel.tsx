@@ -12,14 +12,14 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
   const slides = [
     {
       id: 1,
-      category: 'ACADEMIA DE TATTOO',
+      category: 'EDUCACIÓN',
       title: 'Cursos de Tatuaje Profesional',
       subtitle: 'Conviértete en un artista certificado',
-      description: 'Aprende las técnicas más avanzadas del tatuaje con un instructor profesional. Desde fundamentos básicos hasta especialización en realismo y blackwork.',
+      description: 'Aprende las técnicas más avanzadas del tatuaje con instructores certificados. Desde fundamentos básicos hasta especialización en realismo y blackwork.',
       stats: [
         { icon: Clock, label: 'Duración', value: '8-12 semanas' },
-        { icon: Users, label: 'Estudiantes', value: '10+ formados' },
-        { icon: Award, label: 'Con Certificación', value: 'Profesional' }
+        { icon: Users, label: 'Estudiantes', value: '500+ formados' },
+        { icon: Award, label: 'Certificación', value: 'Oficial' }
       ],
       primaryAction: { text: 'Ver Cursos', action: () => onNavigate('cursos') },
       secondaryAction: { text: 'Más Info', action: () => onNavigate('artista') },
@@ -28,29 +28,30 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
     },
     {
       id: 2,
-      category: 'TECNOLOGIA LASER',
+      category: 'TECNOLOGÍA',
       title: 'Remoción Láser Avanzada',
       subtitle: 'Elimina tatuajes de forma segura',
       description: 'Tecnología láser Q-Switched de última generación para la eliminación efectiva de tatuajes. Proceso seguro, mínimo dolor y resultados garantizados.',
       stats: [
         { icon: Clock, label: 'Sesiones', value: '6-12 promedio' },
-        { icon: Users, label: 'Éxito', value: '99% efectividad' },
-        { icon: Award, label: 'Tecnología Laser', value: 'Q-Switched' }
+        { icon: Users, label: 'Éxito', value: '95% efectividad' },
+        { icon: Award, label: 'Tecnología', value: 'Q-Switched' }
       ],
       primaryAction: { text: 'Ver Precios', action: () => onNavigate('precios') },
       secondaryAction: { text: 'Consultar', action: () => onNavigate('precios') },
-      image: '/home/project/public/remocion_laser.webp'
+      image: 'https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=800',
+      gradient: 'from-blue-600 via-cyan-700 to-teal-800's
     },
     {
       id: 3,
-      category: 'TATUAJES',
-      title: 'Quieres hacerte un tatuaje?',
+      category: 'ARTE',
+      title: 'Tatuajes Personalizados',
       subtitle: 'Dale vida a tu piel con arte único',
-      description: 'Creo diseños únicos adaptados a ti. Especialista en realismo, blackwork, tradicional y estilos contemporáneos.',
+      description: 'Creamos diseños únicos adaptados a tu personalidad. Especialistas en realismo, blackwork, tradicional y estilos contemporáneos.',
       stats: [
         { icon: Clock, label: 'Experiencia', value: '12+ años' },
-        { icon: Users, label: 'Clientes', value: 'Confinaza de un profesionl' },
-        { icon: Award, label: 'El estilo que tu elijas', value: 'Todos los estilos' }
+        { icon: Users, label: 'Clientes', value: '1000+ satisfechos' },
+        { icon: Award, label: 'Estilos', value: 'Todos los tipos' }
       ],
       primaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },
       secondaryAction: { text: 'Contactar', action: () => onNavigate('artista') },

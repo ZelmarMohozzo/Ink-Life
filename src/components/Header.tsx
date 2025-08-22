@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     { name: 'Cursos', page: 'cursos' },
     { name: 'Artista', page: 'artista' },
     { name: 'Galería', page: 'galeria' },
-    { name: 'Precios', page: 'precios' },
+    { name: 'Remoción Láser', page: 'precios' },
   ];
 
   // Detectar scroll para mostrar/ocultar logo flotante

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CartProvider } from './components/CartContext';
+import { CartProvider, useCart } from './components/CartContext';
 import Cart from './components/Cart';
 import Header from './components/Header';
 import MobileHero from './components/MobileHero';
@@ -12,9 +12,11 @@ import Cursos from './pages/Cursos';
 import Galeria from './pages/Galeria';
 import Precios from './pages/Precios';
 import Artista from './pages/Artista';
+import CheckoutForm from './pages/CheckoutForm';
 
-function App() {
+function AppContent() {
   const [currentPage, setCurrentPage] = useState('home');
+  const { cartItems, getTotalPrice } = useCart();
 
   const renderPage = () => {
     switch (currentPage) {
@@ -26,6 +28,8 @@ function App() {
         return <Galeria onNavigate={setCurrentPage} />;
       case 'precios':
         return <Precios onNavigate={setCurrentPage} />;
+      case 'checkout':
+        return <CheckoutForm onNavigate={setCurrentPage} cartItems={cartItems} totalPrice={getTotalPrice()} />;
       default:
         return (
           <>
@@ -40,15 +44,21 @@ function App() {
   };
 
   return (
+    <div className="min-h-screen bg-black text-white">
+      <Header onNavigate={setCurrentPage} currentPage={currentPage} />
+      <main>
+        {renderPage()}
+      </main>
+      <Footer />
+      <Cart onNavigate={setCurrentPage} />
+    </div>
+  );
+}
+
+function App() {
+  return (
     <CartProvider>
-      <div className="min-h-screen bg-black text-white">
-        <Header onNavigate={setCurrentPage} currentPage={currentPage} />
-        <main>
-          {renderPage()}
-        </main>
-        <Footer />
-        <Cart />
-      </div>
+      <AppContent />
     </CartProvider>
   );
 }

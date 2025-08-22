@@ -2,7 +2,11 @@ import React from 'react';
 import { X, Plus, Minus, ShoppingBag, Trash2 } from 'lucide-react';
 import { useCart } from './CartContext';
 
-const Cart: React.FC = () => {
+interface CartProps {
+  onNavigate: (page: string) => void;
+}
+
+const Cart: React.FC<CartProps> = ({ onNavigate }) => {
   const {
     cartItems,
     removeFromCart,
@@ -112,7 +116,13 @@ const Cart: React.FC = () => {
 
             {/* Actions */}
             <div className="space-y-3">
-              <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={() => {
+                  // Aquí se abrirá el formulario de Stripe
+                  window.open('https://buy.stripe.com/test_your_payment_link', '_blank');
+                }}
+                className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+              >
                 Proceder al Pago
               </button>
               

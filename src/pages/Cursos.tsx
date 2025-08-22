@@ -154,18 +154,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
                 </div>
 
                 <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 border border-purple-500/30 hover:border-purple-400/50 mb-3">
-                  <button
-                    onClick={() => addToCart({
-                      id: course.id,
-                      title: course.title,
-                      price: course.price,
-                      duration: course.duration,
-                      image: course.image
-                    })}
-                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 border border-purple-500/30 hover:border-purple-400/50 mb-3"
-                  >
-                    Agregar al Carrito
-                  </button>
+                  Agregar al Carrito
                 </button>
                 
                 {/* Card glow effect */}

@@ -30,7 +30,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
       id: 2,
       category: 'REMOCIÓN LÁSER',
       title: 'Te arrepientes de ese tatuaje?',
-      subtitle: 'Elimina tatuajes de forma segura',
+      subtitle: 'ELIMINALO! De forma segura',
       description: 'Tecnología láser Q-Switched de última generación para la eliminación efectiva de tatuajes. Proceso seguro, mínimo dolor y resultados garantizados.',
       stats: [
         { icon: Clock, label: 'Sesiones', value: '6-12 promedio' },

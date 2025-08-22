@@ -12,7 +12,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
   const slides = [
     {
       id: 1,
-      category: 'EDUCACIÓN',
+      category: 'ACADEMIA DE TATTOO',
       title: 'Cursos de Tatuaje Profesional',
       subtitle: 'Conviértete en un artista certificado',
       description: 'Aprende las técnicas más avanzadas del tatuaje con un instructor certificado. Desde fundamentos básicos hasta especialización en realismo y blackwork.',

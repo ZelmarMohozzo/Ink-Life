@@ -22,7 +22,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
     },
     {
       id: 2,
-      title: 'Curso Completo',
+      title: 'Curso Completo!',
       duration: '12 semanas',
       students: '2 maximo por clase',
       price: '$10.000',

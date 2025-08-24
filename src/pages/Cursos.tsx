@@ -26,7 +26,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       duration: '12 semanas',
       students: '2 maximo por clase',
       price: '$10.000',
-      image: '/wallpaperflare.com_wallpaper.jpg',
+      image: '',
       description: 'Técnicas avanzadas para crear tatuajes realistas fotográficos.',
       features: ['Realismo en piel', 'Retratos', 'Texturas avanzadas', 'Portfolio profesional']
     },

@@ -120,8 +120,12 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           {/* Mobile Menu Overlay */}
           {isMenuOpen && (
             <div 
-              className="md:hidden fixed inset-0 bg-black/90 backdrop-blur-lg z-40 top-0 pt-20"
+              className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 top-0 pt-20"
               onClick={toggleMenu}
+              style={{
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)'
+              }}
             >
               <div className="flex flex-col items-center justify-center min-h-full space-y-8 relative py-8">
                 {menuItems.map((item, index) => (

@@ -117,7 +117,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           <img 
             src="/banner_inkedlife.png" 
             alt="Inked Life" 
-            className="h-24 object-contain mt-2"
+            className="h-32 object-contain mt-2"
           />
         </div>
       </div>

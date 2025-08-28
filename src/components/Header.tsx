@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               <div className="w-20"></div>
               
               {/* Botones - Derecha */}
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
                 <CartIcon />
                 <button
                   onClick={toggleMenu}

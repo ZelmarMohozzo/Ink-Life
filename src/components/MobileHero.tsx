@@ -43,7 +43,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
           {/* Main Title */}
           <div className="space-y-3">
             <h1 className="text-3xl sm:text-4xl font-bold text-white font-['Cinzel'] tracking-wide">
-              ACADEMIA DE TATUAJES
+              INK LIFE
             </h1>
             <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent mx-auto"></div>
           </div>

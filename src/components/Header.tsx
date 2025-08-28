@@ -120,20 +120,16 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           {/* Mobile Menu Overlay */}
           {isMenuOpen && (
             <div 
-              className="md:hidden fixed inset-0 bg-black z-50 top-0"
+              className="md:hidden fixed inset-0 z-50 top-0"
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.95)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)'
+              }}
               onClick={toggleMenu}
             >
-              {/* Blur Background Layer */}
-              <div 
-                className="absolute inset-0 bg-black/80 backdrop-blur-2xl"
-                style={{
-                  backdropFilter: 'blur(25px) saturate(150%)',
-                  WebkitBackdropFilter: 'blur(25px) saturate(150%)'
-                }}
-              ></div>
-              
               {/* Menu Content */}
-              <div className="relative z-10 flex flex-col items-center justify-center min-h-screen space-y-8 pt-20">
+              <div className="flex flex-col items-center justify-center min-h-screen space-y-8 pt-20">
                 {menuItems.map((item, index) => (
                   <button
                     key={item.page}

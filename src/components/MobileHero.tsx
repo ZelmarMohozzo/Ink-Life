@@ -57,7 +57,6 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
             </div>
             
             <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent mx-auto"></div>
-          </div>
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 gap-4 max-w-sm mx-auto">

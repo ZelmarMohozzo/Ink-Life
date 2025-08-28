@@ -15,9 +15,6 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
-      
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-radial from-red-900/20 via-transparent to-transparent"></div>

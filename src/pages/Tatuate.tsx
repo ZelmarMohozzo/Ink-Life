@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Calendar, DollarSign, Palette, Clock, Star, CheckCircle, Upload, X, Camera } from 'lucide-react';
-import { useCart } from '../components/CartContext';
+import { ArrowLeft, Calendar, Palette, Clock, Star, CheckCircle, Upload, X, Camera, Mail, Send } from 'lucide-react';
 
 interface TatuateProps {
   onNavigate: (page: string) => void;
 }
 
 const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
-  const { addToCart } = useCart();
   const [selectedService, setSelectedService] = useState<any>(null);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     bodyZone: '',
     widthCm: '',
     heightCm: '',
-    date: '',
-    time: '',
+    name: '',
+    email: '',
+    phone: '',
     notes: '',
     hasReference: false
   });
@@ -28,8 +28,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
       title: 'Tatuaje Pequeño',
       size: 'Hasta 5cm',
       duration: '1-2 horas',
-      estimatedPrice: 'Desde $150',
-      price: '$150',
+      estimatedPrice: 'Consultar precio',
       image: '/tatuajes/IMG-20250614-WA0016.jpg',
       description: 'Perfecto para diseños simples, letras o símbolos pequeños.',
       features: ['Diseño personalizado', 'Consulta incluida', 'Cuidados post-tatuaje', 'Retoque gratuito'],
@@ -40,8 +39,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
       title: 'Tatuaje Mediano',
       size: '5cm - 15cm',
       duration: '2-4 horas',
-      estimatedPrice: 'Desde $350',
-      price: '$350',
+      estimatedPrice: 'Consultar precio',
       image: '/tatuajes/IMG-20250614-WA0023.jpg',
       description: 'Ideal para diseños con más detalle y complejidad.',
       features: ['Diseño personalizado', 'Múltiples sesiones si es necesario', 'Consulta incluida', 'Cuidados post-tatuaje', 'Retoque gratuito'],
@@ -52,8 +50,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
       title: 'Tatuaje Grande',
       size: 'Más de 15cm',
       duration: '4-8 horas',
-      estimatedPrice: 'Desde $650',
-      price: '$650',
+      estimatedPrice: 'Consultar precio',
       image: '/tatuajes/IMG-20250614-WA0043.jpg',
       description: 'Para diseños complejos, mangas o piezas grandes.',
       features: ['Diseño completamente personalizado', 'Múltiples sesiones', 'Consulta y bocetos incluidos', 'Seguimiento completo', 'Retoques gratuitos'],
@@ -64,8 +61,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
       title: 'Sesión Completa',
       size: 'Todo el día',
       duration: '6-10 horas',
-      estimatedPrice: 'Desde $1,200',
-      price: '$1,200',
+      estimatedPrice: 'Consultar precio',
       image: '/tatuajes/IMG-20250614-WA0030.jpg',
       description: 'Sesión completa para proyectos grandes o múltiples tatuajes.',
       features: ['Diseños múltiples', 'Día completo dedicado', 'Descansos incluidos', 'Comida incluida', 'Seguimiento VIP'],
@@ -143,9 +139,9 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
     setShowBookingForm(true);
   };
 
-  const handleBookingSubmit = () => {
-    if (!formData.bodyZone || !formData.date || !formData.time) {
-      alert('Por favor completa todos los campos obligatorios (zona del cuerpo, fecha y hora)');
+  const handleBookingSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.phone || !formData.bodyZone) {
+      alert('Por favor completa todos los campos obligatorios (nombre, email, teléfono y zona del cuerpo)');
       return;
     }
 
@@ -154,32 +150,42 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
       return;
     }
 
-    const cartItem = {
-      id: selectedService.id,
-      title: `${selectedService.title} - ${formData.bodyZone}`,
-      price: selectedService.price,
-      duration: `${formData.date} a las ${formData.time}`,
-      image: selectedService.image
-    };
+    setIsSubmitting(true);
 
-    addToCart(cartItem);
-    
-    // Reset form
-    setFormData({
-      bodyZone: '',
-      widthCm: '',
-      heightCm: '',
-      date: '',
-      time: '',
-      notes: '',
-      hasReference: false
-    });
-    setUploadedImage(null);
-    setImagePreview(null);
-    setSelectedService(null);
-    setShowBookingForm(false);
-    
-    alert('¡Reserva agregada al carrito! Te contactaremos para confirmar la cita y revisar tu diseño.');
+    try {
+      // Simular envío de email
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Aquí se integraría con un servicio de email como EmailJS o similar
+      console.log('Datos del formulario:', {
+        service: selectedService.title,
+        clientData: formData,
+        hasImage: !!uploadedImage,
+        imageFile: uploadedImage
+      });
+
+      alert('¡Información enviada correctamente! Te contactaremos pronto para coordinar tu tatuaje y enviarte el presupuesto.');
+      
+      // Reset form
+      setFormData({
+        bodyZone: '',
+        widthCm: '',
+        heightCm: '',
+        name: '',
+        email: '',
+        phone: '',
+        notes: '',
+        hasReference: false
+      });
+      setUploadedImage(null);
+      setImagePreview(null);
+      setSelectedService(null);
+      setShowBookingForm(false);
+      
+    } catch (error) {
+      alert('Error al enviar la información. Por favor intenta nuevamente.');
+    } finally {
+      setIsSubmitting(false);
   };
 
   return (
@@ -288,8 +294,10 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                       <button
                         onClick={() => handleServiceSelect(service)}
                         className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+                        className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
                       >
-                        Reservar
+                        <Mail className="h-4 w-4" />
+                        <span>Consultar</span>
                       </button>
                     </td>
                   </tr>
@@ -338,9 +346,10 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                 
                 <button
                   onClick={() => handleServiceSelect(service)}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
                 >
-                  Reservar Ahora
+                  <Mail className="h-4 w-4" />
+                  <span>Consultar Ahora</span>
                 </button>
               </div>
             ))}
@@ -352,7 +361,10 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="bg-black/90 backdrop-blur-md rounded-2xl p-8 max-w-4xl w-full border border-purple-500/30 max-h-[90vh] overflow-y-auto shadow-2xl">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-white">Reservar: {selectedService.title}</h2>
+                <h2 className="text-2xl font-bold text-white flex items-center space-x-2">
+                  <Mail className="h-6 w-6 text-purple-400" />
+                  <span>Consultar: {selectedService.title}</span>
+                </h2>
                 <button
                   onClick={() => {
                     setShowBookingForm(false);
@@ -396,6 +408,58 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
 
                 {/* Right Column - Booking Form */}
                 <div className="space-y-6">
+                  {/* Personal Information */}
+                  <div className="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                    <h3 className="text-white font-semibold mb-4">Información Personal</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-gray-300 text-sm font-medium mb-2">
+                          Nombre completo *
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                          placeholder="Tu nombre completo"
+                        />
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-gray-300 text-sm font-medium mb-2">
+                            Email *
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                            placeholder="tu@email.com"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-gray-300 text-sm font-medium mb-2">
+                            Teléfono *
+                          </label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                            placeholder="+598 99 123 456"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Image Upload Section */}
                   <div>
                     <label className="block text-gray-300 text-sm font-medium mb-3">
@@ -500,43 +564,6 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                     </div>
                   </div>
 
-                  {/* Date and Time */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">
-                        Fecha preferida *
-                      </label>
-                      <input
-                        type="date"
-                        name="date"
-                        value={formData.date}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">
-                        Hora preferida *
-                      </label>
-                      <select
-                        name="time"
-                        value={formData.time}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none transition-colors"
-                      >
-                        <option value="">Seleccionar hora</option>
-                        <option value="09:00">09:00</option>
-                        <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="15:00">15:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="17:00">17:00</option>
-                      </select>
-                    </div>
-                  </div>
 
                   {/* Additional Notes */}
                   <div>
@@ -553,26 +580,37 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                     />
                   </div>
 
-                  {/* Booking Info */}
-                  <div className="bg-green-900/20 p-4 rounded-lg border border-green-500/30">
-                    <h4 className="text-green-400 font-semibold mb-2">💰 Información de Reserva</h4>
+                  {/* Consultation Info */}
+                  <div className="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                    <h4 className="text-blue-400 font-semibold mb-2">📧 Información de Consulta</h4>
                     <p className="text-gray-300 text-sm mb-2">
-                      • Se requiere una seña del 30% para confirmar la cita
+                      • Te enviaremos un presupuesto personalizado por email
                     </p>
                     <p className="text-gray-300 text-sm mb-2">
-                      • El precio final se determina después de evaluar el diseño
+                      • Nos contactaremos contigo en menos de 24 horas
                     </p>
                     <p className="text-gray-300 text-sm">
-                      • Incluye consulta personalizada y boceto previo
+                      • La consulta inicial es completamente gratuita
                     </p>
                   </div>
 
                   {/* Submit Button */}
                   <button
                     onClick={handleBookingSubmit}
-                    className="w-full bg-gradient-to-r from-purple-600 to-green-600 hover:from-purple-700 hover:to-green-700 text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-purple-600 to-green-600 hover:from-purple-700 hover:to-green-700 text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   >
-                    Confirmar Reserva - {selectedService.estimatedPrice}
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                        <span>Enviando...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-5 w-5" />
+                        <span>Enviar Consulta</span>
+                      </>
+                    )}
                   </button>
                 </div>
               </div>

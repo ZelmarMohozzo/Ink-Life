@@ -240,25 +240,15 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
         {/* Services Comparison Table */}
         <div className="bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl border border-purple-500/20 mb-12">
           <div className="bg-gradient-to-r from-purple-600/20 to-green-600/20 p-6 border-b border-purple-500/30">
-            <h2 className="text-2xl font-bold text-white text-center">Nuestros Servicios de Tatuaje</h2>
-            <p className="text-gray-300 text-center mt-2">Compara y selecciona el servicio que mejor se adapte a tu proyecto</p>
+            <h2 className="text-2xl font-bold text-white text-center">Envíame tu diseño</h2>
           </div>
 
           {/* Desktop Table View */}
           <div className="hidden lg:block overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-black/40">
-                <tr>
-                  <th className="px-6 py-4 text-left text-white font-semibold">Servicio</th>
-                  <th className="px-6 py-4 text-center text-white font-semibold">Tamaño</th>
-                  <th className="px-6 py-4 text-center text-white font-semibold">Duración</th>
-                  <th className="px-6 py-4 text-center text-white font-semibold">Precio</th>
-                  <th className="px-6 py-4 text-center text-white font-semibold">Acción</th>
-                </tr>
-              </thead>
               <tbody>
                 {tattooServices.map((service, index) => (
-                  <tr key={service.id} className={`border-b border-gray-700/50 hover:bg-purple-500/10 transition-colors duration-300 ${service.popular ? 'bg-purple-500/5' : ''}`}>
+                  <tr key={service.id} className="border-b border-gray-700/50 hover:bg-purple-500/10 transition-colors duration-300">
                     <td className="px-6 py-6">
                       <div className="flex items-center space-x-4">
                         <img
@@ -269,11 +259,6 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                         <div>
                           <div className="flex items-center space-x-2">
                             <h3 className="text-white font-semibold text-lg">{service.title}</h3>
-                            {service.popular && (
-                              <span className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                                Popular
-                              </span>
-                            )}
                           </div>
                           <p className="text-gray-400 text-sm mt-1">{service.description}</p>
                         </div>
@@ -309,7 +294,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
           {/* Mobile Card View */}
           <div className="lg:hidden p-6 space-y-6">
             {tattooServices.map((service) => (
-              <div key={service.id} className={`bg-black/40 rounded-xl p-6 border border-gray-700/50 ${service.popular ? 'ring-2 ring-purple-500/50' : ''}`}>
+              <div key={service.id} className="bg-black/40 rounded-xl p-6 border border-gray-700/50">
                 <div className="flex items-start space-x-4 mb-4">
                   <img
                     src={service.image}
@@ -319,11 +304,6 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-2">
                       <h3 className="text-white font-semibold text-lg">{service.title}</h3>
-                      {service.popular && (
-                        <span className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                          Popular
-                        </span>
-                      )}
                     </div>
                     <p className="text-gray-400 text-sm">{service.description}</p>
                   </div>

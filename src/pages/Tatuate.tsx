@@ -274,7 +274,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                       </div>
                     </td>
                     <td className="px-6 py-6 text-center">
-                      <span className="text-purple-400 font-bold text-lg">{service.estimatedPrice}</span>
+                      <span className="text-purple-400 font-bold text-lg">Enviar diseño</span>
                     </td>
                     <td className="px-6 py-6 text-center">
                       <button
@@ -282,7 +282,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                         className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
                       >
                         <Mail className="h-4 w-4" />
-                        <span>Consultar</span>
+                        <span>Enviar diseño</span>
                       </button>
                     </td>
                   </tr>
@@ -319,8 +319,8 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                     <p className="text-white font-medium">{service.duration}</p>
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs">Precio</p>
-                    <p className="text-purple-400 font-bold">{service.estimatedPrice}</p>
+                    <p className="text-gray-400 text-xs">Acción</p>
+                    <p className="text-purple-400 font-bold">Enviar diseño</p>
                   </div>
                 </div>
                 
@@ -329,7 +329,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                   className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <Mail className="h-4 w-4" />
-                  <span>Consultar Ahora</span>
+                  <span>Enviar diseño</span>
                 </button>
               </div>
             ))}

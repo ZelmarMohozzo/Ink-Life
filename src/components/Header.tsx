@@ -97,9 +97,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
             {/* Mobile Menu Button - Right */}
             <div className="md:hidden flex items-center space-x-4">
               {/* Logo flotante en móvil */}
-              <div className={`absolute left-4 top-1/2 transform -translate-y-1/2 transition-all duration-300 ${
-                showFloatingLogo ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-              }`}>
+              <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
                 <img 
                   src="/banner_inkedlife.png" 
                   alt="Inked Life" 

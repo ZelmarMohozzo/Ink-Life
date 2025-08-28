@@ -99,12 +99,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       </header>
 
       {/* Logo Móvil Fixed - Separado del navbar */}
-      <div className="md:hidden fixed top-2 left-4 z-50">
+      <div className="md:hidden fixed top-2 left-8 z-50">
         <img 
           src="/banner_inkedlife.png" 
           alt="Inked Life" 
-          className="h-28 object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg"
-          className="h-20 object-contain mt-2"
+          className="h-32 object-contain mt-2 cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg"
         />
       </div>
 

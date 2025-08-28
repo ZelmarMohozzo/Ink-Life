@@ -42,7 +42,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
               />
               
               {/* Title overlaid on logo */}
-              <h1 className="absolute top-16 left-1/2 transform -translate-x-1/2 text-4xl sm:text-5xl font-bold text-white font-['Cinzel'] tracking-wide z-10">
+              <h1 className="absolute top-24 left-1/2 transform -translate-x-1/2 text-4xl sm:text-5xl font-bold text-white font-['Cinzel'] tracking-wide z-10">
                 INK LIFE
               </h1>
             </div>

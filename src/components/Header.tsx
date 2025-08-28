@@ -115,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           onClick={() => onNavigate('home')}
         >
           <img 
-            src="/logo.png" 
+            src="/banner_inkedlife.png" 
             alt="Inked Life" 
             className="h-24 object-contain mt-2"
           />

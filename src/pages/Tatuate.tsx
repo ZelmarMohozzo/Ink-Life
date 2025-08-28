@@ -229,10 +229,10 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
           
           <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/20 shadow-2xl">
             <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed">
-              Selecciona el tipo de tatuaje que deseas y completa tu reserva con todos los detalles.
+              Envíanos tu idea y te ayudamos a convertirla en el tatuaje perfecto. Comparte tu diseño y recibe una cotización personalizada.
             </p>
             <p className="text-lg text-gray-400 italic">
-              "Tu piel es el lienzo, nosotros creamos la obra de arte"
+              "Cada idea tiene su momento, cada diseño su historia"
             </p>
           </div>
         </div>

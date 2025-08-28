@@ -101,7 +101,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                 <img 
                   src="/banner_inkedlife.png" 
                   alt="Inked Life" 
-                  className="h-8 object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                  className="h-12 object-contain cursor-pointer hover:opacity-80 transition-opacity"
                   onClick={() => onNavigate('home')}
                 />
               </div>
@@ -120,10 +120,10 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           {/* Mobile Menu Overlay */}
           {isMenuOpen && (
             <div 
-              className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 top-0"
+              className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 top-0 pt-20"
               onClick={toggleMenu}
             >
-              <div className="flex flex-col items-center justify-center h-full space-y-8 relative">
+              <div className="flex flex-col items-center justify-center min-h-full space-y-8 relative py-8">
                 {menuItems.map((item, index) => (
                   <button
                     key={item.page}
@@ -147,11 +147,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
               
               {/* Logo at the bottom - positioned fixed independently */}
-              <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50">
                 <img 
                   src="/logo.png" 
                   alt="Inked Life Logo" 
-                  className="h-40 object-contain opacity-80"
+                  className="h-32 object-contain opacity-80"
                 />
               </div>
             </div>

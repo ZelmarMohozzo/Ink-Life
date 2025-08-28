@@ -101,9 +101,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                 showFloatingLogo ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
               }`}>
                 <img 
-                  src="/banner_inkedlife.png" 
+                  src="/logo.png" 
                   alt="Inked Life" 
-                  className="h-8 object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                  className="h-10 object-contain cursor-pointer hover:opacity-80 transition-opacity"
                   onClick={() => onNavigate('home')}
                 />
               </div>
@@ -186,9 +186,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           onClick={() => onNavigate('home')}
         >
           <img 
-            src="/banner_inkedlife.png" 
+            src="/logo.png" 
             alt="Inked Life" 
-            className="h-32 object-contain"
+            className="h-24 object-contain mt-2"
           />
         </div>
       </div>

@@ -32,25 +32,68 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
         {/* Logo */}
         <div className="mb-8">
           <img 
-            src="/banner_inkedlife.png" 
+            src="/logo.png" 
             alt="Inked Life" 
-            className="h-40 mx-auto object-contain"
+            className="h-48 md:h-56 mx-auto object-contain drop-shadow-2xl"
           />
         </div>
 
-        {/* Main Text */}
-        <h1 className="text-4xl font-bold text-white mb-4 font-['Oswald']">
-          ACADEMIA DE TATUAJES
-        </h1>
+        {/* Main Content */}
+        <div className="space-y-6">
+          {/* Main Title */}
+          <div className="space-y-3">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white font-['Cinzel'] tracking-wide">
+              ACADEMIA DE TATUAJES
+            </h1>
+            <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent mx-auto"></div>
+          </div>
 
-        {/* Services */}
-        <div className="space-y-4 mb-8">
-          <p className="text-3xl text-gray-300 font-['Oswald']">
-            Remoción de tatuajes
-          </p>
-          <p className="text-3xl text-gray-300 font-['Oswald']">
-            Tatuajes personalizados
-          </p>
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 gap-4 max-w-sm mx-auto">
+            <div className="bg-black/40 backdrop-blur-sm rounded-xl p-4 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300">
+              <h3 className="text-xl font-semibold text-white mb-2 font-['Oswald']">
+                CURSOS PROFESIONALES
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Aprende el arte del tatuaje con instructores expertos
+              </p>
+            </div>
+            
+            <div className="bg-black/40 backdrop-blur-sm rounded-xl p-4 border border-green-500/30 hover:border-green-400/50 transition-all duration-300">
+              <h3 className="text-xl font-semibold text-white mb-2 font-['Oswald']">
+                TATUAJES PERSONALIZADOS
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Diseños únicos creados especialmente para ti
+              </p>
+            </div>
+            
+            <div className="bg-black/40 backdrop-blur-sm rounded-xl p-4 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300">
+              <h3 className="text-xl font-semibold text-white mb-2 font-['Oswald']">
+                REMOCIÓN LÁSER
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Tecnología avanzada para eliminar tatuajes
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col space-y-3 max-w-xs mx-auto">
+            <button
+              onClick={() => onNavigate('cursos')}
+              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Ver Cursos
+            </button>
+            
+            <button
+              onClick={() => onNavigate('tatuate')}
+              className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Reservar Tatuaje
+            </button>
+          </div>
         </div>
 
       </div>

@@ -80,15 +80,8 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
             {/* Mobile Layout */}
             <div className="md:hidden flex items-center justify-between w-full">
-              {/* Logo Móvil - Izquierda */}
-              <div className="flex-shrink-0 relative z-10">
-                <img 
-                  src="/banner_inkedlife.png" 
-                  alt="Inked Life" 
-                  className="h-20 object-contain cursor-pointer hover:opacity-80 transition-opacity transform -translate-y-2"
-                  onClick={() => handleMenuItemClick('home')}
-                />
-              </div>
+              {/* Espacio vacío para el logo fixed */}
+              <div className="w-20"></div>
               
               {/* Botones - Derecha */}
               <div className="flex items-center space-x-4">
@@ -104,6 +97,16 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           </div>
         </div>
       </header>
+
+      {/* Logo Móvil Fixed - Separado del navbar */}
+      <div className="md:hidden fixed top-2 left-4 z-50">
+        <img 
+          src="/banner_inkedlife.png" 
+          alt="Inked Life" 
+          className="h-20 object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg"
+          onClick={() => handleMenuItemClick('home')}
+        />
+      </div>
 
       {/* Logo Desktop - Centrado */}
       <div className="hidden md:block fixed top-0 left-1/2 transform -translate-x-1/2 z-50">

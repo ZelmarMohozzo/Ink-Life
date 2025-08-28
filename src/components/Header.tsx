@@ -120,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           {/* Mobile Menu Overlay */}
           {isMenuOpen && (
             <div 
-              className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 top-0 pt-20"
+              className="md:hidden fixed inset-0 bg-black/90 backdrop-blur-lg z-40 top-0 pt-20"
               onClick={toggleMenu}
             >
               <div className="flex flex-col items-center justify-center min-h-full space-y-8 relative py-8">
@@ -144,15 +144,6 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   </button>
                 ))}
                 
-              </div>
-              
-              {/* Logo at the bottom - positioned fixed independently */}
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-                <img 
-                  src="/logo.png" 
-                  alt="Inked Life Logo" 
-                  className="h-32 object-contain opacity-80"
-                />
               </div>
             </div>
           )}

@@ -31,7 +31,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
           {/* Main Title */}
           <div className="relative space-y-3">
             {/* Title with effects */}
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold font-['Cinzel'] tracking-wider mb-8">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold font-['Cinzel'] tracking-wider mb-16">
               {/* Multiple glow layers for dramatic effect */}
               <span className="absolute inset-0 text-yellow-400 blur-lg opacity-80 animate-pulse">INK LIFE</span>
               <span className="absolute inset-0 text-yellow-300 blur-md opacity-60">INK LIFE</span>

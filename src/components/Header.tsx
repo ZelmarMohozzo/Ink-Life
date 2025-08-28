@@ -104,7 +104,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           src="/banner_inkedlife.png" 
           alt="Inked Life" 
           className="h-28 object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg"
-          onClick={() => handleMenuItemClick('home')}
+          className="h-20 object-contain mt-2"
         />
       </div>
 

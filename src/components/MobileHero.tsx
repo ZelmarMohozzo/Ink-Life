@@ -29,15 +29,6 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4">
-        {/* Logo */}
-        <div className="mb-4">
-          <img 
-            src="/logo.png" 
-            alt="Inked Life" 
-            className="h-52 md:h-60 mx-auto object-contain drop-shadow-2xl"
-          />
-        </div>
-
         {/* Main Content */}
         <div className="space-y-6">
           {/* Main Title */}
@@ -45,6 +36,14 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
             <h1 className="text-4xl sm:text-5xl font-bold text-white font-['Cinzel'] tracking-wide">
               INK LIFE
             </h1>
+            {/* Logo moved below title */}
+            <div className="mb-2">
+              <img 
+                src="/logo.png" 
+                alt="Inked Life" 
+                className="h-52 md:h-60 mx-auto object-contain drop-shadow-2xl"
+              />
+            </div>
             <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent mx-auto"></div>
           </div>
 

@@ -19,29 +19,27 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
       <div className="absolute inset-0 bg-black/60"></div>
       
       {/* Background Pattern */}
-            <div className="relative space-y-3 z-20">
-              {/* Logo sticky background */}
-              <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
-                <img 
-                  src="/logo.png" 
-                  alt="Inked Life" 
-                  className="h-96 md:h-[32rem] lg:h-[40rem] object-contain opacity-20 drop-shadow-2xl"
-                />
-              </div>
-              
-              {/* Title positioned prominently */}
-              <div className="relative z-30 text-center mb-8">
-                <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold font-['Cinzel'] tracking-wider">
-                  {/* Multiple glow layers for dramatic effect */}
-                  <span className="absolute inset-0 text-yellow-400 blur-lg opacity-80 animate-pulse">INK LIFE</span>
-                  <span className="absolute inset-0 text-yellow-300 blur-md opacity-60">INK LIFE</span>
-                  <span className="absolute inset-0 text-orange-400 blur-sm opacity-40">INK LIFE</span>
-                  {/* Main text with gradient and shadow */}
-                  <span className="relative bg-gradient-to-b from-yellow-200 via-yellow-400 to-orange-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(251,191,36,0.8)] animate-pulse">
-                    INK LIFE
-                  </span>
-                </h1>
-              </div>
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-radial from-red-900/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center px-4">
+        {/* Main Content */}
+        <div className="space-y-6">
+          {/* Main Title */}
+          <div className="relative space-y-3">
+            {/* Logo positioned first with absolute title overlay */}
+            <div className="mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Inked Life" 
+                className="h-80 md:h-96 lg:h-[28rem] mx-auto object-contain drop-shadow-2xl"
+              />
               
               {/* Title overlaid on logo with effects */}
               <h1 className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-6xl sm:text-7xl md:text-8xl font-bold font-['Cinzel'] tracking-wider z-10">
@@ -57,6 +55,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
             </div>
             
             <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent mx-auto"></div>
+          </div>
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 gap-4 max-w-sm mx-auto">
@@ -104,7 +103,10 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
               Reservar Tatuaje
             </button>
           </div>
+        </div>
 
+      </div>
+      
       {/* Animated scroll arrow - positioned at very bottom */}
       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
         <div 

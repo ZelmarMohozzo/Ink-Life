@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import CartIcon from './CartIcon';
 
 interface HeaderProps {
@@ -9,8 +9,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isAnimating, setIsAnimating] = React.useState(false);
-  const [showFloatingLogo, setShowFloatingLogo] = React.useState(false);
 
   const menuItems = [
     { name: 'Inicio', page: 'home' },
@@ -21,36 +19,22 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     { name: 'Remoción Láser', page: 'remover-tatuaje' },
   ];
 
-  // Detectar scroll para mostrar/ocultar logo flotante
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      // Mostrar logo cuando se haga scroll hacia abajo (más de 100px)
-      setShowFloatingLogo(scrollY > 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const toggleMenu = () => {
-    if (isMenuOpen) {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setIsMenuOpen(false);
-        setIsAnimating(false);
-      }, 300);
-    } else {
-      setIsMenuOpen(true);
-    }
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleMenuItemClick = (page: string) => {
+    onNavigate(page);
+    setIsMenuOpen(false);
   };
 
   return (
     <>
-      {/* Navbar */}
-      <header className="bg-black/80 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-white/10">
+      {/* Navbar Principal */}
+      <header className="bg-black/80 backdrop-blur-sm fixed w-full top-0 z-40 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-end items-center py-4 md:justify-between">
+          <div className="flex justify-between items-center py-4">
+            
             {/* Desktop Menu */}
             <div className="hidden md:flex justify-between items-center w-full">
               {/* Left Menu Items */}
@@ -72,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
               {/* Center Space for Logo */}
               <div className="flex-1 flex justify-center">
-                {/* Logo space - will be positioned here */}
+                {/* Logo space */}
               </div>
 
               {/* Right Menu Items */}
@@ -94,87 +78,34 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </nav>
             </div>
 
-            {/* Mobile Menu Button - Right */}
-            <div className="md:hidden flex items-center space-x-4">
-              {/* Logo flotante en móvil */}
-              <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+            {/* Mobile Layout */}
+            <div className="md:hidden flex items-center justify-between w-full">
+              {/* Logo Móvil - Izquierda */}
+              <div className="flex-shrink-0">
                 <img 
                   src="/banner_inkedlife.png" 
                   alt="Inked Life" 
-                  className="h-12 object-contain cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={() => onNavigate('home')}
+                  className="h-14 object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => handleMenuItemClick('home')}
                 />
               </div>
               
-              <CartIcon />
-              
-              <button
-                className="flex items-center space-x-2 text-white hover:text-red-400 transition-colors font-['Cinzel'] text-lg"
-                onClick={toggleMenu}
-              >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Menu Overlay */}
-          {isMenuOpen && (
-            <div 
-              className="md:hidden fixed inset-0 z-50 top-0"
-              style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.95)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)'
-              }}
-              onClick={toggleMenu}
-            >
-              {/* Menu Content */}
-              <div className="flex flex-col items-center justify-center min-h-screen space-y-8 pt-20">
-                {menuItems.map((item, index) => (
-                  <button
-                    key={item.page}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onNavigate(item.page);
-                      toggleMenu();
-                    }}
-                    className={`text-2xl font-medium transition-all duration-500 transform hover:scale-110 font-['Cinzel'] ${
-                      currentPage === item.page ? 'text-red-500' : 'text-white hover:text-red-400'
-                    } ${isAnimating ? 'animate-pulse' : `animate-fade-in-up`}`}
-                    style={{
-                      animationDelay: `${index * 100}ms`,
-                      animationFillMode: 'both'
-                    }}
-                  >
-                    {item.name}
-                  </button>
-                ))}
-                
+              {/* Botones - Derecha */}
+              <div className="flex items-center space-x-4">
+                <CartIcon />
+                <button
+                  onClick={toggleMenu}
+                  className="text-white hover:text-purple-400 transition-colors p-2"
+                >
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </header>
 
-      {/* Custom CSS for animations */}
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out;
-        }
-      `}</style>
-
-      {/* Logo positioned below navbar - only on desktop */}
+      {/* Logo Desktop - Centrado */}
       <div className="hidden md:block fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
         <div 
           className="cursor-pointer hover:opacity-80 transition-opacity"
@@ -187,6 +118,62 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           />
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-50">
+          {/* Fondo con blur */}
+          <div 
+            className="absolute inset-0 bg-black bg-opacity-95"
+            style={{
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)'
+            }}
+            onClick={toggleMenu}
+          />
+          
+          {/* Contenido del menú */}
+          <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
+            {/* Botón de cerrar en la esquina */}
+            <button
+              onClick={toggleMenu}
+              className="absolute top-6 right-6 text-white hover:text-red-400 transition-colors p-2"
+            >
+              <X className="h-8 w-8" />
+            </button>
+
+            {/* Items del menú */}
+            <nav className="flex flex-col items-center space-y-8">
+              {menuItems.map((item, index) => (
+                <button
+                  key={item.page}
+                  onClick={() => handleMenuItemClick(item.page)}
+                  className={`text-3xl font-medium transition-all duration-300 transform hover:scale-110 font-['Cinzel'] ${
+                    currentPage === item.page 
+                      ? 'text-purple-500' 
+                      : 'text-white hover:text-purple-400'
+                  }`}
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                  }}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </nav>
+
+            {/* Información adicional */}
+            <div className="absolute bottom-8 text-center">
+              <p className="text-gray-400 text-sm">
+                Ink Life Academia de Tatuajes
+              </p>
+              <p className="text-gray-500 text-xs mt-1">
+                Maldonado, Uruguay
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

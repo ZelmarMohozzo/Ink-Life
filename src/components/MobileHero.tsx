@@ -33,26 +33,17 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
         <div className="space-y-6">
           {/* Main Title */}
           <div className="relative space-y-3">
-            {/* Logo positioned first with absolute title overlay */}
-            <div className="mb-8">
-              <img 
-                src="/logo.png" 
-                alt="Inked Life" 
-                className="h-72 md:h-80 lg:h-96 mx-auto object-contain drop-shadow-2xl"
-              />
-              
-              {/* Title overlaid on logo with effects */}
-              <h1 className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-6xl sm:text-7xl md:text-8xl font-bold font-['Cinzel'] tracking-wider z-10">
-                {/* Multiple glow layers for dramatic effect */}
-                <span className="absolute inset-0 text-yellow-400 blur-lg opacity-80 animate-pulse">INK LIFE</span>
-                <span className="absolute inset-0 text-yellow-300 blur-md opacity-60">INK LIFE</span>
-                <span className="absolute inset-0 text-orange-400 blur-sm opacity-40">INK LIFE</span>
-                {/* Main text with gradient and shadow */}
-                <span className="relative bg-gradient-to-b from-yellow-200 via-yellow-400 to-orange-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(251,191,36,0.8)] animate-pulse">
-                  INK LIFE
-                </span>
-              </h1>
-            </div>
+            {/* Title with effects */}
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold font-['Cinzel'] tracking-wider mb-8">
+              {/* Multiple glow layers for dramatic effect */}
+              <span className="absolute inset-0 text-yellow-400 blur-lg opacity-80 animate-pulse">INK LIFE</span>
+              <span className="absolute inset-0 text-yellow-300 blur-md opacity-60">INK LIFE</span>
+              <span className="absolute inset-0 text-orange-400 blur-sm opacity-40">INK LIFE</span>
+              {/* Main text with gradient and shadow */}
+              <span className="relative bg-gradient-to-b from-yellow-200 via-yellow-400 to-orange-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(251,191,36,0.8)] animate-pulse">
+                INK LIFE
+              </span>
+            </h1>
             
             <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent mx-auto"></div>
           </div>

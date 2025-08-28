@@ -16,17 +16,17 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       duration: '8 semanas',
       students: '2 maximo por clase',
       price: '$6.500',
-      image: '/tattoo-artist-bg.png',
+      image: '/public/tattoo-artist-bg.png',
       description: 'Fundamentos del tatuaje, técnicas básicas, higiene y seguridad.',
       features: ['Teoria del color', 'Técnicas de línea', 'Sombreado básico', 'Certificado oficial']
     },
     {
       id: 2,
-      title: 'Curso Completo!',
+      title: 'Curso Completo',
       duration: '12 semanas',
       students: '2 maximo por clase',
       price: '$10.000',
-      image: '/wallpaperflare.com_wallpaper.jpg',
+      image: '/public/wallpaperflare.com_wallpaper.jpg',
       description: 'Técnicas avanzadas para crear tatuajes realistas fotográficos.',
       features: ['Realismo en piel', 'Retratos', 'Texturas avanzadas', 'Portfolio profesional']
     },
@@ -36,7 +36,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       duration: '4 meses',
       students: '2 maximo por clase',
       price: '$12.000',
-      image: '/fondo_inicio.png',
+      image: '/public/fondo_inicio.png',
       description: 'Especialización en tatuajes en negro, patrones y diseños geométricos.',
       features: ['Patrones complejos', 'Diseño geométrico', 'Técnicas de relleno', 'Estilo personal']
     }

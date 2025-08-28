@@ -122,10 +122,10 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           {/* Mobile Menu Overlay */}
           {isMenuOpen && (
             <div 
-              className="md:hidden fixed inset-0 bg-gradient-to-br from-black/95 via-purple-900/80 to-black/95 backdrop-blur-md z-40 top-0"
+              className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 top-0"
               onClick={toggleMenu}
             >
-              <div className="flex flex-col items-center justify-center h-full space-y-6 relative pt-20 pb-32">
+              <div className="flex flex-col items-center justify-center h-full space-y-8 relative">
                 {menuItems.map((item, index) => (
                   <button
                     key={item.page}
@@ -134,10 +134,8 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                       onNavigate(item.page);
                       toggleMenu();
                     }}
-                    className={`text-xl font-medium transition-all duration-500 transform hover:scale-110 font-['Cinzel'] px-6 py-3 rounded-full backdrop-blur-sm border border-white/20 hover:border-purple-400/50 ${
-                      currentPage === item.page 
-                        ? 'text-purple-400 bg-purple-900/30 border-purple-400/50' 
-                        : 'text-white hover:text-purple-300 hover:bg-white/10'
+                    className={`text-2xl font-medium transition-all duration-500 transform hover:scale-110 font-['Cinzel'] ${
+                      currentPage === item.page ? 'text-red-500' : 'text-white hover:text-red-400'
                     } ${isAnimating ? 'animate-pulse' : `animate-fade-in-up`}`}
                     style={{
                       animationDelay: `${index * 100}ms`,
@@ -151,11 +149,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
               
               {/* Logo at the bottom - positioned fixed independently */}
-              <div className="fixed bottom-12 left-1/2 transform -translate-x-1/2 z-50">
+              <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
                 <img 
                   src="/logo.png" 
                   alt="Inked Life Logo" 
-                  className="h-32 object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  className="h-40 object-contain opacity-80"
                 />
               </div>
             </div>

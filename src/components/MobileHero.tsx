@@ -38,7 +38,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
               <img 
                 src="/logo.png" 
                 alt="Inked Life" 
-                className="h-80 md:h-96 lg:h-[28rem] mx-auto object-contain drop-shadow-2xl opacity-30"
+                className="h-80 md:h-96 lg:h-[28rem] mx-auto object-contain drop-shadow-2xl"
               />
               
               {/* Title overlaid on logo with effects */}

@@ -45,6 +45,9 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
             <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent mx-auto"></div>
           </div>
 
+          {/* Large spacing before content */}
+          <div className="mb-32"></div>
+
           {/* Services Grid */}
           <div className="grid grid-cols-1 gap-4 max-w-sm mx-auto">
             <div className="bg-black/40 backdrop-blur-sm rounded-xl p-4 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300">

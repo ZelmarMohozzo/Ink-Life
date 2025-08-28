@@ -97,7 +97,14 @@ const ArtistInfo: React.FC = () => {
               </div>
               
               <button className="w-full bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 text-white py-3 rounded-lg font-medium transition-all duration-300">
-                VISITAR INSTAGRAM
+                <a
+                  href="https://www.instagram.com/nicolemos.tattoo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center"
+                >
+                  VISITAR INSTAGRAM
+                </a>
               </button>
             </div>
             
@@ -125,7 +132,14 @@ const ArtistInfo: React.FC = () => {
               </div>
               
               <button className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-medium transition-all duration-300">
-                CONTACTAR POR WHATSAPP
+                <a
+                  href="https://api.whatsapp.com/send/?phone=59892153567&text=Hola,%20me%20interesa%20información%20sobre%20los%20cursos&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center"
+                >
+                  CONTACTAR POR WHATSAPP
+                </a>
               </button>
             </div>
             

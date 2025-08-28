@@ -64,11 +64,11 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3 text-gray-200 group hover:text-green-300 transition-colors cursor-pointer">
                 <Phone className="h-5 w-5 text-green-400 group-hover:text-green-300 transition-colors" />
-                <span>+598 92 153 567</span>
+                <a href="tel:+59892153567" className="hover:underline">+598 92 153 567</a>
               </div>
               <div className="flex items-center space-x-3 text-gray-200 group hover:text-purple-300 transition-colors cursor-pointer">
                 <Mail className="h-5 w-5 text-purple-400 group-hover:text-purple-300 transition-colors" />
-                <span>info@inklifeacademia.com</span>
+                <a href="mailto:info@inklifeacademia.com" className="hover:underline">info@inklifeacademia.com</a>
               </div>
             </div>
             

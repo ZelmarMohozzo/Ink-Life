@@ -42,8 +42,8 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
               />
             </div>
             
-            {/* Absolute positioned title over logo */}
-            <h1 className="absolute top-16 left-1/2 transform -translate-x-1/2 text-4xl sm:text-5xl font-bold text-white font-['Cinzel'] tracking-wide z-10">
+            {/* Title below logo */}
+            <h1 className="text-4xl sm:text-5xl font-bold text-white font-['Cinzel'] tracking-wide mb-2">
               INK LIFE
             </h1>
             

@@ -27,7 +27,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
       {/* Content */}
       <div className="relative z-10 text-center px-4">
         {/* Main Content */}
-        <div className="space-y-6">
+        <div className="space-y-6 mt-16">
           {/* Main Title */}
           <div className="relative space-y-3">
             {/* Title with effects */}

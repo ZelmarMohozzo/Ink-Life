@@ -186,6 +186,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
       alert('Error al enviar la información. Por favor intenta nuevamente.');
     } finally {
       setIsSubmitting(false);
+    }
   };
 
   return (
@@ -293,7 +294,6 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                     <td className="px-6 py-6 text-center">
                       <button
                         onClick={() => handleServiceSelect(service)}
-                        className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
                         className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
                       >
                         <Mail className="h-4 w-4" />

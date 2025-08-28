@@ -81,11 +81,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
             {/* Mobile Layout */}
             <div className="md:hidden flex items-center justify-between w-full">
               {/* Logo Móvil - Izquierda */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 relative z-10">
                 <img 
                   src="/banner_inkedlife.png" 
                   alt="Inked Life" 
-                  className="h-14 object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                  className="h-20 object-contain cursor-pointer hover:opacity-80 transition-opacity transform -translate-y-2"
                   onClick={() => handleMenuItemClick('home')}
                 />
               </div>

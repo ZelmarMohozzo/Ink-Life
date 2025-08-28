@@ -34,15 +34,15 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onNavigate }) => {
           {/* Main Title */}
           <div className="relative space-y-3">
             {/* Logo positioned first with absolute title overlay */}
-            <div className="mb-6">
+            <div className="mb-8">
               <img 
                 src="/logo.png" 
                 alt="Inked Life" 
-                className="h-80 md:h-96 lg:h-[28rem] mx-auto object-contain drop-shadow-2xl"
+                className="h-72 md:h-80 lg:h-96 mx-auto object-contain drop-shadow-2xl"
               />
               
               {/* Title overlaid on logo with effects */}
-              <h1 className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-6xl sm:text-7xl md:text-8xl font-bold font-['Cinzel'] tracking-wider z-10">
+              <h1 className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-6xl sm:text-7xl md:text-8xl font-bold font-['Cinzel'] tracking-wider z-10">
                 {/* Multiple glow layers for dramatic effect */}
                 <span className="absolute inset-0 text-yellow-400 blur-lg opacity-80 animate-pulse">INK LIFE</span>
                 <span className="absolute inset-0 text-yellow-300 blur-md opacity-60">INK LIFE</span>

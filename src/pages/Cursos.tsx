@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowLeft, Clock, Users, Award } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, Clock, Users, Award, CheckCircle, Star, Briefcase, BookOpen, Target, Zap, Calendar, Mail } from 'lucide-react';
 import { useCart } from '../components/CartContext';
 
 interface CursosProps {
@@ -8,39 +8,148 @@ interface CursosProps {
 
 const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
   const { addToCart } = useCart();
+  const [selectedCourse, setSelectedCourse] = useState<any>(null);
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    course: '',
+    experience: '',
+    notes: ''
+  });
 
   const courses = [
     {
       id: 1,
-      title: 'Curso Básico de Tatuaje',
-      duration: '8 semanas',
-      students: '2 maximo por clase',
-      price: '$6.500',
-      image: '/public/tattoo-artist-bg.png',
-      description: 'Fundamentos del tatuaje, técnicas básicas, higiene y seguridad.',
-      features: ['Teoria del color', 'Técnicas de línea', 'Sombreado básico', 'Certificado oficial']
+      title: 'Curso Inicial',
+      level: 'Básico',
+      levelColor: 'bg-green-500',
+      duration: '1 mes de duración',
+      hoursPerClass: '2 horas por clase',
+      frequency: '2 veces por semana',
+      price: '$6,500',
+      originalPrice: '$8,000',
+      image: '/tatuajes/cursos.jpg',
+      description: 'Perfecto para comenzar en el mundo del tatuaje con bases sólidas',
+      gradient: 'from-green-600 to-green-800',
+      hoverGradient: 'hover:from-green-500 hover:to-green-700',
+      topics: [
+        'Bioseguridad',
+        'Estilos de tatuajes',
+        'Máquinas',
+        'Materiales',
+        'Línea sólida',
+        'Relleno sólida'
+      ],
+      highlights: [
+        'Fundamentos esenciales',
+        'Práctica supervisada',
+        'Certificado incluido',
+        'Materiales incluidos'
+      ]
     },
     {
       id: 2,
       title: 'Curso Completo',
-      duration: '12 semanas',
-      students: '2 maximo por clase',
-      price: '$10.000',
-      image: '/public/wallpaperflare.com_wallpaper.jpg',
-      description: 'Técnicas avanzadas para crear tatuajes realistas fotográficos.',
-      features: ['Realismo en piel', 'Retratos', 'Texturas avanzadas', 'Portfolio profesional']
+      level: 'Intermedio',
+      levelColor: 'bg-blue-500',
+      duration: '1 mes de duración',
+      hoursPerClass: '2 horas por clase',
+      frequency: '2 veces por semana',
+      price: '$10,000',
+      originalPrice: '$12,500',
+      image: '/tatuajes/cursos.jpg',
+      description: 'Amplía tus conocimientos con técnicas avanzadas de color y sombras',
+      gradient: 'from-blue-600 to-blue-800',
+      hoverGradient: 'hover:from-blue-500 hover:to-blue-700',
+      popular: true,
+      topics: [
+        'Bioseguridad',
+        'Estilos de tatuajes',
+        'Máquinas',
+        'Materiales',
+        'Línea sólida',
+        'Relleno sólida',
+        'Color sólido',
+        'Sombras'
+      ],
+      highlights: [
+        'Técnicas de color',
+        'Sombreado profesional',
+        'Portfolio personal',
+        'Seguimiento post-curso'
+      ]
     },
     {
       id: 3,
       title: 'Curso Full',
-      duration: '4 meses',
-      students: '2 maximo por clase',
-      price: '$12.000',
-      image: '/public/fondo_inicio.png',
-      description: 'Especialización en tatuajes en negro, patrones y diseños geométricos.',
-      features: ['Patrones complejos', 'Diseño geométrico', 'Técnicas de relleno', 'Estilo personal']
+      level: 'Completo',
+      levelColor: 'bg-purple-500',
+      duration: '1 mes de duración',
+      hoursPerClass: '2 horas por clase',
+      frequency: '2 veces por semana',
+      price: '$12,000',
+      originalPrice: '$15,000',
+      image: '/tatuajes/cursos.jpg',
+      description: 'Formación completa con posibilidades laborales en nuestro estudio',
+      gradient: 'from-purple-600 to-purple-800',
+      hoverGradient: 'hover:from-purple-500 hover:to-purple-700',
+      specialFeature: 'Posibilidad laboral en el estudio',
+      topics: [
+        'Bioseguridad',
+        'Estilos de tatuajes',
+        'Máquinas y materiales',
+        'Línea y relleno sólido',
+        'Color sólido',
+        'Sombras y texturas',
+        'Técnica realismo color',
+        'Posibilidad laboral en el estudio'
+      ],
+      highlights: [
+        'Realismo profesional',
+        'Oportunidad laboral',
+        'Mentorías personalizadas',
+        'Acceso al estudio'
+      ]
     }
   ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleCourseSelect = (course: any) => {
+    setSelectedCourse(course);
+    setFormData(prev => ({ ...prev, course: course.title }));
+    setShowContactForm(true);
+  };
+
+  const handleSubmitForm = async () => {
+    if (!formData.name || !formData.email || !formData.phone) {
+      alert('Por favor completa todos los campos obligatorios');
+      return;
+    }
+
+    // Simular envío
+    alert('¡Consulta enviada! Te contactaremos pronto para coordinar tu curso.');
+    
+    // Reset
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      course: '',
+      experience: '',
+      notes: ''
+    });
+    setSelectedCourse(null);
+    setShowContactForm(false);
+  };
 
   return (
     <div 
@@ -53,17 +162,8 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* Dark overlay with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/90"></div>
-      
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(147,51,234,0.3) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-          animation: 'float 20s ease-in-out infinite'
-        }}></div>
-      </div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/90"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
         <button
@@ -74,107 +174,458 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
           <span>Volver al inicio</span>
         </button>
 
-        <div className="text-center mb-16 relative">
-          {/* Glowing title with multiple layers */}
+        {/* Hero Section */}
+        <div className="text-center mb-16">
           <div className="relative mb-12">
             <h1 className="text-5xl md:text-7xl font-bold font-['Cinzel'] tracking-wide relative">
-              {/* Glow layers */}
-              <span className="absolute inset-0 text-purple-500 blur-lg opacity-60 animate-pulse">Nuestros Cursos</span>
-              <span className="absolute inset-0 text-purple-400 blur-md opacity-40">Nuestros Cursos</span>
-              <span className="absolute inset-0 text-green-400 blur-sm opacity-30">Nuestros Cursos</span>
-              {/* Main text */}
+              <span className="absolute inset-0 text-purple-500 blur-lg opacity-60 animate-pulse">Academia de Tatuajes</span>
+              <span className="absolute inset-0 text-purple-400 blur-md opacity-40">Academia de Tatuajes</span>
+              <span className="absolute inset-0 text-green-400 blur-sm opacity-30">Academia de Tatuajes</span>
               <span className="relative text-white drop-shadow-[0_0_20px_rgba(147,51,234,0.8)]">
-                Nuestros Cursos
+                Academia de Tatuajes
               </span>
             </h1>
             
-            {/* Decorative lines with glow */}
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-60 h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-60 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent blur-sm opacity-60"></div>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent blur-md opacity-40"></div>
           </div>
           
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/20 shadow-2xl">
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/20 shadow-2xl mb-12">
             <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed">
-            Aprende el arte del tatuaje con los mejores instructores. Desde nivel principiante hasta técnicas avanzadas profesionales.
+              Aprende el arte del tatuaje con instructores profesionales. Cursos presenciales con máximo 2 alumnos por clase.
             </p>
             <p className="text-lg text-gray-400 italic">
               "Cada línea cuenta una historia, cada sombra tiene un propósito"
             </p>
           </div>
-          
-          {/* Floating decorative elements */}
-          <div className="absolute top-0 left-10 w-4 h-4 bg-purple-500/30 rounded-full animate-bounce" style={{animationDelay: '0s'}}></div>
-          <div className="absolute top-20 right-10 w-3 h-3 bg-green-400/40 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-10 left-20 w-2 h-2 bg-purple-300/50 rounded-full animate-bounce" style={{animationDelay: '2s'}}></div>
+
+          {/* Hero Image */}
+          <div className="relative max-w-4xl mx-auto mb-12">
+            <img
+              src="/tatuajes/cursos.jpg"
+              alt="Cursos de Tatuaje"
+              className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-purple-500/30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
+            <div className="absolute bottom-6 left-6 right-6">
+              <h3 className="text-white text-2xl font-bold mb-2">Formación Profesional</h3>
+              <p className="text-gray-200">Aprende con equipos profesionales y técnicas actualizadas</p>
+            </div>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Course Cards */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {courses.map((course) => (
-            <div key={course.id} className="group bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform hover:scale-[1.05] hover:-translate-y-2 border border-purple-500/20 hover:border-green-400/40">
-              <div className="relative">
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
-                
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm border border-purple-400/30">
-                  {course.price}
-                </div>
-                
-                {/* Floating glow effect */}
-                <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
+            <div key={course.id} className="relative">
+              {/* Badge */}
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+                {course.popular ? (
+                  <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                    Más Popular
+                  </span>
+                ) : course.specialFeature ? (
+                  <span className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                    Con Trabajo
+                  </span>
+                ) : (
+                  <span className={`${course.levelColor} text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg`}>
+                    {course.level}
+                  </span>
+                )}
               </div>
               
-              <div className="p-6 relative">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300">{course.title}</h3>
-                <p className="text-gray-300 mb-4 leading-relaxed">{course.description}</p>
-                
-                <div className="flex items-center justify-between mb-6 text-sm text-gray-400">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="h-4 w-4 text-purple-400" />
-                    <span>{course.duration}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Users className="h-4 w-4 text-green-400" />
-                    <span>{course.students}</span>
+              <div className={`bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 border border-gray-700/50 hover:border-purple-500/50 pt-6`}>
+                {/* Course Image */}
+                <div className="relative mx-6 mb-6">
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-48 object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
+                  <div className="absolute top-4 right-4">
+                    <span className={`${course.levelColor} text-white px-3 py-1 rounded-full text-xs font-bold`}>
+                      {course.level}
+                    </span>
                   </div>
                 </div>
 
-                <div className="space-y-2 mb-6">
-                  {course.features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-sm text-gray-300 hover:text-white transition-colors duration-200">
-                      <Award className="h-4 w-4 text-green-400 group-hover:text-green-300 transition-colors duration-300" />
-                      <span>{feature}</span>
+                <div className="px-6 pb-6">
+                  {/* Course Header */}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">{course.title}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">{course.description}</p>
+                  </div>
+
+                  {/* Course Details */}
+                  <div className="grid grid-cols-1 gap-3 mb-6">
+                    <div className="flex items-center space-x-3 text-gray-200 bg-black/30 p-3 rounded-lg">
+                      <Calendar className="h-5 w-5 text-purple-400" />
+                      <span className="text-sm font-medium">{course.duration}</span>
                     </div>
-                  ))}
+                    <div className="flex items-center space-x-3 text-gray-200 bg-black/30 p-3 rounded-lg">
+                      <Clock className="h-5 w-5 text-green-400" />
+                      <span className="text-sm font-medium">{course.hoursPerClass}</span>
+                    </div>
+                    <div className="flex items-center space-x-3 text-gray-200 bg-black/30 p-3 rounded-lg">
+                      <Users className="h-5 w-5 text-blue-400" />
+                      <span className="text-sm font-medium">{course.frequency}</span>
+                    </div>
+                    {course.specialFeature && (
+                      <div className="flex items-center space-x-3 text-yellow-300 bg-yellow-900/20 p-3 rounded-lg border border-yellow-500/30">
+                        <Briefcase className="h-5 w-5" />
+                        <span className="text-sm font-semibold">{course.specialFeature}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Price */}
+                  <div className="mb-6 text-center">
+                    <div className="flex items-center justify-center space-x-2 mb-2">
+                      <span className="text-3xl font-black text-white">{course.price}</span>
+                      {course.originalPrice && (
+                        <span className="text-lg text-gray-500 line-through">{course.originalPrice}</span>
+                      )}
+                    </div>
+                    {course.originalPrice && (
+                      <div className="text-green-400 text-sm font-semibold">
+                        Ahorro: ${parseInt(course.originalPrice.replace('$', '').replace(',', '')) - parseInt(course.price.replace('$', '').replace(',', ''))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Highlights */}
+                  <div className="mb-6">
+                    <h4 className="text-white font-semibold mb-3 flex items-center space-x-2">
+                      <Star className="h-4 w-4 text-yellow-400" />
+                      <span>Incluye:</span>
+                    </h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      {course.highlights.map((highlight, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                          <span className="text-gray-300 text-sm">{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="space-y-3">
+                    <button 
+                      onClick={() => handleCourseSelect(course)}
+                      className={`w-full bg-gradient-to-r ${course.gradient} ${course.hoverGradient} text-white py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg`}
+                    >
+                      Consultar Curso
+                    </button>
+                    
+                    <button 
+                      onClick={() => addToCart({
+                        id: course.id,
+                        title: course.title,
+                        price: course.price,
+                        duration: course.duration,
+                        image: course.image
+                      })}
+                      className="w-full bg-black/40 hover:bg-black/60 text-white py-2 rounded-full font-medium transition-all duration-300 border border-gray-600 hover:border-purple-500/50"
+                    >
+                      Agregar al Carrito
+                    </button>
+                  </div>
                 </div>
-                <button 
-                  onClick={() => addToCart({
-                    id: course.id,
-                    title: course.title,
-                    price: course.price,
-                    duration: course.duration,
-                    image: course.image
-                  })}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 border border-purple-500/30 hover:border-purple-400/50 mb-3"
-                >
-                  Agregar al Carrito
-                </button>
-                
-                {/* Card glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
               </div>
             </div>
           ))}
         </div>
-        
+
+        {/* Course Comparison Table */}
+        <div className="bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl border border-purple-500/20 mb-16">
+          <div className="bg-gradient-to-r from-purple-600/20 to-green-600/20 p-6 border-b border-purple-500/30">
+            <h2 className="text-2xl font-bold text-white text-center">Comparación de Cursos</h2>
+            <p className="text-gray-300 text-center mt-2">Encuentra el curso perfecto para tu nivel</p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-gray-700">
+                  <th className="text-left p-4 text-white font-semibold">Contenido</th>
+                  <th className="text-center p-4 text-green-400 font-semibold">Inicial</th>
+                  <th className="text-center p-4 text-blue-400 font-semibold">Completo</th>
+                  <th className="text-center p-4 text-purple-400 font-semibold">Full</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  'Bioseguridad',
+                  'Estilos de tatuajes',
+                  'Máquinas y materiales',
+                  'Línea sólida',
+                  'Relleno sólida',
+                  'Color sólido',
+                  'Sombras y texturas',
+                  'Técnica realismo color',
+                  'Posibilidad laboral'
+                ].map((topic, index) => (
+                  <tr key={index} className="border-b border-gray-800/50 hover:bg-white/5 transition-colors">
+                    <td className="p-4 text-gray-300">{topic}</td>
+                    <td className="text-center p-4">
+                      {courses[0].topics.includes(topic) ? (
+                        <CheckCircle className="h-5 w-5 text-green-400 mx-auto" />
+                      ) : (
+                        <div className="w-5 h-5 mx-auto"></div>
+                      )}
+                    </td>
+                    <td className="text-center p-4">
+                      {courses[1].topics.includes(topic) ? (
+                        <CheckCircle className="h-5 w-5 text-blue-400 mx-auto" />
+                      ) : (
+                        <div className="w-5 h-5 mx-auto"></div>
+                      )}
+                    </td>
+                    <td className="text-center p-4">
+                      {courses[2].topics.includes(topic) ? (
+                        <CheckCircle className="h-5 w-5 text-purple-400 mx-auto" />
+                      ) : (
+                        <div className="w-5 h-5 mx-auto"></div>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Benefits Section */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 p-6 rounded-xl border border-purple-500/30 text-center">
+            <div className="bg-purple-500 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+              <Users className="h-8 w-8 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-3">Clases Personalizadas</h3>
+            <p className="text-gray-300">Máximo 2 estudiantes por clase para atención personalizada y aprendizaje efectivo.</p>
+          </div>
+
+          <div className="bg-gradient-to-br from-green-900/40 to-green-800/20 p-6 rounded-xl border border-green-500/30 text-center">
+            <div className="bg-green-500 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+              <Award className="h-8 w-8 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-3">Certificación Oficial</h3>
+            <p className="text-gray-300">Recibe tu certificado oficial al completar el curso y accede a oportunidades laborales.</p>
+          </div>
+
+          <div className="bg-gradient-to-br from-blue-900/40 to-blue-800/20 p-6 rounded-xl border border-blue-500/30 text-center">
+            <div className="bg-blue-500 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+              <Target className="h-8 w-8 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-3">Práctica Real</h3>
+            <p className="text-gray-300">Practica en piel sintética y real bajo supervisión profesional constante.</p>
+          </div>
+        </div>
+
+        {/* Contact Form Modal */}
+        {showContactForm && selectedCourse && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-black/90 backdrop-blur-md rounded-2xl p-8 max-w-2xl w-full border border-purple-500/30 max-h-[90vh] overflow-y-auto shadow-2xl">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-white flex items-center space-x-2">
+                  <BookOpen className="h-6 w-6 text-purple-400" />
+                  <span>Consultar: {selectedCourse.title}</span>
+                </h2>
+                <button
+                  onClick={() => {
+                    setShowContactForm(false);
+                    setSelectedCourse(null);
+                  }}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Course Info */}
+                <div>
+                  <img
+                    src={selectedCourse.image}
+                    alt={selectedCourse.title}
+                    className="w-full h-32 object-cover rounded-lg mb-4"
+                  />
+                  <div className="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                    <h3 className="text-white font-semibold mb-3">Detalles del Curso</h3>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Duración:</span>
+                        <span className="text-white">{selectedCourse.duration}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Clases:</span>
+                        <span className="text-white">{selectedCourse.hoursPerClass}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Frecuencia:</span>
+                        <span className="text-white">{selectedCourse.frequency}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Precio:</span>
+                        <span className="text-green-400 font-bold">{selectedCourse.price}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Topics */}
+                  <div className="mt-4 bg-black/40 p-4 rounded-lg border border-gray-700/50">
+                    <h4 className="text-white font-semibold mb-3">Temario:</h4>
+                    <div className="space-y-1">
+                      {selectedCourse.topics.map((topic: string, index: number) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                          <span className="text-gray-300 text-sm">{topic}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Contact Form */}
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Nombre completo *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                      placeholder="Tu nombre completo"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                      placeholder="tu@email.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Teléfono *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                      placeholder="+598 99 123 456"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Experiencia previa
+                    </label>
+                    <select
+                      name="experience"
+                      value={formData.experience}
+                      onChange={handleInputChange}
+                      className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                    >
+                      <option value="">Seleccionar nivel</option>
+                      <option value="Ninguna">Sin experiencia</option>
+                      <option value="Básica">Experiencia básica</option>
+                      <option value="Intermedia">Experiencia intermedia</option>
+                      <option value="Avanzada">Experiencia avanzada</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Notas adicionales
+                    </label>
+                    <textarea
+                      name="notes"
+                      value={formData.notes}
+                      onChange={handleInputChange}
+                      rows={3}
+                      className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors resize-none"
+                      placeholder="Preguntas, expectativas, horarios preferidos..."
+                    />
+                  </div>
+
+                  <button
+                    onClick={handleSubmitForm}
+                    className="w-full bg-gradient-to-r from-purple-600 to-green-600 hover:from-purple-700 hover:to-green-700 text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                  >
+                    <Mail className="h-5 w-5" />
+                    <span>Enviar Consulta</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Why Choose Us Section */}
+        <div className="bg-gradient-to-br from-purple-900/40 to-green-900/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 shadow-2xl mb-16">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">¿Por Qué Elegir Nuestra Academia?</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Users,
+                title: 'Clases Reducidas',
+                description: 'Máximo 2 alumnos por clase para atención personalizada',
+                color: 'text-purple-400'
+              },
+              {
+                icon: Award,
+                title: '12+ Años Experiencia',
+                description: 'Instructor con amplia trayectoria nacional e internacional',
+                color: 'text-green-400'
+              },
+              {
+                icon: Briefcase,
+                title: 'Oportunidades Laborales',
+                description: 'Posibilidad de trabajar en nuestro estudio al finalizar',
+                color: 'text-blue-400'
+              },
+              {
+                icon: Target,
+                title: 'Práctica Real',
+                description: 'Equipos profesionales y práctica en condiciones reales',
+                color: 'text-yellow-400'
+              }
+            ].map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className="bg-black/40 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center border border-gray-700/50">
+                  <benefit.icon className={`h-8 w-8 ${benefit.color}`} />
+                </div>
+                <h3 className="text-white font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* WhatsApp Contact Section */}
-        <div className="mt-16 text-center">
-          <div className="max-w-2xl mx-auto bg-gradient-to-br from-purple-900/40 to-green-900/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 shadow-2xl">
+        <div className="text-center">
+          <div className="max-w-2xl mx-auto bg-gradient-to-br from-green-900/40 to-emerald-900/40 backdrop-blur-md rounded-2xl p-8 border border-green-500/30 shadow-2xl">
             <div className="flex items-center justify-center mb-6">
               <div className="bg-green-500 p-4 rounded-full">
                 <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -212,20 +663,6 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
           </div>
         </div>
       </div>
-      
-      {/* Custom CSS for animations */}
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33% { transform: translateY(-10px) rotate(1deg); }
-          66% { transform: translateY(5px) rotate(-1deg); }
-        }
-        
-        @keyframes glow {
-          0%, 100% { opacity: 0.6; }
-          50% { opacity: 1; }
-        }
-      `}</style>
     </div>
   );
 };

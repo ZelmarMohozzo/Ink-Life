@@ -240,14 +240,6 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Slide Counter */}
-      <div className="absolute top-8 md:top-12 right-4 md:right-8 z-20">
-        <div className="bg-black/30 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-          <span className="text-white font-semibold">
-            {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
-          </span>
-        </div>
-      </div>
     </section>
   );
 };

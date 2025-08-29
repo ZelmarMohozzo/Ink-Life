@@ -380,7 +380,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
                       )}
                     </td>
                     <td className="text-center p-4">
-                      {courses[2].topics.includes(topic) ? (
+                      {true ? (
                         <CheckCircle className="h-5 w-5 text-purple-400 mx-auto" />
                       ) : (
                         <div className="w-5 h-5 mx-auto"></div>

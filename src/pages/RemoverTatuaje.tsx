@@ -288,26 +288,26 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
             {/* Pricing Plans */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {laserPackages.map((pkg) => (
-                <div
-                  key={pkg.id}
-                  className={`relative bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.05] hover:-translate-y-2 border ${
-                    pkg.popular 
-                      ? 'border-purple-500/50 ring-2 ring-purple-500/30' 
-                      : 'border-gray-700/50 hover:border-blue-500/50'
-                  }`}
-                >
+                <div key={pkg.id} className="relative">
                   {/* Badge */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
                     <span className={`${
                       pkg.popular 
                         ? 'bg-gradient-to-r from-purple-600 to-purple-700' 
                         : 'bg-gradient-to-r from-blue-600 to-blue-700'
-                    } text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg relative z-20`}>
+                    } text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg`}>
                       {pkg.badge}
                     </span>
                   </div>
                   
-                  <div className="p-6 pt-8">
+                  <div
+                    className={`bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.05] hover:-translate-y-2 border ${
+                      pkg.popular 
+                        ? 'border-purple-500/50 ring-2 ring-purple-500/30' 
+                        : 'border-gray-700/50 hover:border-blue-500/50'
+                    }`}
+                  >
+                    <div className="p-6 pt-8">
                     <h3 className="text-xl font-bold text-white mb-2">{pkg.name}</h3>
                     <p className="text-gray-400 mb-4 text-sm">{pkg.description}</p>
                     
@@ -340,6 +340,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                     >
                       Reservar Ahora
                     </button>
+                    </div>
                   </div>
                 </div>
               ))}

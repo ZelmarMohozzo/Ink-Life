@@ -202,7 +202,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
           {/* Hero Image */}
           <div className="relative max-w-4xl mx-auto mb-12">
             <img
-              src="/tatuajes/cursos.jpg"
+              src="/cursos_tatuador.png"
               alt="Cursos de Tatuaje"
               className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-purple-500/30"
             />

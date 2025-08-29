@@ -221,15 +221,15 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
               {/* Badge */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
                 {course.popular ? (
-                  <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-                    Más Popular
+                  <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                    {course.level}
                   </span>
                 ) : course.specialFeature ? (
-                  <span className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-                    Con Trabajo
+                  <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                    {course.level}
                   </span>
                 ) : (
-                  <span className={`${course.levelColor} text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg`}>
+                  <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
                     {course.level}
                   </span>
                 )}

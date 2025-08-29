@@ -84,9 +84,21 @@ const Galeria: React.FC<GaleriaProps> = ({ onNavigate }) => {
   }
 
   return (
-    <div className="min-h-screen bg-black pt-20 relative overflow-hidden">
+    <div 
+      className="min-h-screen pt-20 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/Diseño sin título (5).png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/70"></div>
+      
       {/* Animated background */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-3">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 25% 25%, rgba(147,51,234,0.3) 1px, transparent 1px)`,
           backgroundSize: '60px 60px',

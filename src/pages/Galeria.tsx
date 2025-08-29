@@ -129,6 +129,20 @@ const Galeria: React.FC<GaleriaProps> = ({ onNavigate }) => {
               "El arte permanece, la piel es solo el lienzo"
             </p>
           </div>
+
+          {/* Hero Image */}
+          <div className="relative max-w-4xl mx-auto mb-12">
+            <img
+              src="/Diseño sin título (5).png"
+              alt="Galería de Tatuajes"
+              className="w-full h-96 object-cover rounded-2xl shadow-2xl border border-purple-500/30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
+            <div className="absolute bottom-6 left-6 right-6">
+              <h3 className="text-white text-2xl font-bold mb-2">Arte en la Piel</h3>
+              <p className="text-gray-200">Cada tatuaje es una obra de arte única y personal</p>
+            </div>
+          </div>
         </div>
 
         {/* Enhanced Search and Filter Section */}

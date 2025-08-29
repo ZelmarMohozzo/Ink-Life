@@ -244,11 +244,6 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
                     className="w-full h-48 object-cover rounded-xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
-                  <div className="absolute top-4 right-4">
-                    <span className={`${course.levelColor} text-white px-3 py-1 rounded-full text-xs font-bold`}>
-                      {course.level}
-                    </span>
-                  </div>
                 </div>
 
                 <div className="px-6 pb-6">

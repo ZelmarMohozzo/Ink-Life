@@ -25,49 +25,34 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
   const tattooServices = [
     {
       id: 101,
-      title: 'Tatuaje Pequeño',
-      size: 'Hasta 5cm',
-      duration: '1-2 horas',
-      estimatedPrice: 'Consultar precio',
-      image: '/tatuajes/IMG-20250614-WA0016.jpg',
-      description: 'Perfecto para diseños simples, letras o símbolos pequeños.',
-      features: ['Diseño personalizado', 'Consulta incluida', 'Cuidados post-tatuaje', 'Retoque gratuito'],
-      popular: false
-    },
-    {
-      id: 102,
-      title: 'Tatuaje Mediano',
-      size: '5cm - 15cm',
-      duration: '2-4 horas',
-      estimatedPrice: 'Consultar precio',
-      image: '/tatuajes/IMG-20250614-WA0023.jpg',
-      description: 'Ideal para diseños con más detalle y complejidad.',
-      features: ['Diseño personalizado', 'Múltiples sesiones si es necesario', 'Consulta incluida', 'Cuidados post-tatuaje', 'Retoque gratuito'],
-      popular: true
-    },
-    {
-      id: 103,
-      title: 'Tatuaje Grande',
-      size: 'Más de 15cm',
-      duration: '4-8 horas',
-      estimatedPrice: 'Consultar precio',
+      title: 'Consulta de Tatuaje Personalizado',
+      description: 'Envíanos tu diseño y las medidas para recibir una cotización personalizada.',
       image: '/tatuajes/IMG-20250614-WA0043.jpg',
-      description: 'Para diseños complejos, mangas o piezas grandes.',
-      features: ['Diseño completamente personalizado', 'Múltiples sesiones', 'Consulta y bocetos incluidos', 'Seguimiento completo', 'Retoques gratuitos'],
-      popular: false
-    },
-    {
-      id: 104,
-      title: 'Sesión Completa',
-      size: 'Todo el día',
-      duration: '6-10 horas',
-      estimatedPrice: 'Consultar precio',
-      image: '/tatuajes/IMG-20250614-WA0030.jpg',
-      description: 'Sesión completa para proyectos grandes o múltiples tatuajes.',
-      features: ['Diseños múltiples', 'Día completo dedicado', 'Descansos incluidos', 'Comida incluida', 'Seguimiento VIP'],
-      popular: false
+      features: ['Diseño personalizado', 'Consulta incluida', 'Presupuesto detallado', 'Cuidados post-tatuaje', 'Retoque gratuito'],
+      popular: true
     }
   ];
+
+  // Función para determinar el tipo de tatuaje según las dimensiones
+  const getTattooType = (width: number, height: number) => {
+    const maxDimension = Math.max(width, height);
+    const area = width * height;
+    
+    if (maxDimension <= 5) {
+      return { type: 'Pequeño', duration: '1-2 horas', description: 'Perfecto para diseños simples, letras o símbolos pequeños' };
+    } else if (maxDimension <= 15) {
+      return { type: 'Mediano', duration: '2-4 horas', description: 'Ideal para diseños con más detalle y complejidad' };
+    } else if (maxDimension <= 25 || area <= 400) {
+      return { type: 'Grande', duration: '4-8 horas', description: 'Para diseños complejos, mangas o piezas grandes' };
+    } else {
+      return { type: 'Sesión Completa', duration: '6-10 horas', description: 'Sesión completa para proyectos grandes o múltiples tatuajes' };
+    }
+  };
+
+  // Calcular el tipo de tatuaje basado en las dimensiones actuales
+  const currentTattooInfo = formData.widthCm && formData.heightCm 
+    ? getTattooType(parseFloat(formData.widthCm), parseFloat(formData.heightCm))
+    : null;
 
   const bodyZones = [
     'Brazo (antebrazo)',
@@ -241,98 +226,94 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
         <div className="bg-black/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl border border-purple-500/20 mb-12">
           <div className="bg-gradient-to-r from-purple-600/20 to-green-600/20 p-6 border-b border-purple-500/30">
             <h2 className="text-2xl font-bold text-white text-center">Envíame tu diseño</h2>
+            <p className="text-gray-300 text-center mt-2">Completa las medidas para recibir una cotización personalizada</p>
           </div>
 
-          {/* Desktop Table View */}
-          <div className="hidden lg:block overflow-x-auto">
-            <table className="w-full">
-              <tbody>
-                {tattooServices.map((service, index) => (
-                  <tr key={service.id} className="border-b border-gray-700/50 hover:bg-purple-500/10 transition-colors duration-300">
-                    <td className="px-6 py-6">
-                      <div className="flex items-center space-x-4">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-16 h-16 object-cover rounded-lg"
-                        />
-                        <div>
-                          <div className="flex items-center space-x-2">
-                            <h3 className="text-white font-semibold text-lg">{service.title}</h3>
-                          </div>
-                          <p className="text-gray-400 text-sm mt-1">{service.description}</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-6 text-center">
-                      <span className="text-gray-300 font-medium">{service.size}</span>
-                    </td>
-                    <td className="px-6 py-6 text-center">
+          <div className="p-8">
+            <div className="max-w-2xl mx-auto">
+              {/* Imagen de referencia */}
+              <div className="text-center mb-8">
+                <img
+                  src="/tatuajes/IMG-20250614-WA0043.jpg"
+                  alt="Tatuaje de referencia"
+                  className="w-full max-w-md mx-auto h-64 object-cover rounded-lg border border-purple-500/30"
+                />
+              </div>
+
+              {/* Formulario de dimensiones */}
+              <div className="bg-black/40 rounded-xl p-6 border border-gray-700/50 mb-6">
+                <h3 className="text-white font-semibold mb-4 text-center">Dimensiones del Tatuaje</h3>
+                
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Ancho (cm) *
+                    </label>
+                    <input
+                      type="number"
+                      name="widthCm"
+                      value={formData.widthCm}
+                      onChange={handleInputChange}
+                      min="1"
+                      max="50"
+                      required
+                      className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                      placeholder="ej: 10"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Alto (cm) *
+                    </label>
+                    <input
+                      type="number"
+                      name="heightCm"
+                      value={formData.heightCm}
+                      onChange={handleInputChange}
+                      min="1"
+                      max="50"
+                      required
+                      className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                      placeholder="ej: 15"
+                    />
+                  </div>
+                </div>
+
+                {/* Mostrar categoría automática */}
+                {currentTattooInfo && (
+                  <div className="bg-gradient-to-r from-purple-900/40 to-green-900/40 rounded-lg p-4 border border-purple-500/30 mb-4">
+                    <div className="text-center">
+                      <h4 className="text-white font-semibold text-lg mb-2">
+                        Categoría: {currentTattooInfo.type}
+                      </h4>
+                      <p className="text-gray-300 text-sm mb-2">{currentTattooInfo.description}</p>
                       <div className="flex items-center justify-center space-x-1">
                         <Clock className="h-4 w-4 text-green-400" />
-                        <span className="text-gray-300">{service.duration}</span>
+                        <span className="text-green-400 font-medium">{currentTattooInfo.duration}</span>
                       </div>
-                    </td>
-                    <td className="px-6 py-6 text-center">
-                      <span className="text-purple-400 font-bold text-lg">Enviar diseño</span>
-                    </td>
-                    <td className="px-6 py-6 text-center">
-                      <button
-                        onClick={() => handleServiceSelect(service)}
-                        className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
-                      >
-                        <Mail className="h-4 w-4" />
-                        <span>Enviar diseño</span>
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Mobile Card View */}
-          <div className="lg:hidden p-6 space-y-6">
-            {tattooServices.map((service) => (
-              <div key={service.id} className="bg-black/40 rounded-xl p-6 border border-gray-700/50">
-                <div className="flex items-start space-x-4 mb-4">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-20 h-20 object-cover rounded-lg"
-                  />
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <h3 className="text-white font-semibold text-lg">{service.title}</h3>
                     </div>
-                    <p className="text-gray-400 text-sm">{service.description}</p>
                   </div>
-                </div>
-                
-                <div className="grid grid-cols-3 gap-4 mb-4 text-center">
-                  <div>
-                    <p className="text-gray-400 text-xs">Tamaño</p>
-                    <p className="text-white font-medium">{service.size}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-xs">Duración</p>
-                    <p className="text-white font-medium">{service.duration}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-xs">Acción</p>
-                    <p className="text-purple-400 font-bold">Enviar diseño</p>
-                  </div>
-                </div>
-                
-                <button
-                  onClick={() => handleServiceSelect(service)}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
-                >
-                  <Mail className="h-4 w-4" />
-                  <span>Enviar diseño</span>
-                </button>
+                )}
               </div>
-            ))}
+
+              {/* Botón para continuar */}
+              <div className="text-center">
+                <button
+                  onClick={() => handleServiceSelect(tattooServices[0])}
+                  disabled={!formData.widthCm || !formData.heightCm}
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 mx-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span>Enviar Consulta</span>
+                </button>
+                
+                {(!formData.widthCm || !formData.heightCm) && (
+                  <p className="text-gray-400 text-sm mt-2">
+                    Completa las dimensiones para continuar
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -362,7 +343,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                 {/* Left Column - Service Info */}
                 <div>
                   <img
-                    src={selectedService.image}
+                    src="/tatuajes/IMG-20250614-WA0043.jpg"
                     alt={selectedService.title}
                     className="w-full h-48 object-cover rounded-lg mb-4"
                   />
@@ -543,7 +524,6 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                       />
                     </div>
                   </div>
-
 
                   {/* Additional Notes */}
                   <div>

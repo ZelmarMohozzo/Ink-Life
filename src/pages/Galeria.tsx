@@ -87,7 +87,7 @@ const Galeria: React.FC<GaleriaProps> = ({ onNavigate }) => {
     <div 
       className="min-h-screen pt-20 relative overflow-hidden"
       style={{
-        backgroundImage: 'url(/Diseño sin título (5).png)',
+        backgroundImage: 'url(/texture-dark.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

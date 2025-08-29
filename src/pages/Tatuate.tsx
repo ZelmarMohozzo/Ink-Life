@@ -6,8 +6,8 @@ interface TatuateProps {
 }
 
 const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
-  const [selectedService, setSelectedService] = useState<any>(tattooServices[0]);
-  const [showBookingForm, setShowBookingForm] = useState(true);
+  const [selectedService, setSelectedService] = useState<any>(null);
+  const [showBookingForm, setShowBookingForm] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -297,27 +297,47 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
               </div>
 
               {/* Botón para continuar */}
-              <div className="text-center mb-8">
-                <p className="text-gray-300 text-lg font-semibold">
-                  📝 Completa el formulario abajo para recibir tu cotización personalizada
-                </p>
+              <div className="text-center">
+                <button
+                  onClick={() => handleServiceSelect(tattooServices[0])}
+                  disabled={!formData.widthCm || !formData.heightCm}
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 mx-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span>Enviar Consulta</span>
+                </button>
+                
+                {(!formData.widthCm || !formData.heightCm) && (
+                  <p className="text-gray-400 text-sm mt-2">
+                    Completa las dimensiones para continuar
+                  </p>
+                )}
               </div>
             </div>
           </div>
         </div>
 
         {/* Booking Form Modal */}
-        {/* Booking Form Section */}
-        <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 shadow-2xl">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-white flex items-center justify-center space-x-3 mb-4">
-              <Mail className="h-8 w-8 text-purple-400" />
-              <span>Formulario de Consulta</span>
-            </h2>
-            <p className="text-gray-300 text-center text-lg">
-              Completa la información para recibir tu presupuesto personalizado
-            </p>
-          </div>
+        {showBookingForm && selectedService && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-black/90 backdrop-blur-md rounded-2xl p-8 max-w-4xl w-full border border-purple-500/30 max-h-[90vh] overflow-y-auto shadow-2xl">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-white flex items-center space-x-2">
+                  <Mail className="h-6 w-6 text-purple-400" />
+                  <span>Consultar: {selectedService.title}</span>
+                </h2>
+                <button
+                  onClick={() => {
+                    setShowBookingForm(false);
+                    setSelectedService(null);
+                    setUploadedImage(null);
+                    setImagePreview(null);
+                  }}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
 
               <div className="grid lg:grid-cols-2 gap-8">
                 {/* Left Column - Service Info */}
@@ -537,7 +557,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                   {/* Submit Button */}
                   <button
                     onClick={handleBookingSubmit}
-                    disabled={isSubmitting || !formData.name || !formData.email || !formData.phone || !formData.bodyZone || (!uploadedImage && !formData.hasReference)}
+                    disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-purple-600 to-green-600 hover:from-purple-700 hover:to-green-700 text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   >
                     {isSubmitting ? (
@@ -552,16 +572,11 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
                       </>
                     )}
                   </button>
-                  
-                  {(!formData.name || !formData.email || !formData.phone || !formData.bodyZone || (!uploadedImage && !formData.hasReference)) && (
-                    <p className="text-gray-400 text-sm mt-3 text-center">
-                      Completa todos los campos obligatorios para enviar la consulta
-                    </p>
-                  )}
                 </div>
               </div>
             </div>
-        </div>
+          </div>
+        )}
 
         {/* WhatsApp Contact Section */}
         <div className="mt-16 text-center">

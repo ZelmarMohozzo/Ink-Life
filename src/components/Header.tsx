@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
             <div className="hidden md:flex justify-between items-center w-full">
               {/* Left Menu Items */}
               <nav className="flex space-x-8">
-                {menuItems.slice(0, 4).map((item) => (
+                {menuItems.slice(0, 3).map((item) => (
                   <button
                     key={item.page}
                     onClick={() => onNavigate(item.page)}
@@ -61,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
               {/* Right Menu Items */}
               <nav className="flex items-center space-x-8">
-                {menuItems.slice(4).map((item) => (
+                {menuItems.slice(3).map((item) => (
                   <button
                     key={item.page}
                     onClick={() => onNavigate(item.page)}

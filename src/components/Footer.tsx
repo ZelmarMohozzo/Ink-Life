@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 p-4 rounded-lg border border-purple-400/30 hover:border-purple-300/50 transition-all duration-300">
                 <div className="flex items-center space-x-2 mb-2">
                   <Award className="h-5 w-5 text-purple-400" />
-                  <span className="text-purple-300 font-semibold">5+</span>
+                  <span className="text-purple-300 font-semibold">10+</span>
                 </div>
                 <p className="text-gray-400 text-sm">Estudiantes Formados</p>
               </div>

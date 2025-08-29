@@ -297,12 +297,12 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                   }`}
                 >
                   {/* Badge */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                     <span className={`${
                       pkg.popular 
                         ? 'bg-gradient-to-r from-purple-600 to-purple-700' 
                         : 'bg-gradient-to-r from-blue-600 to-blue-700'
-                    } text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg`}>
+                    } text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg relative z-20`}>
                       {pkg.badge}
                     </span>
                   </div>

@@ -111,7 +111,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       </div>
 
       {/* Logo Desktop - Centrado */}
-      <div className="hidden md:block fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="hidden md:block fixed top-0 left-1/2 transform -translate-x-[60%] z-50">
         <div 
           className="cursor-pointer hover:opacity-80 transition-opacity"
           onClick={() => onNavigate('home')}

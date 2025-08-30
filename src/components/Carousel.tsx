@@ -53,8 +53,8 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
         { icon: Users, label: 'Clientes', value: 'Confianza y profesionalismo' },
         { icon: Award, label: 'Realismo, Blackwork, etc', value: 'Todos los estilos' }
       ],
-      primaryAction: { text: 'TATÚATE', action: () => onNavigate('tatuate') },
-      secondaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },
+      primaryAction: { text: 'Ver Galería', action: () => onNavigate('galeria') },
+      secondaryAction: { text: 'Contactar', action: () => onNavigate('artista') },
       image: '/tatuajes.png',
       gradient: 'from-red-900 via-pink-900 to-rose-900'
     }

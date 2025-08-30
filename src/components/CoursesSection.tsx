@@ -169,8 +169,18 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
               <div className="flip-card-inner">
                 {/* Front Side */}
                 <div className={`flip-card-front bg-gradient-to-br ${course.bgColor}/20 backdrop-blur-2xl rounded-2xl p-8 border border-white/40 shadow-2xl hover:bg-gradient-to-br ${course.hoverColor}/30 transition-all duration-300`}>
+                  {/* Course Image */}
+                  <div className="relative mb-6">
+                    <img
+                      src={course.id === 1 ? '/cursos/curso_inicial.jpg' : course.id === 2 ? '/cursos/curso_completo.jpg' : '/cursos/curso_full.jpg'}
+                      alt={course.title}
+                      className="w-full h-32 object-cover rounded-xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-xl"></div>
+                  </div>
+
                   {/* Level Badge */}
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl md:text-3xl font-bold text-white">
                       {course.title}
                     </h3>
@@ -218,9 +228,19 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
 
                 {/* Back Side */}
                 <div className={`flip-card-back bg-gradient-to-br ${course.bgColor}/20 backdrop-blur-2xl rounded-2xl p-8 border border-white/40 shadow-2xl hover:bg-gradient-to-br ${course.hoverColor}/30 transition-all duration-300`}>
+                  {/* Course Image */}
+                  <div className="relative mb-4">
+                    <img
+                      src={course.id === 1 ? '/cursos/curso_inicial.jpg' : course.id === 2 ? '/cursos/curso_completo.jpg' : '/cursos/curso_full.jpg'}
+                      alt={course.title}
+                      className="w-full h-24 object-cover rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg"></div>
+                  </div>
+
                   <div className="h-full flex flex-col">
                     {/* Header */}
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center justify-between mb-4">
                       <h3 className="text-2xl font-bold text-white">
                         {course.title}
                       </h3>

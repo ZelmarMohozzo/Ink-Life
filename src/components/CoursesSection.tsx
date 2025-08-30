@@ -144,6 +144,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
           <div className="relative max-w-3xl mx-auto mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-green-500/10 rounded-2xl blur-xl"></div>
             <div className="relative bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
+              <>
               <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-4">
                 Todos nuestros cursos son <span className="text-transparent bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text font-semibold">exclusivamente presenciales</span> con un máximo de <span className="text-transparent bg-gradient-to-r from-green-300 to-green-400 bg-clip-text font-semibold">2 alumnos por clase</span>
               </p>
@@ -153,6 +154,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
               <p className="text-base md:text-lg text-gray-300">
                 Incluyen materiales, certificado de finalización y seguimiento personalizado por parte del instructor.
               </p>
+              </>
               
               {/* Subtle decorative accent */}
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-12 h-0.5 bg-gradient-to-r from-purple-400 to-green-400 rounded-full"></div>

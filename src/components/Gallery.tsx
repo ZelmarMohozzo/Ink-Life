@@ -173,12 +173,12 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Cinzel'] tracking-[0.2em] relative">
-              {/* Elegant layered glow effects */}
-              <span className="absolute inset-0 text-purple-400 blur-2xl opacity-60">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-green-400 blur-xl opacity-40">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-purple-300 blur-lg opacity-30">GALERÍA DE TRABAJOS</span>
-              {/* Main text with sophisticated gradient and shadow */}
-              <span className="relative bg-gradient-to-r from-purple-200 via-white via-green-100 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(147,51,234,0.6)] filter brightness-110">
+              {/* Neon-style glow effects */}
+              <span className="absolute inset-0 text-purple-500 blur-sm opacity-90 animate-pulse">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-green-500 blur-md opacity-70" style={{animationDelay: '0.5s'}}>GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-white blur-lg opacity-50">GALERÍA DE TRABAJOS</span>
+              {/* Main text with neon effect */}
+              <span className="relative text-white drop-shadow-[0_0_10px_rgba(168,85,247,1)] drop-shadow-[0_0_20px_rgba(34,197,94,0.8)] drop-shadow-[0_0_40px_rgba(168,85,247,0.6)]">
                 GALERÍA DE TRABAJOS
               </span>
             </h2>

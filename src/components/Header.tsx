@@ -82,12 +82,13 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
             {/* Mobile Layout */}
             <div className="md:hidden flex items-center justify-between w-full">
-              {/* Espacio vacío para el logo fixed */}
-              <div className="w-20"></div>
-              
-              {/* Botones - Derecha */}
+              {/* Cart - Izquierda */}
               <div className="flex items-center space-x-2">
                 <CartIcon />
+              </div>
+              
+              {/* Menu Button - Derecha */}
+              <div className="flex items-center space-x-2">
                 <button
                   onClick={toggleMenu}
                   className="text-white hover:text-purple-400 transition-colors p-2"
@@ -101,11 +102,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       </header>
 
       {/* Logo Móvil Fixed - Separado del navbar */}
-      <div className="md:hidden fixed top-0 left-0 z-50 pointer-events-none">
+      <div className="md:hidden fixed top-0 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
         <img 
           src="/banner_inkedlife.png" 
           alt="Inked Life" 
-          className="w-[70%] sm:w-[50%] lg:w-[45%] object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg pointer-events-auto"
+          className="w-[60%] sm:w-[45%] object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg pointer-events-auto"
           onClick={() => onNavigate('home')}
         />
       </div>

@@ -102,11 +102,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       </header>
 
       {/* Logo Móvil Fixed - Separado del navbar */}
-      <div className="md:hidden relative top-0 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
+      <div className="md:hidden absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4 z-50 pointer-events-none overflow-visible">
         <img 
           src="/banner_inkedlife.png" 
           alt="Inked Life" 
-          className="w-[200%] sm:w-[250%] object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg pointer-events-auto"
+          className="w-[300%] sm:w-[350%] object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg pointer-events-auto"
           onClick={() => onNavigate('home')}
         />
       </div>

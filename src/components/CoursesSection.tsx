@@ -195,7 +195,14 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
                     </div>
 
                     {course.specialFeature && (
-                      <div className="flex items-center space-x-3 text-yellow-300">
+                      <div className="flex items-center space-x-3 
+            )
+            }
+    )
+    )
+    }
+  )
+}text-yellow-300">
                         <CheckCircle className="h-5 w-5 flex-shrink-0" />
                         <span className="text-lg font-semibold">{course.specialFeature}</span>
                       </div>

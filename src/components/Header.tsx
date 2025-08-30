@@ -88,7 +88,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
               
               {/* Logo Móvil - Centro */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 pointer-events-none overflow-visible">
+              <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-6 pointer-events-none overflow-visible">
                 <img 
                   src="/banner_inkedlife.png" 
                   alt="Inked Life" 

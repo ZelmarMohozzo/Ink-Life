@@ -91,9 +91,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               <div className="flex items-center space-x-2 -mr-0">
                 <button
                   onClick={toggleMenu}
-                  className="text-white hover:text-purple-400 transition-colors p-2"
+                  className="text-white hover:text-purple-400 transition-colors p-3"
                 >
-                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                  {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
                 </button>
               </div>
             </div>

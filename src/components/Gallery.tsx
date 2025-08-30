@@ -165,36 +165,47 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
         <div className="text-center mb-16">
           {/* Elegant Title Design */}
           <div className="relative mb-12">
-            {/* Decorative top accent */}
-            <div className="flex items-center justify-center mb-8">
-              <div className="w-16 h-px bg-gradient-to-r from-transparent to-purple-400"></div>
-              <div className="mx-4 w-2 h-2 bg-gradient-to-br from-purple-400 to-green-400 rounded-full"></div>
-              <div className="w-16 h-px bg-gradient-to-l from-transparent to-green-400"></div>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light font-['Cinzel'] tracking-[0.3em] relative mb-6">
-              {/* Subtle background glow */}
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-transparent to-green-500/20 blur-3xl"></span>
-              {/* Main elegant text */}
-              <span className="relative bg-gradient-to-r from-purple-100 via-white to-green-100 bg-clip-text text-transparent filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
-                GALERÍA
-              </span>
-            </h2>
-            
-            {/* Subtitle with elegant styling */}
-            <div className="relative">
-              <p className="text-lg md:text-xl font-light font-['Cinzel'] tracking-[0.2em] text-gray-300 mb-8">
-                DE TRABAJOS ARTÍSTICOS
-              </p>
-            </div>
-            
-            {/* Decorative bottom accent */}
-            <div className="flex items-center justify-center">
-              <div className="w-8 h-px bg-gradient-to-r from-transparent to-purple-300"></div>
-              <div className="mx-3 flex space-x-1">
-                <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
-                <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-                <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
+            {/* Background frame for title */}
+            <div className="relative max-w-4xl mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-green-500/10 rounded-2xl blur-xl"></div>
+              <div className="relative bg-black/40 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl">
+                
+                {/* Decorative top accent */}
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-px bg-gradient-to-r from-transparent to-purple-400"></div>
+                  <div className="mx-4 w-2 h-2 bg-gradient-to-br from-purple-400 to-green-400 rounded-full"></div>
+                  <div className="w-16 h-px bg-gradient-to-l from-transparent to-green-400"></div>
+                </div>
+                
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light font-['Cinzel'] tracking-[0.3em] relative mb-4">
+                  {/* Subtle background glow */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-transparent to-green-500/20 blur-3xl"></span>
+                  {/* Main elegant text */}
+                  <span className="relative bg-gradient-to-r from-purple-100 via-white to-green-100 bg-clip-text text-transparent filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+                    GALERÍA
+                  </span>
+                </h2>
+                
+                {/* Subtitle with elegant styling */}
+                <div className="relative">
+                  <p className="text-lg md:text-xl font-light font-['Cinzel'] tracking-[0.2em] text-gray-300 mb-6">
+                    DE TRABAJOS ARTÍSTICOS
+                  </p>
+                </div>
+                
+                {/* Decorative bottom accent */}
+                <div className="flex items-center justify-center">
+                  <div className="w-8 h-px bg-gradient-to-r from-transparent to-purple-300"></div>
+                  <div className="mx-3 flex space-x-1">
+                    <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
+                    <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+                    <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
+                  </div>
+                  <div className="w-8 h-px bg-gradient-to-l from-transparent to-green-300"></div>
+                </div>
+                
+                {/* Subtle decorative accent at bottom */}
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-12 h-0.5 bg-gradient-to-r from-purple-400 to-green-400 rounded-full"></div>
               </div>
               <div className="w-8 h-px bg-gradient-to-l from-transparent to-green-300"></div>
             </div>

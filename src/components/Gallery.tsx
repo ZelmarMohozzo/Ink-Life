@@ -163,23 +163,59 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          {/* Compact Title */}
-          <h2 className="text-4xl md:text-5xl font-bold font-['Cinzel'] tracking-wide text-white mb-6">
-            GALERÍA DE TRABAJOS
-          </h2>
+          {/* Enhanced Title with Multiple Effects */}
+          <div className="relative mb-12">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-['Cinzel'] tracking-wide relative">
+              {/* Multiple glow layers for dramatic effect */}
+              <span className="absolute inset-0 text-purple-500 blur-lg opacity-70 animate-pulse">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-purple-400 blur-md opacity-50">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-green-400 blur-sm opacity-30">GALERÍA DE TRABAJOS</span>
+              {/* Main text with gradient and enhanced shadow */}
+              <span className="relative bg-gradient-to-r from-white via-purple-200 to-green-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(147,51,234,0.9)]">
+                GALERÍA DE TRABAJOS
+              </span>
+            </h2>
+            
+            {/* Animated decorative lines */}
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-80 h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-pulse"></div>
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-80 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent blur-sm opacity-60"></div>
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-60 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-40"></div>
+          </div>
           
-          {/* Simple description */}
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Descubre nuestros trabajos más destacados y la calidad artística que nos caracteriza.
-          </p>
+          {/* Enhanced description with background */}
+          <div className="max-w-4xl mx-auto bg-black/50 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 shadow-2xl mb-12">
+            <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed">
+              Descubre nuestros trabajos más destacados y la <span className="text-purple-300 font-semibold">calidad artística</span> que nos caracteriza.
+            </p>
+            <p className="text-lg text-gray-400 italic">
+              "Cada obra refleja años de experiencia y pasión por el arte del tatuaje"
+            </p>
+          </div>
           
-          {/* Simple CTA button */}
-          <button
-            onClick={() => onNavigate('galeria')}
-            className="bg-gradient-to-r from-purple-600 to-green-600 hover:from-purple-700 hover:to-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
-          >
-            Ver Galería Completa
-          </button>
+          {/* Enhanced CTA button with glow effects */}
+          <div className="relative inline-block">
+            <button
+              onClick={() => onNavigate('galeria')}
+              className="group relative bg-gradient-to-r from-purple-600 via-purple-700 to-green-600 hover:from-purple-500 hover:via-purple-600 hover:to-green-500 text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-purple-500/50 border border-purple-400/50 hover:border-purple-300/70 overflow-hidden"
+            >
+              {/* Button glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-green-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Button content */}
+              <span className="relative flex items-center space-x-3">
+                <span>Ver Galería Completa</span>
+                <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+              
+              {/* Animated shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+            </button>
+            
+            {/* Outer glow ring */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-green-500/30 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 scale-150"></div>
+          </div>
         </div>
 
         {/* Continuous Scroll Container */}

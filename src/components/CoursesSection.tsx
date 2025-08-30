@@ -135,7 +135,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
             <div key={course.id} className="flip-card h-[520px]">
               <div className="flip-card-inner">
                 {/* Front Side */}
-                <div className={`flip-card-front bg-gradient-to-br ${course.bgColor} bg-opacity-20 backdrop-blur-xl rounded-2xl p-8 border border-white/30 shadow-2xl`}>
+                <div className={`flip-card-front bg-white/10 backdrop-blur-2xl rounded-2xl p-8 border border-white/40 shadow-2xl hover:bg-white/15 transition-all duration-300`}>
                   {/* Level Badge */}
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-2xl md:text-3xl font-bold text-white">
@@ -184,7 +184,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Back Side */}
-                <div className={`flip-card-back bg-gradient-to-br ${course.bgColor} bg-opacity-20 backdrop-blur-xl rounded-2xl p-8 border border-white/30 shadow-2xl`}>
+                <div className={`flip-card-back bg-white/10 backdrop-blur-2xl rounded-2xl p-8 border border-white/40 shadow-2xl hover:bg-white/15 transition-all duration-300`}>
                   <div className="h-full flex flex-col">
                     {/* Header */}
                     <div className="flex items-center justify-between mb-6">

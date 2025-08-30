@@ -102,7 +102,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       </header>
 
       {/* Logo Móvil Fixed - Separado del navbar */}
-      <div className="md:hidden absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4 z-50 pointer-events-none overflow-visible">
+      <div className="md:hidden absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-8 z-50 pointer-events-none overflow-visible">
         <img 
           src="/banner_inkedlife.png" 
           alt="Inked Life" 

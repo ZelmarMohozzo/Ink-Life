@@ -173,12 +173,12 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Cinzel'] tracking-[0.2em] relative">
-              {/* Neon-style glow effects */}
-              <span className="absolute inset-0 text-purple-500 blur-sm opacity-90 animate-pulse">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-green-500 blur-md opacity-70" style={{animationDelay: '0.5s'}}>GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-white blur-lg opacity-50">GALERÍA DE TRABAJOS</span>
-              {/* Main text with neon effect */}
-              <span className="relative text-white drop-shadow-[0_0_10px_rgba(168,85,247,1)] drop-shadow-[0_0_20px_rgba(34,197,94,0.8)] drop-shadow-[0_0_40px_rgba(168,85,247,0.6)]">
+              {/* White overlap effect */}
+              <span className="absolute inset-0 text-white transform translate-x-1 translate-y-1 opacity-30">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-white transform translate-x-2 translate-y-2 opacity-20">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-white transform translate-x-3 translate-y-3 opacity-10">GALERÍA DE TRABAJOS</span>
+              {/* Main text without shadow */}
+              <span className="relative text-white">
                 GALERÍA DE TRABAJOS
               </span>
             </h2>

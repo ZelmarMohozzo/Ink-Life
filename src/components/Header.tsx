@@ -88,14 +88,18 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
               
               {/* Logo Móvil - Centro */}
-              {/* Menu Button - Derecha */}
-              <div className="flex items-center space-x-2 -mr-0">
-                <button
-                  onClick={toggleMenu}
-                  className="text-white hover:text-purple-400 transition-colors p-3"
+              <div className="flex-1 flex justify-center">
+                <div 
+                  className="cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => onNavigate('home')}
                 >
-                  {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
-                </button>
+                  <img 
+                    src="/banner_inkedlife.png" 
+                    alt="Inked Life" 
+                    className="h-16 w-auto object-contain"
+                  />
+                </div>
+              </div>
               </div>
             </div>
           </div>

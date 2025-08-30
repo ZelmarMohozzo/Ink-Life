@@ -163,23 +163,40 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          {/* 3D Overlap Title Effect */}
+          {/* Elegant Title Design */}
           <div className="relative mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-['Cinzel'] tracking-[0.1em] relative">
-              {/* 3D Overlap layers - creating depth effect */}
-              <span className="absolute inset-0 text-gray-300 transform translate-x-1 translate-y-1">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-gray-400 transform translate-x-2 translate-y-2">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-gray-500 transform translate-x-3 translate-y-3">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-gray-600 transform translate-x-4 translate-y-4">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-gray-700 transform translate-x-5 translate-y-5">GALERÍA DE TRABAJOS</span>
-              {/* Front face - bright white */}
-              <span className="relative text-white">
-                GALERÍA DE TRABAJOS
+            {/* Decorative top accent */}
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent to-purple-400"></div>
+              <div className="mx-4 w-2 h-2 bg-gradient-to-br from-purple-400 to-green-400 rounded-full"></div>
+              <div className="w-16 h-px bg-gradient-to-l from-transparent to-green-400"></div>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light font-['Cinzel'] tracking-[0.3em] relative mb-6">
+              {/* Subtle background glow */}
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-transparent to-green-500/20 blur-3xl"></span>
+              {/* Main elegant text */}
+              <span className="relative bg-gradient-to-r from-purple-100 via-white to-green-100 bg-clip-text text-transparent filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+                GALERÍA
               </span>
             </h2>
             
-            {/* Simple decorative line */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-purple-400 to-green-400">
+            {/* Subtitle with elegant styling */}
+            <div className="relative">
+              <p className="text-lg md:text-xl font-light font-['Cinzel'] tracking-[0.2em] text-gray-300 mb-8">
+                DE TRABAJOS ARTÍSTICOS
+              </p>
+            </div>
+            
+            {/* Decorative bottom accent */}
+            <div className="flex items-center justify-center">
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-purple-300"></div>
+              <div className="mx-3 flex space-x-1">
+                <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
+                <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+                <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
+              </div>
+              <div className="w-8 h-px bg-gradient-to-l from-transparent to-green-300"></div>
             </div>
           </div>
           

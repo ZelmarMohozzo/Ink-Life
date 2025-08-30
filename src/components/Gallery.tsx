@@ -163,28 +163,51 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          {/* Redesigned Title with Purple-Green Effects */}
+          {/* Elegant Title with Sophisticated Effects */}
           <div className="relative mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Cinzel'] tracking-wider relative">
-              {/* Purple and green glow effects */}
-              <span className="absolute inset-0 text-purple-400 blur-xl opacity-80 animate-pulse">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-green-400 blur-lg opacity-60">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-purple-300 blur-md opacity-40">GALERÍA DE TRABAJOS</span>
-              {/* Main text with vibrant gradient */}
-              <span className="relative bg-gradient-to-r from-purple-300 via-white to-green-300 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.8)]">
+            {/* Floating particles background */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-purple-400 rounded-full opacity-60 animate-ping"></div>
+              <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-green-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-purple-300 rounded-full opacity-50 animate-bounce" style={{animationDelay: '2s'}}></div>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Cinzel'] tracking-[0.2em] relative">
+              {/* Elegant layered glow effects */}
+              <span className="absolute inset-0 text-purple-400 blur-2xl opacity-60">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-green-400 blur-xl opacity-40">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-purple-300 blur-lg opacity-30">GALERÍA DE TRABAJOS</span>
+              {/* Main text with sophisticated gradient and shadow */}
+              <span className="relative bg-gradient-to-r from-purple-200 via-white via-green-100 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(147,51,234,0.6)] filter brightness-110">
                 GALERÍA DE TRABAJOS
               </span>
             </h2>
             
-            {/* Purple-green decorative lines */}
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-purple-500 via-green-400 to-purple-500 animate-pulse"></div>
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-green-500 via-purple-400 to-green-500 blur-sm opacity-70"></div>
+            {/* Elegant decorative elements */}
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-purple-400"></div>
+                <div className="w-3 h-3 bg-gradient-to-br from-purple-400 to-green-400 rounded-full shadow-lg shadow-purple-500/50"></div>
+                <div className="w-20 h-0.5 bg-gradient-to-r from-purple-400 via-green-400 to-purple-400"></div>
+                <div className="w-3 h-3 bg-gradient-to-br from-green-400 to-purple-400 rounded-full shadow-lg shadow-green-500/50"></div>
+                <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-green-400"></div>
+              </div>
+            </div>
           </div>
           
-          {/* Compact description */}
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Explora nuestros <span className="text-purple-300 font-semibold">trabajos más destacados</span> y la <span className="text-green-300 font-semibold">calidad artística</span> que nos define.
-          </p>
+          {/* Elegant description with glass effect */}
+          <div className="relative max-w-3xl mx-auto mb-8">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-green-500/10 rounded-2xl blur-xl"></div>
+            <div className="relative bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
+                Explora nuestros <span className="text-transparent bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text font-semibold">trabajos más destacados</span> y la 
+                <span className="text-transparent bg-gradient-to-r from-green-300 to-green-400 bg-clip-text font-semibold"> calidad artística</span> que nos define.
+              </p>
+              
+              {/* Subtle decorative accent */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-12 h-0.5 bg-gradient-to-r from-purple-400 to-green-400 rounded-full"></div>
+            </div>
+          </div>
           
           {/* Enhanced CTA button with glow effects */}
           <div className="relative inline-block">

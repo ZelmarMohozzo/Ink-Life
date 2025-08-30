@@ -139,6 +139,27 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
               </div>
             </div>
           </div>
+          
+          {/* Description with glass frame */}
+          <div className="relative max-w-3xl mx-auto mb-8">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-green-500/10 rounded-2xl blur-xl"></div>
+            <div className="relative bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
+              <>
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-4">
+                Todos nuestros cursos son <span className="text-transparent bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text font-semibold">exclusivamente presenciales</span> con un máximo de <span className="text-transparent bg-gradient-to-r from-green-300 to-green-400 bg-clip-text font-semibold">2 alumnos por clase</span>
+              </p>
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-4">
+                para garantizar una atención personalizada y de calidad.
+              </p>
+              <p className="text-base md:text-lg text-gray-300">
+                Incluyen materiales, certificado de finalización y seguimiento personalizado por parte del instructor.
+              </p>
+              </>
+              
+              {/* Subtle decorative accent */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-12 h-0.5 bg-gradient-to-r from-purple-400 to-green-400 rounded-full"></div>
+            </div>
+          </div>
         </div>
 
         {/* Courses Grid */}
@@ -251,53 +272,20 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ onNavigate }) => {
           ))}
         </div>
 
-        {/* Description with glass frame - moved below courses */}
-        <div className="relative max-w-3xl mx-auto mb-12 mt-16">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-green-500/10 rounded-2xl blur-xl"></div>
-          <div className="relative bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
-            <>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-4">
-              Todos nuestros cursos son <span className="text-transparent bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text font-semibold">exclusivamente presenciales</span> con un máximo de <span className="text-transparent bg-gradient-to-r from-green-300 to-green-400 bg-clip-text font-semibold">2 alumnos por clase</span>
-            </p>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-4">
-              para garantizar una atención personalizada y de calidad.
-            </p>
-            <p className="text-base md:text-lg text-gray-300">
-              Incluyen materiales, certificado de finalización y seguimiento personalizado por parte del instructor.
-            </p>
-            </>
-            
-            {/* Subtle decorative accent */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-12 h-0.5 bg-gradient-to-r from-purple-400 to-green-400 rounded-full"></div>
-          </div>
-        </div>
-
         {/* Bottom CTA */}
-        <div className="text-center">
-          {/* Enhanced CTA button with glow effects */}
-          <div className="relative inline-block">
-            <button
-              onClick={() => onNavigate('cursos')}
-              className="group relative bg-gradient-to-r from-purple-600 via-purple-700 to-green-600 hover:from-purple-500 hover:via-purple-600 hover:to-green-500 text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-purple-500/50 border border-purple-400/50 hover:border-purple-300/70 overflow-hidden"
-            >
-              {/* Button glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-green-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Button content */}
-              <span className="relative flex items-center space-x-3">
-                <span>Ver Todos los Cursos</span>
-                <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-              
-              {/* Animated shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-            </button>
-            
-            {/* Outer glow ring */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-green-500/30 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 scale-150"></div>
-          </div>
+        <div className="text-center mt-16">
+          <button
+            onClick={() => onNavigate('cursos')}
+            className="group relative bg-black hover:bg-gray-900 text-purple-400 hover:text-purple-300 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-purple-500/25 border border-purple-500/50 hover:border-purple-400/70"
+          >
+            <span className="relative z-10 flex items-center space-x-2">
+              <span>Ver Todos los Cursos</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          </button>
         </div>
       </div>
 

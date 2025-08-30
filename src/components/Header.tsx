@@ -100,7 +100,6 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   />
                 </div>
               </div>
-              </div>
             </div>
           </div>
         </div>

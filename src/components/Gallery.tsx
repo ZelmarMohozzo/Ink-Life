@@ -163,34 +163,28 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          {/* Enhanced Title with Multiple Effects */}
+          {/* Redesigned Title with Purple-Green Effects */}
           <div className="relative mb-12">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-['Cinzel'] tracking-wide relative">
-              {/* Multiple glow layers for dramatic effect */}
-              <span className="absolute inset-0 text-purple-500 blur-lg opacity-70 animate-pulse">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-purple-400 blur-md opacity-50">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-green-400 blur-sm opacity-30">GALERÍA DE TRABAJOS</span>
-              {/* Main text with gradient and enhanced shadow */}
-              <span className="relative bg-gradient-to-r from-white via-purple-200 to-green-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(147,51,234,0.9)]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Cinzel'] tracking-wider relative">
+              {/* Purple and green glow effects */}
+              <span className="absolute inset-0 text-purple-400 blur-xl opacity-80 animate-pulse">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-green-400 blur-lg opacity-60">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-purple-300 blur-md opacity-40">GALERÍA DE TRABAJOS</span>
+              {/* Main text with vibrant gradient */}
+              <span className="relative bg-gradient-to-r from-purple-300 via-white to-green-300 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.8)]">
                 GALERÍA DE TRABAJOS
               </span>
             </h2>
             
-            {/* Animated decorative lines */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-80 h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-pulse"></div>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-80 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent blur-sm opacity-60"></div>
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-60 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-40"></div>
+            {/* Purple-green decorative lines */}
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-purple-500 via-green-400 to-purple-500 animate-pulse"></div>
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-green-500 via-purple-400 to-green-500 blur-sm opacity-70"></div>
           </div>
           
-          {/* Enhanced description with background */}
-          <div className="max-w-4xl mx-auto bg-black/50 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 shadow-2xl mb-12">
-            <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed">
-              Descubre nuestros trabajos más destacados y la <span className="text-purple-300 font-semibold">calidad artística</span> que nos caracteriza.
-            </p>
-            <p className="text-lg text-gray-400 italic">
-              "Cada obra refleja años de experiencia y pasión por el arte del tatuaje"
-            </p>
-          </div>
+          {/* Compact description */}
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Explora nuestros <span className="text-purple-300 font-semibold">trabajos más destacados</span> y la <span className="text-green-300 font-semibold">calidad artística</span> que nos define.
+          </p>
           
           {/* Enhanced CTA button with glow effects */}
           <div className="relative inline-block">

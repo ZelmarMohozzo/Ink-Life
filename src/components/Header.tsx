@@ -88,8 +88,6 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
               
               {/* Logo Móvil - Centro */}
-              {/* Logo moved above to avoid duplication */}
-              
               {/* Menu Button - Derecha */}
               <div className="flex items-center space-x-2 -mr-0">
                 <button

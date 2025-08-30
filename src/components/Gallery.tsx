@@ -163,35 +163,23 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          {/* Elegant Title with Sophisticated Effects */}
+          {/* 3D Overlap Title Effect */}
           <div className="relative mb-12">
-            {/* Floating particles background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-purple-400 rounded-full opacity-60 animate-ping"></div>
-              <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-green-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-purple-300 rounded-full opacity-50 animate-bounce" style={{animationDelay: '2s'}}></div>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-['Cinzel'] tracking-[0.2em] relative">
-              {/* White overlap effect */}
-              <span className="absolute inset-0 text-white transform translate-x-1 translate-y-1 opacity-30">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-white transform translate-x-2 translate-y-2 opacity-20">GALERÍA DE TRABAJOS</span>
-              <span className="absolute inset-0 text-white transform translate-x-3 translate-y-3 opacity-10">GALERÍA DE TRABAJOS</span>
-              {/* Main text without shadow */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-['Cinzel'] tracking-[0.1em] relative">
+              {/* 3D Overlap layers - creating depth effect */}
+              <span className="absolute inset-0 text-gray-300 transform translate-x-1 translate-y-1">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-gray-400 transform translate-x-2 translate-y-2">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-gray-500 transform translate-x-3 translate-y-3">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-gray-600 transform translate-x-4 translate-y-4">GALERÍA DE TRABAJOS</span>
+              <span className="absolute inset-0 text-gray-700 transform translate-x-5 translate-y-5">GALERÍA DE TRABAJOS</span>
+              {/* Front face - bright white */}
               <span className="relative text-white">
                 GALERÍA DE TRABAJOS
               </span>
             </h2>
             
-            {/* Elegant decorative elements */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-purple-400"></div>
-                <div className="w-3 h-3 bg-gradient-to-br from-purple-400 to-green-400 rounded-full shadow-lg shadow-purple-500/50"></div>
-                <div className="w-20 h-0.5 bg-gradient-to-r from-purple-400 via-green-400 to-purple-400"></div>
-                <div className="w-3 h-3 bg-gradient-to-br from-green-400 to-purple-400 rounded-full shadow-lg shadow-green-500/50"></div>
-                <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-green-400"></div>
-              </div>
+            {/* Simple decorative line */}
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-purple-400 to-green-400">
             </div>
           </div>
           

@@ -164,44 +164,46 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           {/* Enhanced Header Container */}
-          <div className="relative mb-16 bg-black/30 backdrop-blur-xl rounded-3xl p-12 border border-green-500/30 shadow-2xl hover:shadow-green-500/20 transition-all duration-700">
+          <div className="relative mb-16 bg-gradient-to-br from-purple-900/20 via-black/40 to-green-900/20 backdrop-blur-xl rounded-3xl p-12 border border-purple-500/30 shadow-2xl hover:shadow-purple-500/30 transition-all duration-700">
             {/* Animated background particles */}
             <div className="absolute inset-0 overflow-hidden rounded-3xl">
-              <div className="absolute top-0 left-1/4 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-60"></div>
-              <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-emerald-300 rounded-full animate-pulse opacity-40"></div>
-              <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-green-500 rounded-full animate-bounce opacity-50" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-lime-400 rounded-full animate-ping opacity-30" style={{animationDelay: '2s'}}></div>
+              <div className="absolute top-0 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-ping opacity-60"></div>
+              <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-green-300 rounded-full animate-pulse opacity-40"></div>
+              <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-purple-500 rounded-full animate-bounce opacity-50" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-green-400 rounded-full animate-ping opacity-30" style={{animationDelay: '2s'}}></div>
+              <div className="absolute top-1/4 left-1/2 w-1 h-1 bg-violet-300 rounded-full animate-pulse opacity-50" style={{animationDelay: '1.5s'}}></div>
+              <div className="absolute bottom-1/3 right-1/2 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping opacity-40" style={{animationDelay: '2.5s'}}></div>
             </div>
             
             {/* Main Title with enhanced effects */}
             <div className="relative mb-8">
               <h2 className="text-5xl md:text-7xl font-bold font-['Cinzel'] tracking-wide relative">
                 {/* Multiple glow layers for dramatic effect */}
-                <span className="absolute inset-0 text-green-500 blur-2xl opacity-80 animate-pulse">GALERÍA DE TRABAJOS</span>
-                <span className="absolute inset-0 text-green-400 blur-xl opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}>GALERÍA DE TRABAJOS</span>
-                <span className="absolute inset-0 text-emerald-300 blur-lg opacity-40 animate-pulse" style={{animationDelay: '1s'}}>GALERÍA DE TRABAJOS</span>
-                <span className="absolute inset-0 text-lime-400 blur-md opacity-30">GALERÍA DE TRABAJOS</span>
+                <span className="absolute inset-0 text-purple-500 blur-2xl opacity-80 animate-pulse">GALERÍA DE TRABAJOS</span>
+                <span className="absolute inset-0 text-green-400 blur-xl opacity-70 animate-pulse" style={{animationDelay: '0.5s'}}>GALERÍA DE TRABAJOS</span>
+                <span className="absolute inset-0 text-purple-300 blur-lg opacity-50 animate-pulse" style={{animationDelay: '1s'}}>GALERÍA DE TRABAJOS</span>
+                <span className="absolute inset-0 text-green-300 blur-md opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}>GALERÍA DE TRABAJOS</span>
                 {/* Main text with enhanced gradient and shadow */}
-                <span className="relative bg-gradient-to-b from-white via-green-100 to-green-300 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,197,94,0.9)] filter brightness-110">
+                <span className="relative bg-gradient-to-r from-purple-200 via-white to-green-200 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(147,51,234,0.8)] filter brightness-110">
                   GALERÍA DE TRABAJOS
                 </span>
               </h2>
               
               {/* Enhanced decorative elements */}
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
-                <div className="w-80 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent animate-pulse"></div>
-                <div className="w-80 h-1 bg-gradient-to-r from-transparent via-emerald-300 to-transparent blur-sm opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                <div className="w-60 h-0.5 bg-gradient-to-r from-transparent via-lime-400 to-transparent blur-md opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>
+                <div className="w-80 h-1 bg-gradient-to-r from-purple-400 via-green-400 to-purple-400 animate-pulse"></div>
+                <div className="w-80 h-1 bg-gradient-to-r from-green-300 via-purple-300 to-green-300 blur-sm opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                <div className="w-60 h-0.5 bg-gradient-to-r from-purple-300 via-green-300 to-purple-300 blur-md opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
             </div>
           </div>
           
           {/* Enhanced description container */}
-          <div className="max-w-4xl mx-auto mb-12 bg-black/20 backdrop-blur-lg rounded-2xl p-8 border border-green-500/20 shadow-xl hover:shadow-green-500/10 transition-all duration-500">
+          <div className="max-w-4xl mx-auto mb-12 bg-gradient-to-r from-purple-900/20 via-black/30 to-green-900/20 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/30 shadow-xl hover:shadow-purple-500/20 transition-all duration-500">
             <p className="text-xl md:text-2xl text-gray-100 mb-6 leading-relaxed font-light">
               Cada tatuaje cuenta una historia única. Descubre nuestros trabajos más destacados y la calidad artística que nos caracteriza.
             </p>
-            <p className="text-lg md:text-xl text-green-300 italic font-medium bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">
+            <p className="text-lg md:text-xl italic font-medium bg-gradient-to-r from-purple-400 via-green-300 to-purple-400 bg-clip-text text-transparent">
               "El arte permanece, la piel es solo el lienzo"
             </p>
           </div>
@@ -209,14 +211,14 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
           {/* Enhanced CTA button container */}
           <div className="relative inline-block group">
             {/* Animated background glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-green-500 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
             
             <button
               onClick={() => onNavigate('galeria')}
-              className="relative bg-black/40 backdrop-blur-xl hover:bg-black/20 text-green-400 hover:text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-700 transform hover:scale-110 shadow-2xl hover:shadow-green-500/40 border-2 border-green-500/60 hover:border-green-300/80 overflow-hidden"
+              className="relative bg-black/40 backdrop-blur-xl hover:bg-black/20 text-purple-400 hover:text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-700 transform hover:scale-110 shadow-2xl hover:shadow-purple-500/40 border-2 border-purple-500/60 hover:border-green-400/80 overflow-hidden"
             >
               {/* Animated background shimmer */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/20 via-green-400/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
               
               <span className="relative z-10 flex items-center space-x-3">
                 <span className="tracking-wide">Ver Galería Completa</span>
@@ -227,10 +229,10 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate }) => {
             </button>
           
             {/* Enhanced decorative elements */}
-            <div className="absolute -left-6 -top-6 w-12 h-12 border-l-2 border-t-2 border-green-400/50 opacity-80 animate-pulse"></div>
+            <div className="absolute -left-6 -top-6 w-12 h-12 border-l-2 border-t-2 border-purple-400/50 opacity-80 animate-pulse"></div>
             <div className="absolute -right-6 -bottom-6 w-12 h-12 border-r-2 border-b-2 border-green-400/50 opacity-80 animate-pulse" style={{animationDelay: '1s'}}></div>
-            <div className="absolute -left-3 -bottom-3 w-6 h-6 border-l-2 border-b-2 border-emerald-300/40 opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="absolute -right-3 -top-3 w-6 h-6 border-r-2 border-t-2 border-emerald-300/40 opacity-60 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+            <div className="absolute -left-3 -bottom-3 w-6 h-6 border-l-2 border-b-2 border-green-300/40 opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="absolute -right-3 -top-3 w-6 h-6 border-r-2 border-t-2 border-purple-300/40 opacity-60 animate-pulse" style={{animationDelay: '1.5s'}}></div>
           </div>
         </div>
 

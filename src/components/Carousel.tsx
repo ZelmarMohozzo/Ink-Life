@@ -172,7 +172,7 @@ const Carousel: React.FC<CarouselProps> = ({ onNavigate }) => {
                   <div className="relative">
                     <div className={`relative ${index === 0 ? '' : 'drop-shadow-custom'}`}>
                       <img
-                        src={slide.image}
+                        src="/tatuajes/nico_tatuando.png"
                         alt={slide.title}
                         className={`w-full h-[300px] md:h-[500px] lg:h-[600px] transform hover:scale-105 transition-transform duration-700 rounded-3xl ${
                           index === 0 ? 'object-contain' : 'object-cover'

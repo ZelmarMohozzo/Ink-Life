@@ -87,23 +87,29 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                 <CartIcon />
               </div>
               
-              {/* Logo Móvil - Centro */}
-              <div className="flex-1 flex justify-center">
-                <div 
-                  className="cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={() => onNavigate('home')}
+              {/* Menu Button - Derecha */}
+              <div className="flex items-center space-x-2 -mr-0">
+                <button
+                  onClick={toggleMenu}
+                  className="text-white hover:text-purple-400 transition-colors p-3"
                 >
-                  <img 
-                    src="/banner_inkedlife.png" 
-                    alt="Inked Life" 
-                    className="h-16 w-auto object-contain"
-                  />
-                </div>
+                  {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+                </button>
               </div>
             </div>
           </div>
         </div>
       </header>
+
+      {/* Logo Móvil Fixed - Separado del navbar */}
+      <div className="md:hidden fixed top-0 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
+        <img 
+          src="/banner_inkedlife.png" 
+          alt="Inked Life" 
+          className="w-[120%] sm:w-[130%] object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg pointer-events-auto"
+          onClick={() => onNavigate('home')}
+        />
+      </div>
 
       {/* Logo Desktop - Centrado */}
       <div className="hidden md:block fixed top-0 left-1/2 transform -translate-x-[75%] z-50">

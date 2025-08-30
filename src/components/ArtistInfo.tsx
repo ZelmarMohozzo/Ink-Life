@@ -113,7 +113,7 @@ const ArtistInfo: React.FC = () => {
               <div className="flex items-center justify-center space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
                   <img 
-                    src="/15707820.png" 
+                    src="/texture-dark.png" 
                     alt="WhatsApp" 
                     className="w-full h-full object-cover"
                   />

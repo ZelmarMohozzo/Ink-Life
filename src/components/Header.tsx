@@ -88,14 +88,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
               
               {/* Logo Móvil - Centro */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-6 pointer-events-none overflow-visible">
-                <img 
-                  src="/banner_inkedlife.png" 
-                  alt="Inked Life" 
-                  className="w-[620px] sm:w-[680px] object-contain cursor-pointer hover:opacity-80 transition-opacity drop-shadow-lg pointer-events-auto"
-                  onClick={() => onNavigate('home')}
-                />
-              </div>
+              {/* Logo moved above to avoid duplication */}
               
               {/* Menu Button - Derecha */}
               <div className="flex items-center space-x-2 -mr-0">

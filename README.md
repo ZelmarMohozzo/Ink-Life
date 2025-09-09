@@ -2,16 +2,6 @@
 
 **Ink Life** es un estudio profesional de tatuajes y piercings dirigido por **Nico Lemos**, con base en **Punta del Este, Uruguay**. En funcionamiento desde **2013**, ofrece diseños personalizados, realismo, tattoo a color y más. Las agendas se gestionan a través de mensajes directos o WhatsApp.
 
-## Table of Contents
-- [Descripción](#descripción)
-- [Tecnologías](#tecnologías)
-- [Instalación](#instalación)
-- [Desarrollo](#desarrollo)
-- [Uso](#uso)
-- [Despliegue](#despliegue)
-- [Autor](#autor)
-- [Licencia](#licencia)
-
 ---
 
 ## Descripción
@@ -22,4 +12,5 @@ Ink Life es un sitio web que presenta información sobre los servicios de tatuaj
 - Framework frontend: **React**  
 - Estilos: **Tailwind CSS**  
 - Hosting: **Netlify** — despliegue continuo desde GitHub, con previews automáticas :contentReference[oaicite:1]{index=1}  
+
 

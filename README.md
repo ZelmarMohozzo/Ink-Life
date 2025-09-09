@@ -11,6 +11,6 @@ Ink Life es un sitio web que presenta información sobre los servicios de tatuaj
 
 - Framework frontend: **React**  
 - Estilos: **Tailwind CSS**  
-- Hosting: **Netlify** — despliegue continuo desde GitHub, con previews automáticas :contentReference[oaicite:1]{index=1}  
+- Hosting: **Netlify** — despliegue continuo desde GitHub
 
 

@@ -29,7 +29,6 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       hoursPerClass: '2 horas por clase',
       frequency: '2 veces por semana',
       price: '$6,500',
-      originalPrice: '$18,000',
       image: '/cursos/curso_inicial.jpg',
       description: 'Perfecto para comenzar en el mundo del tatuaje con bases sólidas',
       gradient: 'from-green-600 to-green-800',
@@ -60,7 +59,6 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       hoursPerClass: '2 horas por clase',
       frequency: '2 veces por semana',
       price: '$25,000',
-      originalPrice: '$30,000',
       image: '/cursos/curso_completo.jpg',
       description: 'Amplía tus conocimientos con técnicas avanzadas de color y sombras',
       gradient: 'from-blue-600 to-blue-800',
@@ -96,7 +94,6 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       hoursPerClass: '2 horas por clase',
       frequency: '2 veces por semana',
       price: '$35,000',
-      originalPrice: '$42,000',
       image: '/cursos/curso_full.jpg',
       description: 'Formación completa con posibilidades laborales en nuestro estudio',
       gradient: 'from-purple-600 to-purple-800',
@@ -289,15 +286,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
                   <div className="mb-6 text-center">
                     <div className="flex items-center justify-center space-x-2 mb-2">
                       <span className="text-3xl font-black text-white">{course.price}</span>
-                      {course.originalPrice && (
-                        <span className="text-lg text-gray-500 line-through">{course.originalPrice}</span>
-                      )}
                     </div>
-                    {course.originalPrice && (
-                      <div className="text-green-400 text-sm font-semibold">
-                        Ahorro: ${parseInt(course.originalPrice.replace('$', '').replace(',', '')) - parseInt(course.price.replace('$', '').replace(',', ''))}
-                      </div>
-                    )}
                   </div>
 
                   {/* Highlights */}

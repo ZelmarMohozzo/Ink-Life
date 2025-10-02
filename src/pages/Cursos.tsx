@@ -28,7 +28,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       duration: '1 mes de duración',
       hoursPerClass: '2 horas por clase',
       frequency: '2 veces por semana',
-      price: '$6,500',
+      price: '$15,000',
       image: '/cursos/curso_inicial.jpg',
       description: 'Perfecto para comenzar en el mundo del tatuaje con bases sólidas',
       gradient: 'from-green-600 to-green-800',

@@ -29,7 +29,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       hoursPerClass: '2 horas por clase',
       frequency: '2 veces por semana',
       price: '$6,500',
-      originalPrice: '$8,000',
+      originalPrice: '$18,000',
       image: '/cursos/curso_inicial.jpg',
       description: 'Perfecto para comenzar en el mundo del tatuaje con bases sólidas',
       gradient: 'from-green-600 to-green-800',
@@ -43,10 +43,12 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
         'Relleno sólida'
       ],
       highlights: [
-        'Fundamentos esenciales',
-        'Práctica supervisada',
-        'Certificado incluido',
-        'Materiales incluidos'
+        'Bioseguridad',
+        'Estilos de tatuajes',
+        'Máquinas',
+        'Materiales',
+        'Línea sólida',
+        'Relleno sólida'
       ]
     },
     {
@@ -57,8 +59,8 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       duration: '1 mes de duración',
       hoursPerClass: '2 horas por clase',
       frequency: '2 veces por semana',
-      price: '$10,000',
-      originalPrice: '$12,500',
+      price: '$25,000',
+      originalPrice: '$30,000',
       image: '/cursos/curso_completo.jpg',
       description: 'Amplía tus conocimientos con técnicas avanzadas de color y sombras',
       gradient: 'from-blue-600 to-blue-800',
@@ -75,10 +77,14 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
         'Sombras'
       ],
       highlights: [
-        'Técnicas de color',
-        'Sombreado profesional',
-        'Portfolio personal',
-        'Seguimiento post-curso'
+        'Bioseguridad',
+        'Estilos de tatuajes',
+        'Máquinas',
+        'Materiales',
+        'Línea sólida',
+        'Relleno sólida',
+        'Color sólido',
+        'Sombras'
       ]
     },
     {
@@ -89,8 +95,8 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
       duration: '1 mes de duración',
       hoursPerClass: '2 horas por clase',
       frequency: '2 veces por semana',
-      price: '$12,000',
-      originalPrice: '$15,000',
+      price: '$35,000',
+      originalPrice: '$42,000',
       image: '/cursos/curso_full.jpg',
       description: 'Formación completa con posibilidades laborales en nuestro estudio',
       gradient: 'from-purple-600 to-purple-800',
@@ -107,10 +113,14 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
         'Posibilidad laboral en el estudio'
       ],
       highlights: [
-        'Realismo profesional',
-        'Oportunidad laboral',
-        'Mentorías personalizadas',
-        'Acceso al estudio'
+        'Bioseguridad',
+        'Estilos de tatuajes',
+        'Máquinas y materiales',
+        'Línea y relleno sólido',
+        'Color sólido',
+        'Sombras y texturas',
+        'Técnica realismo color',
+        'Posibilidad laboral en el estudio'
       ]
     }
   ];

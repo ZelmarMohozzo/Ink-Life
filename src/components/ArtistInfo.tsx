@@ -164,7 +164,7 @@ const ArtistInfo: React.FC = () => {
               
               <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-all duration-300">
                 <a
-                  href="https://api.whatsapp.com/send/?phone=59892153567&text&type=phone_number&app_absent=0"
+                  href="https://api.whatsapp.com/send/?phone=59892542158&text&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center"

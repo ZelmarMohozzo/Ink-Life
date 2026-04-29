@@ -636,7 +636,7 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://api.whatsapp.com/send/?phone=59892153567&text=Hola,%20me%20interesa%20información%20sobre%20los%20cursos%20de%20tatuaje&type=phone_number&app_absent=0"
+                href="https://api.whatsapp.com/send/?phone=59892542158&text=Hola,%20me%20interesa%20información%20sobre%20los%20cursos%20de%20tatuaje&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 flex items-center justify-center space-x-2"
@@ -648,10 +648,10 @@ const Cursos: React.FC<CursosProps> = ({ onNavigate }) => {
               </a>
               
               <a
-                href="tel:+59892153567"
+                href="tel:+59892542158"
                 className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 border border-purple-500/30 hover:border-purple-400/50 text-center"
               >
-                Llamar: +598 92 153 567
+                Llamar: +598 92 542 158
               </a>
             </div>
           </div>

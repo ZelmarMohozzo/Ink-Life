@@ -586,7 +586,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                       <Phone className="h-6 w-6 text-blue-400" />
                       <div>
                         <p className="text-white font-semibold">Teléfono</p>
-                        <p className="text-gray-300">+598 92 153 567</p>
+                        <p className="text-gray-300">+598 92 542 158</p>
                       </div>
                     </div>
 

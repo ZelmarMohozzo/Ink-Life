@@ -619,7 +619,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                 </div>
 
                 <a
-                  href="https://api.whatsapp.com/send/?phone=59892153567&text=Hola,%20me%20interesa%20información%20sobre%20la%20remoción%20láser%20de%20tatuajes&type=phone_number&app_absent=0"
+                  href="https://api.whatsapp.com/send/?phone=59892542158&text=Hola,%20me%20interesa%20información%20sobre%20la%20remoción%20láser%20de%20tatuajes&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 text-center"

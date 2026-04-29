@@ -128,7 +128,7 @@ const ArtistInfo: React.FC = () => {
                 <p className="text-gray-300">¿Tienes preguntas sobre nuestros cursos?</p>
                 <p className="text-gray-300">¡Contáctanos directamente por WhatsApp!</p>
                 <p className="text-gray-300">Respuesta rápida y personalizada</p>
-                <p className="text-green-400 font-medium">📱 +598 92 153 567</p>
+                <p className="text-green-400 font-medium">📱 +598 92 542 158</p>
               </div>
               
               <button className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-medium transition-all duration-300">

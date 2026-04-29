@@ -124,7 +124,7 @@ const Cart: React.FC<CartProps> = ({ onNavigate }) => {
               </button>
               
               <a
-                href="https://api.whatsapp.com/send/?phone=59892153567&text&type=phone_number&app_absent=0"
+                href="https://api.whatsapp.com/send/?phone=59892542158&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2"

@@ -480,7 +480,7 @@ const RemoverTatuaje: React.FC<RemoverTatuajeProps> = ({ onNavigate }) => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full bg-black/40 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors"
-                      placeholder="+598 99 123 456"
+                      placeholder="+598 92 542 158"
                     />
                   </div>
 

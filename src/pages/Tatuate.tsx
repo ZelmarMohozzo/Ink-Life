@@ -830,7 +830,7 @@ const Tatuate: React.FC<TatuateProps> = ({ onNavigate }) => {
             </p>
             
             <a
-              href="https://api.whatsapp.com/send/?phone=59892153567&text=Hola,%20me%20interesa%20hacerme%20un%20tatuaje%20y%20me%20gustaría%20recibir%20más%20información&type=phone_number&app_absent=0"
+              href="https://api.whatsapp.com/send/?phone=59892542158&text=Hola,%20me%20interesa%20hacerme%20un%20tatuaje%20y%20me%20gustaría%20recibir%20más%20información&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
